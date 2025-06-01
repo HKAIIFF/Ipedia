@@ -3,179 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AIF Token - Official Private Sale Round 1/25</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>AIF Token Sale - Hong Kong AI International Film Festival</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --space-dark: #0a1020;
-            --nebula-blue: #0f2a4a;
-            --quantum-purple: #4d2b8c;
-            --ai-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 50%, #4f46e5 100%);
-            --token-gold: #ffd700;
-            --text-light: #e0f2fe;
-            --text-gray: #94a3b8;
-            --card-bg: rgba(15, 42, 74, 0.6);
-            --card-border: rgba(128, 90, 213, 0.2);
-        }
-        
-        * { 
-            box-sizing: border-box; 
-            margin: 0; 
-            padding: 0; 
+            --primary: #3498db;
+            --secondary: #8e44ad;
+            --accent: #00ff9d;
+            --gold: #ffd700;
         }
         
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--space-dark);
-            color: var(--text-light);
-            line-height: 1.7;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.15) 0%, transparent 25%),
-                radial-gradient(circle at 80% 70%, rgba(124, 58, 237, 0.15) 0%, transparent 25%);
+            background-color: #0a0a0a;
+            color: #ffffff;
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(52, 152, 219, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(142, 68, 173, 0.1) 0%, transparent 20%);
         }
         
-        h1, h2, h3, h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
+        .logo-font {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: 2.5rem;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+            animation: logoGlow 3s ease-in-out infinite alternate;
         }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        @keyframes logoGlow {
+            0% { text-shadow: 0 0 10px rgba(0, 255, 157, 0.3); }
+            100% { text-shadow: 0 0 25px rgba(0, 255, 157, 0.6), 0 0 35px rgba(52, 152, 219, 0.4); }
         }
         
-        /* Animation keyframes */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
-            70% { box-shadow: 0 0 0 10px rgba(124, 58, 237, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
         
-        /* Header styles */
-        header {
-            background: rgba(10, 16, 32, 0.95);
+        .gold-gradient {
+            background: linear-gradient(135deg, var(--gold), #ff8c00);
+        }
+        
+        .accent-bg {
+            background: rgba(0, 255, 157, 0.1);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+        }
+        
+        .card {
+            background-color: rgba(26, 32, 44, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid var(--card-border);
-        }
-        
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 18px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 26px;
-            font-weight: 700;
-            text-decoration: none;
-            color: var(--text-light);
-        }
-        
-        .logo-icon {
-            background: var(--ai-gradient);
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-        
-        .nav-links a {
-            color: var(--text-gray);
-            text-decoration: none;
-            font-size: 16px;
-            transition: all 0.3s;
-            position: relative;
-        }
-        
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--text-light);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--ai-gradient);
-            transition: width 0.3s;
-        }
-        
-        .nav-links a:hover::after, .nav-links a.active::after {
-            width: 100%;
-        }
-        
-        .action-btn {
-            background: var(--ai-gradient);
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 16px;
-        }
-        
-        .action-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-        }
-        
-        .global-progress {
-            height: 4px;
-            background: rgba(128, 90, 213, 0.2);
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            width: 40%;
-            background: var(--ai-gradient);
-        }
-        
-        /* Hero section */
-        .hero {
-            padding: 180px 0 100px;
-            position: relative;
+            border-radius: 16px;
+            transition: all 0.3s ease;
             overflow: hidden;
         }
         
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 255, 157, 0.2);
+            border-color: rgba(0, 255, 157, 0.3);
+        }
+        
+        .navbar {
+            background-color: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 157, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            border: none;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold), #ff8c00);
+            color: #000;
+            transition: all 0.3s ease;
+            border: none;
+            font-weight: 700;
+        }
+        
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.4);
+            color: #000;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(0, 255, 157, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .hero {
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+            display: flex;
             align-items: center;
+            padding-top: 80px;
+        }
+        
+        .hero:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%);
+            z-index: 1;
         }
         
         .hero-content {
@@ -183,1342 +150,1385 @@
             z-index: 2;
         }
         
-        .hero-badge {
-            background: rgba(37, 99, 235, 0.2);
-            color: #60a5fa;
-            padding: 8px 20px;
-            border-radius: 30px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-            font-weight: 600;
-            font-size: 14px;
-        }
-        
-        .hero-title {
-            font-size: 3.2rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #e0f2fe, #a5b4fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            line-height: 1.2;
-        }
-        
-        .hero-subtitle {
-            color: var(--text-gray);
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-        
-        .private-sale-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 30px;
-            margin-top: 40px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.5);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .private-sale-card::before {
-            content: '';
+        .hero-bg {
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, transparent 70%);
-            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.7;
+            animation: bgPan 30s infinite linear;
         }
         
-        .sale-details {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-bottom: 25px;
+        @keyframes bgPan {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
         }
         
-        .detail-item {
-            background: rgba(15, 42, 74, 0.7);
-            border: 1px solid var(--card-border);
-            border-radius: 15px;
-            padding: 15px;
+        .floating {
+            animation: floating 6s ease-in-out infinite;
         }
         
-        .detail-label {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            margin-bottom: 5px;
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
         
-        .detail-value {
-            font-size: 1.3rem;
-            font-weight: 700;
+        .animate-fade-in {
+            animation: fadeIn 1s ease-in-out forwards;
+            opacity: 0;
         }
         
-        .detail-value.highlight {
-            color: var(--token-gold);
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-in-out forwards;
+            opacity: 0;
         }
         
-        .progress-container {
-            margin-top: 20px;
+        .animate-slide-right {
+            animation: slideRight 0.8s ease-in-out forwards;
+            opacity: 0;
         }
         
-        .progress-labels {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 0.9rem;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes slideRight {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
         
         .progress-bar {
-            height: 10px;
-            background: rgba(148, 163, 184, 0.1);
-            border-radius: 5px;
+            background: linear-gradient(to right, var(--primary), var(--accent), var(--secondary));
+            border-radius: 9999px;
+            height: 8px;
+            transition: width 0.8s ease;
+        }
+        
+        .cyber-border {
+            position: relative;
+        }
+        
+        .cyber-border:after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, transparent 30%, var(--accent) 45%, var(--secondary) 55%, transparent 70%);
+            background-size: 200% 200%;
+            animation: borderGlow 5s linear infinite;
+            z-index: -1;
+            border-radius: 20px;
+        }
+        
+        @keyframes borderGlow {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+        
+        .ai-element {
+            position: absolute;
+            background-color: rgba(52, 152, 219, 0.1);
+            border: 1px solid rgba(52, 152, 219, 0.3);
+            backdrop-filter: blur(5px);
+            padding: 10px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 12px;
+            color: var(--accent);
+            z-index: 3;
+            pointer-events: none;
+            box-shadow: 0 0 15px rgba(0, 255, 157, 0.1);
+        }
+        
+        .data-stream {
+            position: absolute;
+            height: 100px;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, var(--accent), var(--secondary), transparent);
+            z-index: 0;
+            animation: dataStream 2s linear infinite;
+            opacity: 0.3;
+        }
+        
+        @keyframes dataStream {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100vh); }
+        }
+        
+        .countdown-container {
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--gold);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .countdown-item {
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            color: #ccc;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .sale-progress {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .private-sale-card {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 140, 0, 0.1));
+            border: 2px solid var(--gold);
+            position: relative;
             overflow: hidden;
         }
         
-        .progress-fill-bar {
-            height: 100%;
-            width: 40%;
-            background: var(--ai-gradient);
-        }
-        
-        .ecosystem-viz {
-            position: relative;
-            height: 500px;
-        }
-        
-        .ecosystem-center {
+        .private-sale-card:before {
+            content: "EXCLUSIVE";
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 180px;
-            height: 180px;
-            background: rgba(37, 99, 235, 0.1);
-            border: 2px solid #7c3aed;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-            z-index: 2;
-            animation: pulse 3s infinite;
+            top: 15px;
+            right: -30px;
+            background: var(--gold);
+            color: #000;
+            padding: 5px 40px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            transform: rotate(45deg);
         }
         
-        .ecosystem-node {
-            position: absolute;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 20px;
-            width: 140px;
-            text-align: center;
-            backdrop-filter: blur(5px);
-            transition: all 0.3s;
-        }
-        
-        .ecosystem-node:hover {
-            transform: scale(1.05);
-            border-color: #7c3aed;
-            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.5);
-        }
-        
-        .ecosystem-node i {
-            font-size: 24px;
-            color: #7c3aed;
+        .phase-indicator {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
             margin-bottom: 10px;
         }
         
-        .ecosystem-node .node-title {
-            font-size: 14px;
-            font-weight: 600;
+        .phase-active {
+            background: var(--gold);
+            color: #000;
         }
         
-        /* Token metrics section */
-        .section-header {
+        .phase-upcoming {
+            background: rgba(142, 68, 173, 0.3);
+            color: var(--secondary);
+            border: 1px solid var(--secondary);
+        }
+        
+        .stats-card {
             text-align: center;
-            margin-bottom: 60px;
+            padding: 25px;
+            border-radius: 16px;
+            background: rgba(26, 32, 44, 0.5);
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .stats-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            background: rgba(26, 32, 44, 0.7);
+        }
+        
+        .stats-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+        
+        .stats-card .number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .live-indicator {
+            display: inline-flex;
+            align-items: center;
+            color: #ff4444;
+            font-weight: bold;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #ff4444;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        .allocation-chart {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        
+        .allocation-bar {
+            height: 10px;
+            border-radius: 5px;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .allocation-label {
+            font-size: 0.9rem;
+            color: #ccc;
         }
         
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            background: linear-gradient(to right, #e0f2fe, #a5b4fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            position: relative;
             display: inline-block;
+            margin-bottom: 2rem;
         }
         
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .token-metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-        
-        .metric-card {
-            background: rgba(15, 42, 74, 0.5);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 25px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .metric-card:hover {
-            transform: translateY(-5px);
-            border-color: #7c3aed;
-        }
-        
-        .metric-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #60a5fa;
-            margin-bottom: 10px;
-        }
-        
-        .metric-label {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-        }
-        
-        /* Tokenomics section */
-        .tokenomics-section {
-            padding: 100px 0;
-            background: rgba(15, 42, 74, 0.2);
-        }
-        
-        .token-distribution {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .distribution-item {
-            margin-bottom: 20px;
-        }
-        
-        .distribution-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        
-        .distribution-label {
-            font-weight: 600;
-        }
-        
-        .distribution-bar {
-            height: 10px;
-            background: rgba(148, 163, 184, 0.1);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        
-        .distribution-fill {
-            height: 100%;
-            border-radius: 5px;
-        }
-        
-        .fill-dev { width: 30%; background: linear-gradient(90deg, #2563eb, #3b82f6); }
-        .fill-team { width: 20%; background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
-        .fill-private { width: 15%; background: linear-gradient(90deg, #ec4899, #f472b6); }
-        .fill-public { width: 10%; background: linear-gradient(90deg, #f59e0b, #fbbf24); }
-        .fill-community { width: 15%; background: linear-gradient(90deg, #10b981, #34d399); }
-        .fill-partners { width: 5%; background: linear-gradient(90deg, #06b6d4, #22d3ee); }
-        .fill-reserve { width: 5%; background: linear-gradient(90deg, #64748b, #94a3b8); }
-        
-        /* Roadmap section */
-        .roadmap {
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 50px auto 0;
-        }
-        
-        .timeline::before {
+        .section-title:after {
             content: '';
             position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 4px;
-            background: var(--ai-gradient);
-            left: 50%;
-            margin-left: -2px;
-        }
-        
-        .timeline-item {
-            padding: 20px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-        
-        .timeline-item:nth-child(odd) {
+            bottom: -10px;
             left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
         }
         
-        .timeline-item:nth-child(even) {
+        .section-title.center:after {
             left: 50%;
+            transform: translateX(-50%);
         }
         
-        .timeline-content {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 25px;
-            position: relative;
-            backdrop-filter: blur(5px);
-        }
-        
-        .timeline-content::after {
-            content: '';
-            position: absolute;
-            border-style: solid;
-            width: 15px;
-            height: 15px;
-            background: #7c3aed;
-            border: 4px solid var(--space-dark);
-            top: 26px;
-            border-radius: 50%;
-        }
-        
-        .timeline-item:nth-child(odd) .timeline-content::after {
-            right: -42px;
-        }
-        
-        .timeline-item:nth-child(even) .timeline-content::after {
-            left: -42px;
-        }
-        
-        .timeline-year {
-            font-weight: 700;
-            color: var(--token-gold);
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .timeline-title {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
-        }
-        
-        /* Team section */
-        .team {
-            padding: 100px 0;
-            background: rgba(15, 42, 74, 0.2);
-        }
-        
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-        
-        .team-member {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 30px;
-            text-align: center;
-            transition: all 0.3s;
-            backdrop-filter: blur(5px);
-        }
-        
-        .team-member:hover {
-            transform: translateY(-10px);
-            border-color: #7c3aed;
-        }
-        
-        .member-photo {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            margin: 0 auto 20px;
-            overflow: hidden;
-            border: 3px solid #7c3aed;
-        }
-        
-        .member-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .member-name {
-            font-size: 1.3rem;
-            margin-bottom: 5px;
-        }
-        
-        .member-role {
-            color: var(--text-gray);
-            margin-bottom: 15px;
-            font-size: 0.9rem;
-        }
-        
-        .member-bio {
-            font-size: 0.9rem;
-            color: var(--text-gray);
-            margin-bottom: 15px;
-        }
-        
-        /* FAQ section */
-        .faq {
-            padding: 100px 0;
-        }
-        
-        .faq-container {
-            max-width: 800px;
-            margin: 50px auto 0;
-        }
-        
-        .faq-item {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            backdrop-filter: blur(5px);
-        }
-        
-        .faq-question {
+        .roadmap-item {
             padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent);
+            background: rgba(26, 32, 44, 0.5);
+            border-radius: 0 10px 10px 0;
         }
         
-        .faq-answer {
-            padding: 0 20px 20px;
-            color: var(--text-gray);
-            display: none;
+        .roadmap-date {
+            color: var(--gold);
+            font-weight: bold;
+            font-size: 0.9rem;
         }
         
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-        
-        .faq-toggle {
-            font-size: 1.2rem;
-        }
-        
-        /* Contact section */
-        .contact {
-            padding: 100px 0;
-            background: rgba(15, 42, 74, 0.2);
-        }
-        
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 50px;
-        }
-        
-        .contact-info {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
+        .investment-benefit {
+            padding: 25px;
             border-radius: 16px;
-            padding: 30px;
-            backdrop-filter: blur(5px);
+            background: rgba(26, 32, 44, 0.5);
+            border: 1px solid rgba(0, 255, 157, 0.1);
+            transition: all 0.3s ease;
         }
         
-        .contact-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .contact-detail {
-            margin-bottom: 20px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-        
-        .contact-detail i {
-            font-size: 1.2rem;
-            color: #7c3aed;
-            margin-top: 3px;
-        }
-        
-        .contact-form {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 30px;
-            backdrop-filter: blur(5px);
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        
-        .form-control {
-            width: 100%;
-            background: rgba(15, 42, 74, 0.5);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 14px;
-            color: var(--text-light);
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: #7c3aed;
-            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
-        }
-        
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(10, 16, 32, 0.95);
-            padding: 60px 0 30px;
-            border-top: 1px solid var(--card-border);
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-        
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--text-light);
-            text-decoration: none;
-        }
-        
-        .footer-desc {
-            color: var(--text-gray);
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--card-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-light);
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-        
-        .social-link:hover {
-            background: var(--ai-gradient);
-            transform: translateY(-3px);
-        }
-        
-        .footer-title {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        
-        .footer-links a {
-            color: var(--text-gray);
-            text-decoration: none;
-            transition: color 0.3s;
-            font-size: 0.9rem;
-        }
-        
-        .footer-links a:hover {
-            color: var(--text-light);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid var(--card-border);
-            color: var(--text-gray);
-            font-size: 0.9rem;
-        }
-        
-        /* Responsive styles */
-        @media (max-width: 992px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .ecosystem-viz {
-                height: 400px;
-                margin-top: 40px;
-            }
-            
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+        .investment-benefit:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+            background: rgba(26, 32, 44, 0.7);
         }
         
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .logo-font {
+                font-size: 1.8rem;
             }
             
-            .hero-title {
-                font-size: 2.5rem;
+            .countdown-number {
+                font-size: 1.8rem;
             }
             
-            .token-metrics {
-                grid-template-columns: 1fr;
-            }
-            
-            .timeline::before {
-                left: 31px;
-            }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-            
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-            
-            .timeline-item:nth-child(odd) .timeline-content::after,
-            .timeline-item:nth-child(even) .timeline-content::after {
-                left: 20px;
-            }
-            
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .sale-details {
-                grid-template-columns: 1fr;
-            }
-            
-            .section-title {
-                font-size: 2rem;
+            .hero-bg {
+                animation: none;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-atom"></i>
-                    </div>
-                    AIF<span style="color:#7c3aed">Token</span>
-                </a>
-                <div class="nav-links">
-                    <a href="#about" class="active">About</a>
-                    <a href="#ecosystem">Ecosystem</a>
-                    <a href="#tokenomics">Tokenomics</a>
-                    <a href="#roadmap">Roadmap</a>
-                    <a href="#team">Team</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <button class="action-btn">
-                    <i class="fas fa-lock"></i> Accredited Investor Portal
-                </button>
-            </nav>
-            <div class="global-progress">
-                <div class="progress-fill"></div>
+    <!-- AI Elements -->
+    <div class="ai-element" style="top: 120px; left: 10%;">
+        TOKEN_ID: AIF-7840 <br>
+        STATUS: SALE_ACTIVE <br>
+        // Private Sale Round 1
+    </div>
+    
+    <div class="ai-element" style="bottom: 150px; right: 15%;">
+        PRICE: $0.05 USD <br>
+        HASH: 0x71A9B3...F7E <br>
+        // Blockchain Verified
+    </div>
+    
+    <!-- Data streams -->
+    <div class="data-stream" style="left: 20%; animation-delay: 0s;"></div>
+    <div class="data-stream" style="left: 40%; animation-delay: 0.5s;"></div>
+    <div class="data-stream" style="left: 60%; animation-delay: 1s;"></div>
+    <div class="data-stream" style="left: 80%; animation-delay: 1.5s;"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-50 px-4 py-3">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <div class="logo-font">AIF</div>
+                <div class="ml-2 text-sm text-accent font-bold">TOKEN SALE</div>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#sale" class="hover:text-blue-400 transition">Token Sale</a>
+                <a href="#tokenomics" class="hover:text-blue-400 transition">Tokenomics</a>
+                <a href="#roadmap" class="hover:text-blue-400 transition">Roadmap</a>
+                <a href="#ecosystem" class="hover:text-blue-400 transition">Ecosystem</a>
+                <a href="#whitepaper" class="hover:text-blue-400 transition">Whitepaper</a>
             </div>
+            <div class="flex items-center space-x-4">
+                <button class="btn-secondary px-4 py-2 rounded-full text-sm">
+                    <i class="fas fa-file-pdf mr-2"></i>Whitepaper
+                </button>
+                <button class="btn-gold px-6 py-2 rounded-full text-sm">
+                    Buy AIF Now
+                </button>
+            </div>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        <i class="fas fa-bolt"></i> Private Sale Round 1/25 - $1.2M Raised
-                    </div>
-                    <h1 class="hero-title">Building the Future of AI-Native Entertainment</h1>
-                    <p class="hero-subtitle">
-                        AIF Token powers the world's first comprehensive AI-native film and media ecosystem, creating unprecedented opportunities for creators, investors, and audiences.
-                    </p>
-                    
-                    <div class="private-sale-card">
-                        <h3 style="font-size: 1.4rem; margin-bottom: 25px; display: flex; align-items: center; gap: 10px;">
-                            <i class="fas fa-gem" style="color: var(--token-gold);"></i> Private Sale Details
-                        </h3>
-                        <div class="sale-details">
-                            <div class="detail-item">
-                                <div class="detail-label">Token Price</div>
-                                <div class="detail-value">$0.05</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Round Target</div>
-                                <div class="detail-value highlight">$3M</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Tokens Available</div>
-                                <div class="detail-value">60M AIF</div>
-                            </div>
-                            <div class="detail-item">
-                                <div class="detail-label">Minimum Investment</div>
-                                <div class="detail-value">$10,000</div>
-                            </div>
-                        </div>
-                        
-                        <div class="progress-container">
-                            <div class="progress-labels">
-                                <span>$0</span>
-                                <span>$1.2M Raised</span>
-                                <span>$3M</span>
-                            </div>
-                            <div class="progress-bar">
-                                <div class="progress-fill-bar"></div>
-                            </div>
-                        </div>
-                        
-                        <button class="action-btn" style="width: 100%; margin-top: 25px;">
-                            <i class="fas fa-file-contract"></i> Download Investment Memorandum
-                        </button>
-                    </div>
+    <section class="hero" id="sale">
+        <div class="hero-bg"></div>
+        <div class="container mx-auto px-4 hero-content">
+            <div class="max-w-4xl animate-fade-in">
+                <div class="live-indicator mb-4">
+                    <div class="live-dot"></div>
+                    PRIVATE SALE ROUND 1 NOW LIVE
                 </div>
                 
-                <!-- Ecosystem Visualization -->
-                <div class="ecosystem-viz">
-                    <div class="ecosystem-center">
-                        <i class="fas fa-sync-alt fa-2x"></i>
-                        <div>AIF Token Economy</div>
-                    </div>
-                    
-                    <div class="ecosystem-node" style="top: 10%; left: 10%;">
-                        <i class="fas fa-trophy"></i>
-                        <div class="node-title">Exhibition & Competition</div>
-                    </div>
-                    
-                    <div class="ecosystem-node" style="top: 10%; right: 10%;">
-                        <i class="fas fa-video"></i>
-                        <div class="node-title">Production Hub</div>
-                    </div>
-                    
-                    <div class="ecosystem-node" style="bottom: 10%; left: 10%;">
-                        <i class="fas fa-graduation-cap"></i>
-                        <div class="node-title">AI Film Academy</div>
-                    </div>
-                    
-                    <div class="ecosystem-node" style="bottom: 10%; right: 10%;">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                    AIF Token Sale<br>
+                    Building the <span class="gradient-text">Future of Cinema</span>
+                </h1>
+                
+                <p class="text-xl text-gray-300 mb-8">
+                    Join the world's first comprehensive AI-native film and media ecosystem. 
+                    25 exclusive private sale rounds, $3M each round, limited time opportunity.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                    <button class="btn-gold px-8 py-3 rounded-lg font-medium">
+                        Join Round 1 <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                    <button class="btn-secondary px-8 py-3 rounded-lg font-medium">
+                        <i class="fas fa-play-circle mr-2"></i> Learn More
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="stats-card">
                         <i class="fas fa-coins"></i>
-                        <div class="node-title">Token Market</div>
+                        <div class="number">$370B+</div>
+                        <div class="text-sm">AI Market by 2030</div>
                     </div>
-                    
-                    <div class="ecosystem-node" style="top: 50%; left: 0; transform: translateY(-50%);">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                        <div class="node-title">Content Hub</div>
+                    <div class="stats-card">
+                        <i class="fas fa-users"></i>
+                        <div class="number">10B</div>
+                        <div class="text-sm">Total Token Supply</div>
                     </div>
-                    
-                    <div class="ecosystem-node" style="top: 50%; right: 0; transform: translateY(-50%);">
-                        <i class="fas fa-exchange-alt"></i>
-                        <div class="node-title">AIF Exchange</div>
+                    <div class="stats-card">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="number">25</div>
+                        <div class="text-sm">Private Sale Rounds</div>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Token Metrics -->
-            <div class="token-metrics">
-                <div class="metric-card">
-                    <div class="metric-value">$370B+</div>
-                    <div class="metric-label">2030 AI Content Market</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">54.2%</div>
-                    <div class="metric-label">Annual Market Growth</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">90%</div>
-                    <div class="metric-label">Production Cost Reduction</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">35%</div>
-                    <div class="metric-label">Asia-Pacific Market Share</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Revolutionizing Entertainment</h2>
-                <p class="section-subtitle">The AIF ecosystem creates a new paradigm for content creation, financing, distribution, and consumption</p>
-            </div>
-            
-            <div class="token-metrics">
-                <div class="metric-card">
-                    <div class="metric-value">10B</div>
-                    <div class="metric-label">Total Token Supply</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">6</div>
-                    <div class="metric-label">Integrated Platforms</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">10.5%</div>
-                    <div class="metric-label">5-Year Burn Projection</div>
-                </div>
-                <div class="metric-card">
-                    <div class="metric-value">14%</div>
-                    <div class="metric-label">Avg. Staking APY</div>
-                </div>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
-                <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 30px; backdrop-filter: blur(5px);">
-                    <div style="font-size: 3rem; color: #7c3aed; margin-bottom: 15px; text-align: center;"><i class="fas fa-video"></i></div>
-                    <h3 style="text-align: center; margin-bottom: 15px;">For Creators</h3>
-                    <p style="color: var(--text-gray); text-align: center;">
-                        90% reduction in production costs, direct access to global funding, transparent revenue sharing via smart contracts
-                    </p>
-                </div>
-                
-                <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 30px; backdrop-filter: blur(5px);">
-                    <div style="font-size: 3rem; color: #7c3aed; margin-bottom: 15px; text-align: center;"><i class="fas fa-chart-line"></i></div>
-                    <h3 style="text-align: center; margin-bottom: 15px;">For Investors</h3>
-                    <p style="color: var(--text-gray); text-align: center;">
-                        Fractional ownership of high-potential content, liquid secondary markets, transparent project tracking
-                    </p>
-                </div>
-                
-                <div style="background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 16px; padding: 30px; backdrop-filter: blur(5px);">
-                    <div style="font-size: 3rem; color: #7c3aed; margin-bottom: 15px; text-align: center;"><i class="fas fa-users"></i></div>
-                    <h3 style="text-align: center; margin-bottom: 15px;">For Audiences</h3>
-                    <p style="color: var(--text-gray); text-align: center;">
-                        Personalized, interactive content experiences, direct participation in creation, community governance
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tokenomics Section -->
-    <section class="tokenomics-section" id="tokenomics">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Token Economics</h2>
-                <p class="section-subtitle">Sustainable token model with deflationary mechanisms and multiple utility drivers</p>
-            </div>
-            
-            <div class="token-distribution">
-                <div class="distribution-item">
-                    <div class="distribution-header">
-                        <span class="distribution-label">Ecosystem Development</span>
-                        <span>30%</span>
-                    </div>
-                    <div class="distribution-bar">
-                        <div class="distribution-fill fill-dev"></div>
-                    </div>
-                </div>
-                
-                <div class="distribution-item">
-                    <div class="distribution-header">
-                        <span class="distribution-label">Team & Advisors</span>
-                        <span>20%</span>
-                    </div>
-                    <div class="distribution-bar">
-                        <div class="distribution-fill fill-team"></div>
-                    </div>
-                </div>
-                
-                <div class="distribution-item">
-                    <div class="distribution-header">
-                        <span class="distribution-label">Private Sale</span>
-                        <span>15%</span>
-                    </div>
-                    <div class="distribution-bar">
-                        <div class="distribution-fill fill-private"></div>
-                    </div>
-                </div>
-                
-                <div class="distribution-item">
-                    <div class="distribution-header">
-                        <span class="distribution-label">Public Sale</span>
-                        <span>10%</span>
-                    </div>
-                    <div class="distribution-bar">
-                        <div class="distribution-fill fill-public"></div>
-                    </div>
-                </div>
-                
-                <div class="distribution-item">
-                    <div class="distribution-header">
-                        <span class="distribution-label">Community Incentives</span>
-                        <span>15%</span>
-                    </div>
-                    <div class="distribution-bar">
-                        <div class="distribution-fill fill-community"></div>
-                    </div>
-                </div>
-                
-                <div class="distribution-item">
-                    <div class="distribution-header">
-                        <span class="distribution-label">Strategic Partners</span>
-                        <span>5%</span>
-                    </div>
-                    <div class="distribution-bar">
-                        <div class="distribution-fill fill-partners"></div>
-                    </div>
-                </div>
-                
-                <div class="distribution-item">
-                    <div class="distribution-header">
-                        <span class="distribution-label">Reserve Fund</span>
-                        <span>5%</span>
-                    </div>
-                    <div class="distribution-bar">
-                        <div class="distribution-fill fill-reserve"></div>
+                    <div class="stats-card">
+                        <i class="fas fa-network-wired"></i>
+                        <div class="number">6</div>
+                        <div class="text-sm">Integrated Platforms</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Roadmap Section -->
-    <section class="roadmap" id="roadmap">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Development Roadmap</h2>
-                <p class="section-subtitle">Our strategic plan for building the world's premier AI-native entertainment ecosystem</p>
+    <!-- Private Sale Details -->
+    <section class="py-16 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">Private Sale Round 1</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Exclusive early investment opportunity at the lowest price before public launch
+                </p>
             </div>
             
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2025</div>
-                        <h3 class="timeline-title">Foundation & Launch</h3>
-                        <p>Smart contract deployment, core team assembly, private sale execution, alpha platform development</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2026</div>
-                        <h3 class="timeline-title">Market Expansion</h3>
-                        <p>Regional market penetration, educational program scaling, content creator acquisition, investor ecosystem development</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2027</div>
-                        <h3 class="timeline-title">Technology Innovation</h3>
-                        <p>Next-generation AI video models, blockchain-based IP protection, global content delivery network</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-year">2028-2030</div>
-                        <h3 class="timeline-title">Industry Leadership</h3>
-                        <p>AIF protocols as industry standard, regulatory framework leadership, new entertainment formats</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="team" id="team">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Leadership Team</h2>
-                <p class="section-subtitle">Experienced professionals driving the AI entertainment revolution</p>
-            </div>
-            
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-photo">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="CEO">
-                    </div>
-                    <h3 class="member-name">Michael Chen</h3>
-                    <div class="member-role">Chief Executive Officer</div>
-                    <p class="member-bio">15+ years in entertainment and blockchain, former leader of $500M+ content platform</p>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-photo">
-                        <img src="https://images.unsplash.com/photo-1556157382-97eda2f9e946?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="CTO">
-                    </div>
-                    <h3 class="member-name">Sarah Johnson</h3>
-                    <div class="member-role">Chief Technology Officer</div>
-                    <p class="member-bio">Former senior engineer at leading DeFi protocol, PhD in Computer Science</p>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-photo">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1888&q=80" alt="CPO">
-                    </div>
-                    <h3 class="member-name">Emma Rodriguez</h3>
-                    <div class="member-role">Chief Product Officer</div>
-                    <p class="member-bio">12+ years in film production, former product lead at major streaming platform</p>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-photo">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="CFO">
-                    </div>
-                    <h3 class="member-name">David Kim</h3>
-                    <div class="member-role">Chief Financial Officer</div>
-                    <p class="member-bio">CFO at fintech startup, investment banking background, CFA charterholder</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Find answers to common questions about AIF Token and the private sale</p>
-            </div>
-            
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What is AIF Token?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        AIF Token is the native utility token of the Hong Kong AI International Film Festival ecosystem. It powers a revolutionary platform for AI-native content creation, financing, distribution, and consumption.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How does the private sale work?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        The private sale consists of 25 rounds. Round 1 is currently open with a $3M target. Tokens are priced at $0.05 with a minimum investment of $10,000. Tokens have a 6-month cliff followed by 24-month linear vesting.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What are the token utilities?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        AIF Token has multiple utilities including platform access & payments, governance & voting, staking & rewards, and investment & trading across the ecosystem's six integrated platforms.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Who can participate in the private sale?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        The private sale is open to accredited investors only. You'll need to verify your accreditation status through our investor portal before participating.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What is the total token supply?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        The total supply is fixed at 10 billion AIF tokens. There will be no additional minting. Deflationary mechanisms include token burns from platform fees.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Contact Us</h2>
-                <p class="section-subtitle">Reach out to our team for private sale participation and partnership opportunities</p>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-info">
-                        <h3 class="contact-title"><i class="fas fa-info-circle"></i> Private Sale Details</h3>
-                        <div class="contact-detail">
-                            <i class="fas fa-calendar-alt"></i>
-                            <div>
-                                <strong>Round Dates:</strong> May 30 - June 30, 2025
-                            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+                <div class="private-sale-card card p-6 animate-slide-right">
+                    <div class="phase-indicator phase-active">ROUND 1 ACTIVE</div>
+                    <h3 class="text-2xl font-bold mb-4">Foundation Round</h3>
+                    <div class="space-y-3">
+                        <div class="flex justify-between">
+                            <span>Price per AIF:</span>
+                            <span class="font-bold text-gold">$0.05</span>
                         </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-lock"></i>
-                            <div>
-                                <strong>Vesting:</strong> 6-month cliff, 24-month linear release
-                            </div>
+                        <div class="flex justify-between">
+                            <span>Round Size:</span>
+                            <span class="font-bold">$3,000,000</span>
                         </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-users"></i>
-                            <div>
-                                <strong>Eligibility:</strong> Accredited investors only
-                            </div>
+                        <div class="flex justify-between">
+                            <span>Tokens Available:</span>
+                            <span class="font-bold">60,000,000 AIF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Deadline:</span>
+                            <span class="font-bold text-red-400">August 8, 2025</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Min Investment:</span>
+                            <span class="font-bold">$1,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Vesting:</span>
+                            <span class="font-bold">6M cliff, 24M linear</span>
                         </div>
                     </div>
                     
-                    <div class="contact-info" style="margin-top: 30px;">
-                        <h3 class="contact-title"><i class="fas fa-envelope"></i> Contact Information</h3>
-                        <div class="contact-detail">
-                            <i class="fas fa-envelope"></i>
+                    <div class="sale-progress mt-6">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span>Progress</span>
+                            <span>47% Completed</span>
+                        </div>
+                        <div class="w-full bg-gray-800 rounded-full h-3">
+                            <div class="progress-bar" style="width: 47%"></div>
+                        </div>
+                        <div class="flex justify-between text-xs mt-2 text-gray-400">
+                            <span>$1,410,000 raised</span>
+                            <span>$1,590,000 remaining</span>
+                        </div>
+                    </div>
+                    
+                    <button class="btn-gold w-full mt-6 py-3 rounded-lg font-bold">
+                        Participate Now
+                    </button>
+                </div>
+
+                <!-- Countdown Timer -->
+                <div class="countdown-container animate-slide-up" style="animation-delay: 0.3s;">
+                    <h3 class="text-xl font-bold mb-4 text-center">Round 1 Ends In:</h3>
+                    <div class="grid grid-cols-4 gap-4" id="countdown">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">00</span>
+                            <span class="countdown-label">Days</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">00</span>
+                            <span class="countdown-label">Hours</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">00</span>
+                            <span class="countdown-label">Minutes</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">00</span>
+                            <span class="countdown-label">Seconds</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-6 text-center text-sm text-gray-300">
+                        <i class="fas fa-clock mr-2"></i>
+                        Next rounds scheduled based on development milestones
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Private Sale Rounds -->
+    <section class="py-16 bg-gray-900 bg-opacity-50" id="rounds">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">25 Private Sale Rounds Schedule</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Strategic token distribution across multiple rounds with increasing prices based on development progress
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Round 1 - Active -->
+                <div class="card p-6 border-2 border-gold animate-fade-in">
+                    <div class="phase-indicator phase-active">ROUND 1 - LIVE</div>
+                    <h3 class="text-xl font-bold mb-4">Foundation Round</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span>Price:</span>
+                            <span class="font-bold text-gold">$0.05</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Allocation:</span>
+                            <span>60M AIF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Amount:</span>
+                            <span>$3,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Deadline:</span>
+                            <span class="text-red-400">Aug 8, 2025</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Vesting:</span>
+                            <span>6M cliff, 24M vest</span>
+                        </div>
+                    </div>
+                    <button class="btn-gold w-full mt-4 py-2 rounded-lg">Join Round 1</button>
+                </div>
+
+                <!-- Round 2-5 - Upcoming -->
+                <div class="card p-6 animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="phase-indicator phase-upcoming">ROUNDS 2-5</div>
+                    <h3 class="text-xl font-bold mb-4">Growth Rounds</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span>Price:</span>
+                            <span class="font-bold">$0.055</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Total Allocation:</span>
+                            <span>218M AIF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Total Amount:</span>
+                            <span>$12,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Timeline:</span>
+                            <span>Q3-Q4 2025</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Focus:</span>
+                            <span>Platform Launch</span>
+                        </div>
+                    </div>
+                    <button class="btn-secondary w-full mt-4 py-2 rounded-lg">Notify Me</button>
+                </div>
+
+                <!-- Round 6-25 - Future -->
+                <div class="card p-6 animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="phase-indicator phase-upcoming">ROUNDS 6-25</div>
+                    <h3 class="text-xl font-bold mb-4">Expansion Rounds</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span>Price:</span>
+                            <span class="font-bold">$0.06</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Total Allocation:</span>
+                            <span>1B AIF</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Total Amount:</span>
+                            <span>$60,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Timeline:</span>
+                            <span>2026-2028</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Focus:</span>
+                            <span>Global Expansion</span>
+                        </div>
+                    </div>
+                    <button class="btn-secondary w-full mt-4 py-2 rounded-lg">Join Waitlist</button>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <div class="card p-8 max-w-2xl mx-auto">
+                    <h3 class="text-2xl font-bold mb-4">Why Participate in Early Rounds?</h3>
+                    <div class="grid md:grid-cols-2 gap-6 text-left">
+                        <div class="flex items-start">
+                            <i class="fas fa-chart-line text-green-400 mt-1 mr-3"></i>
                             <div>
-                                <strong>General Inquiries:</strong> info@aif.market
+                                <h4 class="font-bold">Maximum Discount</h4>
+                                <p class="text-sm text-gray-400">Early rounds offer the lowest prices before public launch</p>
                             </div>
                         </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-briefcase"></i>
+                        <div class="flex items-start">
+                            <i class="fas fa-crown text-gold mt-1 mr-3"></i>
                             <div>
-                                <strong>Investor Relations:</strong> investors@aif.market
+                                <h4 class="font-bold">Exclusive Benefits</h4>
+                                <p class="text-sm text-gray-400">Priority access to platform features and governance rights</p>
                             </div>
                         </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-handshake"></i>
+                        <div class="flex items-start">
+                            <i class="fas fa-users text-blue-400 mt-1 mr-3"></i>
                             <div>
-                                <strong>Partnerships:</strong> partners@aif.market
+                                <h4 class="font-bold">Community Access</h4>
+                                <p class="text-sm text-gray-400">Join the founding community of AI film creators</p>
                             </div>
                         </div>
-                        <div class="contact-detail">
-                            <i class="fas fa-newspaper"></i>
+                        <div class="flex items-start">
+                            <i class="fas fa-rocket text-purple-400 mt-1 mr-3"></i>
                             <div>
-                                <strong>Media Inquiries:</strong> press@aif.market
+                                <h4 class="font-bold">Early Adoption</h4>
+                                <p class="text-sm text-gray-400">Be part of the AI entertainment revolution from day one</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="contact-form">
-                    <h3 class="contact-title"><i class="fas fa-paper-plane"></i> Send Us a Message</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name">
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Process -->
+    <section class="py-16 relative">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 animate-fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">How to Participate</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Join the private sale in three simple steps and become part of the AI entertainment revolution
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="card p-8 text-center animate-fade-in">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Complete KYC</h3>
+                    <p class="text-gray-300 mb-4">
+                        Verify your identity through our secure KYC process to comply with regulatory requirements.
+                    </p>
+                    <button class="btn-primary px-6 py-2 rounded-full">Start KYC</button>
+                </div>
+
+                <div class="card p-8 text-center animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Choose Investment</h3>
+                    <p class="text-gray-300 mb-4">
+                        Select your investment amount and preferred payment method (USDT, USDC, ETH, or wire transfer).
+                    </p>
+                    <button class="btn-primary px-6 py-2 rounded-full">Calculate Investment</button>
+                </div>
+
+                <div class="card p-8 text-center animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Receive Tokens</h3>
+                    <p class="text-gray-300 mb-4">
+                        Your AIF tokens will be allocated immediately with vesting schedule starting from Token Generation Event.
+                    </p>
+                    <button class="btn-primary px-6 py-2 rounded-full">Setup Wallet</button>
+                </div>
+            </div>
+
+            <!-- Investment Calculator -->
+            <div class="card p-8 max-w-2xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6 text-center">Investment Calculator</h3>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Investment Amount (USD)</label>
+                        <input type="number" id="investment-amount" class="w-full bg-gray-800 border border-gray-600 rounded-lg px-4 py-3 text-white" placeholder="Enter amount (min: $1,000)" min="1000">
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-gray-800 rounded-lg p-4">
+                            <div class="text-sm text-gray-400 mb-1">AIF Tokens</div>
+                            <div class="text-2xl font-bold text-gold" id="token-amount">0</div>
                         </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="Enter your email">
+                        <div class="bg-gray-800 rounded-lg p-4">
+                            <div class="text-sm text-gray-400 mb-1">Potential Value at $0.055</div>
+                            <div class="text-2xl font-bold text-green-400" id="potential-value">$0</div>
                         </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" placeholder="Subject of your message">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" placeholder="Enter your message"></textarea>
-                        </div>
-                        <button type="submit" class="action-btn" style="width: 100%;">
-                            <i class="fas fa-paper-plane"></i> Send Message
+                    </div>
+                    
+                    <div class="text-center">
+                        <button class="btn-gold px-8 py-3 rounded-full font-bold text-lg w-full md:w-auto">
+                            Proceed to Payment
                         </button>
-                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tokenomics -->
+    <section class="py-16 bg-gray-900 bg-opacity-50" id="tokenomics">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">AIF Tokenomics</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    A carefully designed token economy that drives ecosystem growth and provides sustainable value for all participants
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Token Distribution -->
+                <div class="card p-8 animate-fade-in">
+                    <h3 class="text-2xl font-bold mb-6">Token Distribution</h3>
+                    <div class="space-y-4">
+                        <div class="allocation-chart">
+                            <div class="allocation-bar bg-blue-500" style="width: 120px;"></div>
+                            <div class="allocation-label">Ecosystem Development (30%) - 3B AIF</div>
+                        </div>
+                        <div class="allocation-chart">
+                            <div class="allocation-bar bg-purple-500" style="width: 80px;"></div>
+                            <div class="allocation-label">Team & Advisors (20%) - 2B AIF</div>
+                        </div>
+                        <div class="allocation-chart">
+                            <div class="allocation-bar bg-yellow-500" style="width: 60px;"></div>
+                            <div class="allocation-label">Private Sale (15%) - 1.5B AIF</div>
+                        </div>
+                        <div class="allocation-chart">
+                            <div class="allocation-bar bg-green-500" style="width: 60px;"></div>
+                            <div class="allocation-label">Community Incentives (15%) - 1.5B AIF</div>
+                        </div>
+                        <div class="allocation-chart">
+                            <div class="allocation-bar bg-red-500" style="width: 40px;"></div>
+                            <div class="allocation-label">Public Sale (10%) - 1B AIF</div>
+                        </div>
+                        <div class="allocation-chart">
+                            <div class="allocation-bar bg-indigo-500" style="width: 20px;"></div>
+                            <div class="allocation-label">Strategic Partners (5%) - 500M AIF</div>
+                        </div>
+                        <div class="allocation-chart">
+                            <div class="allocation-bar bg-gray-500" style="width: 20px;"></div>
+                            <div class="allocation-label">Reserve Fund (5%) - 500M AIF</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Token Utility -->
+                <div class="card p-8 animate-fade-in" style="animation-delay: 0.3s;">
+                    <h3 class="text-2xl font-bold mb-6">Token Utility</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-vote-yea text-blue-400 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Governance Rights</h4>
+                                <p class="text-sm text-gray-400">Vote on platform upgrades and ecosystem development</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-coins text-green-400 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Platform Payments</h4>
+                                <p class="text-sm text-gray-400">Pay for festival submissions, courses, and premium features</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-percentage text-purple-400 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Revenue Sharing</h4>
+                                <p class="text-sm text-gray-400">Receive 30% of platform's total revenue through staking</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-fire text-red-400 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Deflationary Burn</h4>
+                                <p class="text-sm text-gray-400">50% of platform fees automatically burned</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-chart-line text-yellow-400 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-bold">Investment Access</h4>
+                                <p class="text-sm text-gray-400">Priority funding opportunities in AI film projects</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Accrual Mechanisms -->
+            <div class="mt-16">
+                <div class="card p-8">
+                    <h3 class="text-2xl font-bold mb-6 text-center">Value Accrual Mechanisms</h3>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-red-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-fire text-red-400 text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Token Burn</h4>
+                            <p class="text-sm text-gray-400">50% of platform fees burned monthly, reducing total supply</p>
+                            <div class="text-red-400 font-bold mt-2">10.5% over 5 years</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-blue-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-lock text-blue-400 text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Staking Rewards</h4>
+                            <p class="text-sm text-gray-400">8-23% APY based on staking duration and governance participation</p>
+                            <div class="text-blue-400 font-bold mt-2">50% of supply staked</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-16 h-16 rounded-full bg-green-500 bg-opacity-20 flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-share-alt text-green-400 text-2xl"></i>
+                            </div>
+                            <h4 class="font-bold mb-2">Revenue Share</h4>
+                            <p class="text-sm text-gray-400">Direct revenue distribution from ecosystem growth</p>
+                            <div class="text-green-400 font-bold mt-2">$1.1B by 2030</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HKAIIFF Ecosystem -->
+    <section class="py-16" id="ecosystem">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">HKAIIFF Ecosystem</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    The world's first comprehensive AI-native film ecosystem with 6 integrated platforms creating network effects
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Exhibition & Competition -->
+                <div class="investment-benefit animate-fade-in">
+                    <div class="w-14 h-14 rounded-full gold-gradient flex items-center justify-center mb-6">
+                        <i class="fas fa-trophy text-black text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Exhibition & Competition</h3>
+                    <p class="text-gray-300 mb-4">
+                        Global showcase for AI-native content with $1M+ prize pools and industry recognition.
+                    </p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-1">
+                            <span>Annual Prize Pool:</span>
+                            <span class="text-gold font-bold">$1,000,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Global Reach:</span>
+                            <span class="font-bold">50+ Cities</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Film Academy -->
+                <div class="investment-benefit animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-graduation-cap text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Film Academy</h3>
+                    <p class="text-gray-300 mb-4">
+                        Professional education programs for AI filmmaking with certification and mentorship.
+                    </p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-1">
+                            <span>Target Students:</span>
+                            <span class="text-blue-400 font-bold">120K by 2030</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Global Centers:</span>
+                            <span class="font-bold">100+ Locations</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Film Market -->
+                <div class="investment-benefit animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Film Market</h3>
+                    <p class="text-gray-300 mb-4">
+                        Decentralized financing marketplace for AI film projects with tokenized ownership.
+                    </p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-1">
+                            <span>Project Funding:</span>
+                            <span class="text-purple-400 font-bold">$100M+ Target</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Secondary Trading:</span>
+                            <span class="font-bold">24/7 Liquidity</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submission Center -->
+                <div class="investment-benefit animate-fade-in" style="animation-delay: 0.6s;">
+                    <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-upload text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Submission Center</h3>
+                    <p class="text-gray-300 mb-4">
+                        Global content gateway with AI analysis and automated distribution to multiple channels.
+                    </p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-1">
+                            <span>Distribution Partners:</span>
+                            <span class="text-green-400 font-bold">Netflix, Amazon+</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Creator Revenue:</span>
+                            <span class="font-bold">60-80% Share</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 404.world Platform -->
+                <div class="investment-benefit animate-fade-in" style="animation-delay: 0.8s;">
+                    <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-globe text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">404.world Platform</h3>
+                    <p class="text-gray-300 mb-4">
+                        Interactive streaming platform with personalized parallel worlds and community features.
+                    </p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-1">
+                            <span>Target Users:</span>
+                            <span class="text-cyan-400 font-bold">10M by 2030</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Subscription Revenue:</span>
+                            <span class="font-bold">$840M by 2030</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AIF Exchange -->
+                <div class="investment-benefit animate-fade-in" style="animation-delay: 1s;">
+                    <div class="w-14 h-14 rounded-full gradient-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-exchange-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AIF Exchange</h3>
+                    <p class="text-gray-300 mb-4">
+                        Dedicated exchange for AIF and project tokens with advanced trading features and liquidity mining.
+                    </p>
+                    <div class="text-sm">
+                        <div class="flex justify-between mb-1">
+                            <span>Trading Pairs:</span>
+                            <span class="text-yellow-400 font-bold">AIF/FilmTokens</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Liquidity Rewards:</span>
+                            <span class="font-bold">15-40% APY</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="py-16 bg-gray-900 bg-opacity-50" id="roadmap">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title center">Development Roadmap</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Strategic milestones from foundation building to global ecosystem maturity
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <!-- 2025 -->
+                <div class="roadmap-item animate-fade-in">
+                    <div class="roadmap-date">2025 - Foundation Year</div>
+                    <h3 class="text-xl font-bold mb-2">Genesis Launch & Platform Beta</h3>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>• Private Sale Rounds 1-5 ($15M total)</li>
+                        <li>• Smart contract deployment and auditing</li>
+                        <li>• AI Film Academy beta launch (5K students)</li>
+                        <li>• First Hong Kong AI Film Festival</li>
+                        <li>• AIF Exchange launch and major listings</li>
+                    </ul>
+                </div>
+
+                <!-- 2026 -->
+                <div class="roadmap-item animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="roadmap-date">2026 - Expansion Year</div>
+                    <h3 class="text-xl font-bold mb-2">Regional Growth & Technology Enhancement</h3>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>• Academy expansion (20 centers, 15K students)</li>
+                        <li>• First FilmToken projects funding</li>
+                        <li>• Cross-chain bridge implementation</li>
+                        <li>• Traditional studio partnerships</li>
+                        <li>• European market entry (London hub)</li>
+                    </ul>
+                </div>
+
+                <!-- 2027 -->
+                <div class="roadmap-item animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="roadmap-date">2027 - Market Leadership</div>
+                    <h3 class="text-xl font-bold mb-2">Industry Recognition & Global Presence</h3>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>• 100+ AI films produced and distributed</li>
+                        <li>• 1M+ monthly active users on 404.world</li>
+                        <li>• $100M+ in project funding facilitated</li>
+                        <li>• 50 global cooperation centers</li>
+                        <li>• North American operations (LA office)</li>
+                    </ul>
+                </div>
+
+                <!-- 2028-2030 -->
+                <div class="roadmap-item animate-fade-in" style="animation-delay: 0.6s;">
+                    <div class="roadmap-date">2028-2030 - Global Ecosystem</div>
+                    <h3 class="text-xl font-bold mb-2">Industry Standard & Future Vision</h3>
+                    <ul class="text-sm text-gray-400 space-y-1">
+                        <li>• AIF protocols adopted by major studios</li>
+                        <li>• 100+ cooperation centers worldwide</li>
+                        <li>• 10M+ platform users</li>
+                        <li>• Multi-language platform support</li>
+                        <li>• Next-generation AI integration (AGI)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-purple-900 opacity-80"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Don't Miss the Opportunity</h2>
+                <p class="text-xl text-gray-200 mb-8">
+                    Join Round 1 before August 8, 2025, and secure your position in the future of AI entertainment at the lowest price.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="btn-gold px-10 py-4 rounded-full font-bold text-lg">
+                        Join Round 1 Now
+                    </button>
+                    <button class="btn-secondary px-10 py-4 rounded-full font-bold text-lg">
+                        Download Whitepaper
+                    </button>
+                </div>
+                
+                <div class="mt-8 text-sm text-gray-300">
+                    <i class="fas fa-shield-alt mr-2"></i>
+                    Secure, regulated, and fully compliant token sale
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <a href="#" class="footer-logo">
-                        <i class="fas fa-atom"></i> AIF<span style="color:#7c3aed">Token</span>
+    <footer class="py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <a href="#" class="flex items-center mb-4">
+                        <div class="logo-font">AIF</div>
+                        <div class="ml-2 text-sm text-accent font-bold">TOKEN SALE</div>
                     </a>
-                    <p class="footer-desc">
-                        Building the world's first comprehensive AI-native film and media ecosystem through the Hong Kong AI International Film Festival (HKAIIFF) ecosystem.
+                    <p class="text-gray-400 mb-4">
+                        Building the future of AI-native entertainment through blockchain innovation.
                     </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-medium"></i></a>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-blue-400"><i class="fab fa-medium"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer-col">
-                    <h4 class="footer-title">Resources</h4>
-                    <div class="footer-links">
-                        <a href="#">Whitepaper</a>
-                        <a href="#">Lightpaper</a>
-                        <a href="#">Technical Documentation</a>
-                        <a href="#">GitHub Repository</a>
-                        <a href="#">Audit Reports</a>
-                    </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Token Sale</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#sale" class="text-gray-400 hover:text-white">Private Sale</a></li>
+                        <li><a href="#rounds" class="text-gray-400 hover:text-white">Sale Rounds</a></li>
+                        <li><a href="#tokenomics" class="text-gray-400 hover:text-white">Tokenomics</a></li>
+                        <li><a href="#whitepaper" class="text-gray-400 hover:text-white">Whitepaper</a></li>
+                    </ul>
                 </div>
-                
-                <div class="footer-col">
-                    <h4 class="footer-title">Company</h4>
-                    <div class="footer-links">
-                        <a href="#">About Us</a>
-                        <a href="#">Team</a>
-                        <a href="#">Careers</a>
-                        <a href="#">Partners</a>
-                        <a href="#">Press Kit</a>
-                    </div>
-                </div>
-                
-                <div class="footer-col">
-                    <h4 class="footer-title">Legal</h4>
-                    <div class="footer-links">
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Cookie Policy</a>
-                        <a href="#">Risk Disclosure</a>
-                        <a href="#">Compliance</a>
-                    </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#terms" class="text-gray-400 hover:text-white">Terms & Conditions</a></li>
+                        <li><a href="#privacy" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#compliance" class="text-gray-400 hover:text-white">Regulatory Compliance</a></li>
+                        <li><a href="#risk" class="text-gray-400 hover:text-white">Risk Disclosure</a></li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>© 2025 Hong Kong AI International Film Festival Association. All rights reserved.</p>
-                <p>AIF Token is a utility token and not a security. This website is for informational purposes only.</p>
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-500 text-sm mb-4 md:mb-0">
+                        © 2025 Hong Kong AI International Film Festival Association. All rights reserved.
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm">
+                        <span class="text-gray-500">Powered by:</span>
+                        <div class="flex items-center space-x-2">
+                            <i class="fab fa-ethereum text-blue-400"></i>
+                            <span class="text-gray-400">Ethereum</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-shield-alt text-green-400"></i>
+                            <span class="text-gray-400">Audited</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Risk Disclosure Modal (Hidden by default) -->
+    <div id="risk-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="card max-w-2xl w-full max-h-96 overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-xl font-bold">Risk Disclosure</h3>
+                    <button id="close-risk-modal" class="text-gray-400 hover:text-white">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="text-sm text-gray-400 space-y-3">
+                    <p class="text-red-400 font-bold">HIGH-RISK INVESTMENT NOTICE</p>
+                    <p>This whitepaper is for informational purposes only and does not constitute investment advice. The AIF Token involves substantial risks, and there can be no assurance that the objectives outlined will be achieved.</p>
+                    <p><strong>Key Risk Factors:</strong></p>
+                    <ul class="list-disc list-inside space-y-1">
+                        <li>Total Loss of Investment: You may lose your entire investment</li>
+                        <li>Regulatory Risk: Changes in regulations may affect token value</li>
+                        <li>Technology Risk: Smart contract bugs or blockchain issues</li>
+                        <li>Market Risk: Cryptocurrency market volatility</li>
+                        <li>Liquidity Risk: Limited ability to sell tokens</li>
+                    </ul>
+                    <p>Only invest what you can afford to lose. Please consult with financial advisors before making investment decisions.</p>
+                </div>
+                <div class="mt-6 text-center">
+                    <button id="acknowledge-risk" class="btn-secondary px-6 py-2 rounded-full">
+                        I Understand the Risks
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
+        // Add random data streams
+        function createDataStreams() {
+            for (let i = 0; i < 5; i++) {
+                setTimeout(() => {
+                    const stream = document.createElement('div');
+                    stream.className = 'data-stream';
+                    stream.style.left = Math.random() * 100 + '%';
+                    stream.style.animationDelay = Math.random() * 2 + 's';
+                    document.body.appendChild(stream);
+                    
+                    // Remove after animation
+                    setTimeout(() => {
+                        stream.remove();
+                    }, 4000);
+                }, i * 3000);
+            }
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const deadline = new Date('2025-08-08T23:59:59').getTime();
+            const now = new Date().getTime();
+            const timeLeft = deadline - now;
+
+            if (timeLeft > 0) {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.getElementById('countdown').innerHTML = '<div class="text-red-400 text-center col-span-4">Round 1 Has Ended</div>';
+            }
+        }
+
+        // Investment Calculator
+        function updateCalculator() {
+            const investmentAmount = parseFloat(document.getElementById('investment-amount').value) || 0;
+            const tokenPrice = 0.05; // $0.05 per AIF
+            const futurePrice = 0.055; // Round 2-5 price
+            
+            const tokenAmount = investmentAmount / tokenPrice;
+            const potentialValue = tokenAmount * futurePrice;
+            
+            document.getElementById('token-amount').textContent = tokenAmount.toLocaleString(undefined, {maximumFractionDigits: 0});
+            document.getElementById('potential-value').textContent = ' + potentialValue.toLocaleString(undefined, {maximumFractionDigits: 0});
+        }
+
+        // Smooth scrolling for anchor links
+        function smoothScroll(target) {
+            const element = document.querySelector(target);
+            if (element) {
+                element.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Risk Modal
+        function showRiskModal() {
+            document.getElementById('risk-modal').classList.remove('hidden');
+            document.getElementById('risk-modal').classList.add('flex');
+        }
+
+        function hideRiskModal() {
+            document.getElementById('risk-modal').classList.add('hidden');
+            document.getElementById('risk-modal').classList.remove('flex');
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start data streams
+            createDataStreams();
+            setInterval(createDataStreams, 15000);
+            
+            // Start countdown
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            
+            // Investment calculator
+            const investmentInput = document.getElementById('investment-amount');
+            if (investmentInput) {
+                investmentInput.addEventListener('input', updateCalculator);
+                updateCalculator(); // Initial calculation
+            }
+            
+            // Add scroll animations
+            const animatedElements = document.querySelectorAll('.animate-fade-in, .animate-slide-up, .animate-slide-right');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        if (entry.target.classList.contains('animate-slide-up')) {
+                            entry.target.style.transform = 'translateY(0)';
+                        }
+                        if (entry.target.classList.contains('animate-slide-right')) {
+                            entry.target.style.transform = 'translateX(0)';
+                        }
+                        if (entry.target.classList.contains('animate-fade-in')) {
+                            entry.target.style.transform = 'scale(1)';
+                        }
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                if (el.classList.contains('animate-slide-up')) {
+                    el.style.transform = 'translateY(50px)';
+                }
+                if (el.classList.contains('animate-slide-right')) {
+                    el.style.transform = 'translateX(-50px)';
+                }
+                if (el.classList.contains('animate-fade-in')) {
+                    el.style.transform = 'scale(0.95)';
+                }
+                observer.observe(el);
+            });
+            
+            // Smooth scrolling for all anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = this.getAttribute('href');
+                    if (target !== '#') {
+                        smoothScroll(target);
+                    }
+                });
+            });
+            
+            // Risk modal handlers
+            const riskButtons = document.querySelectorAll('.btn-gold, .btn-primary');
+            riskButtons.forEach(button => {
+                if (button.textContent.includes('Join') || button.textContent.includes('Buy') || button.textContent.includes('Participate') || button.textContent.includes('Proceed')) {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        showRiskModal();
                     });
                 }
             });
-        });
-        
-        // Set active navigation link based on scroll position
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
             
-            let current = '';
+            document.getElementById('close-risk-modal').addEventListener('click', hideRiskModal);
+            document.getElementById('acknowledge-risk').addEventListener('click', function() {
+                hideRiskModal();
+                // Here you would redirect to the actual investment platform
+                alert('Redirecting to secure investment platform...');
+            });
             
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                
-                if (pageYOffset >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
+            // Show success message for whitepaper download
+            const whitepaperButtons = document.querySelectorAll('button');
+            whitepaperButtons.forEach(button => {
+                if (button.textContent.includes('Whitepaper')) {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        alert('AIF Token Whitepaper will be downloaded. Please check your downloads folder.');
+                        // In a real implementation, this would trigger an actual download
+                    });
                 }
             });
             
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
+            // Simulate progress bar animation
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 1000);
             });
-        });
-        
-        // FAQ toggle functionality
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            const toggle = item.querySelector('.faq-toggle');
             
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                
-                // Close all FAQ items
-                faqItems.forEach(faq => {
-                    faq.classList.remove('active');
-                    faq.querySelector('.faq-toggle').textContent = '+';
-                });
-                
-                // Open clicked item if it wasn't active
-                if (!isActive) {
-                    item.classList.add('active');
-                    toggle.textContent = '-';
+            // Simulate live data updates
+            setInterval(() => {
+                const progressElement = document.querySelector('.sale-progress .progress-bar');
+                if (progressElement) {
+                    const currentWidth = parseInt(progressElement.style.width);
+                    if (currentWidth < 50) {
+                        progressElement.style.width = (currentWidth + 0.1) + '%';
+                        
+                        // Update progress text
+                        const progressText = document.querySelector('.sale-progress span');
+                        if (progressText) {
+                            progressText.textContent = Math.round(currentWidth + 0.1) + '% Completed';
+                        }
+                    }
                 }
-            });
-        });
-        
-        // Animation on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        document.querySelectorAll('.metric-card, .team-member, .faq-item').forEach(el => {
-            observer.observe(el);
+            }, 30000); // Update every 30 seconds
         });
     </script>
 </body>
