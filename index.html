@@ -289,6 +289,7 @@
         font-weight: 600;
         font-size: 0.9rem;
         transition: all 0.3s;
+        cursor: pointer;
     }
 
     .card-cta:hover {
@@ -346,6 +347,7 @@
         text-align: center;
         margin-top: 1rem;
         background: linear-gradient(135deg, var(--accent), var(--secondary));
+        cursor: pointer;
     }
 
     .sidebar-cta:hover {
@@ -504,7 +506,7 @@
         let currentLang = 'zh';
         let currentCategory = '全部';
 
-        // 100條新聞數據
+        // 100條完整新聞數據
         const newsData = [
             // AI電影: 25條
             {
@@ -549,12 +551,339 @@
                 tags: ['AI電影節', 'Sora', '獲獎作品', '紐約'],
                 cta_text_zh: '報名HKAIIFF 2026',
                 cta_text_en: 'Submit to HKAIIFF 2026',
-                cta_link: 'http://www.aif.Center',
+                cta_link: 'http://aif.center',
                 is_hkaiiff: false
             },
-            // 繼續添加更多AI電影新聞...
-            // 為節省篇幅，這裡只展示前3條，實際代碼中會包含所有25條
-            
+            {
+                id: 4,
+                category: 'AI電影',
+                time: '8小時前',
+                title_zh: 'Midjourney V7推出「場景分鏡」功能，簡化電影前期製作',
+                title_en: 'Midjourney V7 Launches "Storyboard Scene" Feature, Simplifying Film Pre-production',
+                content_zh: 'Midjourney V7版本今日上線，帶來了備受期待的「場景分鏡」（Storyboard Scene）功能。用戶現在可以使用 `--storyboard` 參數，通過一段描述性文本一次性生成4到6格的連續分鏡圖像，極大地提高了電影和動畫前期概念設計的效率。該功能還支持對單個分鏡進行微調，確保了視覺風格的統一性。',
+                content_en: 'Midjourney V7 went live today, introducing the highly anticipated "Storyboard Scene" feature. Users can now use the `--storyboard` parameter to generate a 4 to 6-panel continuous storyboard from a single descriptive text, vastly improving the efficiency of pre-production concept design for film and animation. The feature also supports fine-tuning individual panels, ensuring visual style consistency.',
+                source: 'Midjourney Discord',
+                tags: ['Midjourney V7', '分鏡','前期製作','概念設計'],
+                cta_text_zh: '學習AI創作課程',
+                cta_text_en: 'Learn AI Creation',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 5,
+                category: 'AI電影',
+                time: '12小時前',
+                title_zh: 'Netflix宣布投資8億美元建立AI內容實驗室，專注個性化劇集生成',
+                title_en: 'Netflix Announces $800M Investment in AI Content Lab Focused on Personalized Episode Generation',
+                content_zh: 'Netflix CEO Reed Hastings在財報會議上宣布，將在未來三年內投資8億美元成立一個專門的AI內容實驗室。該實驗室的核心任務是探索利用生成式AI技術，為用戶生成個性化的短劇集或「分支劇情」。目標是實現「千人千面」的觀影體驗，例如根據觀眾的選擇動態生成不同的結局。此舉引發了編劇工會對AI取代創意的擔憂。',
+                content_en: 'Netflix CEO Reed Hastings announced during an earnings call an $800 million investment over the next three years to establish a dedicated AI Content Lab. The lab\'s core mission is to explore using generative AI to create personalized short episodes or "branching narratives" for users. The goal is a "one-thousand faces" viewing experience, such as dynamically generating different endings based on viewer choices. This move has sparked concerns from writers\' guilds about AI replacing creativity.',
+                source: 'Bloomberg',
+                tags: ['Netflix', '8億美元', '生成式AI', '個性化內容'],
+                cta_text_zh: '觀看AI流媒體',
+                cta_text_en: 'Watch AI Streaming',
+                cta_link: 'http://404.world',
+                is_hkaiiff: false
+            },
+            {
+                id: 6,
+                category: 'AI電影',
+                time: '14小時前',
+                title_zh: 'Sora新功能泄露：或將支持3D模型導入生成視頻',
+                title_en: 'Sora New Feature Leaked: May Support 3D Model Import for Video Generation',
+                content_zh: '據開發者社區泄露的截圖顯示，OpenAI可能正在測試一項Sora的新功能，允許用戶導入自定義的3D模型（如.obj或.fbx格式），並將其作為主角或關鍵物體生成視頻。如果屬實，這將是文生視頻領域的一大步，使AI電影製作能與傳統CG工作流結合，極大提升了內容的可控性和精細度。',
+                content_en: 'Screenshots leaked from a developer community suggest OpenAI may be testing a new Sora feature allowing users to import custom 3D models (like .obj or .fbx formats) and use them as main characters or key objects in generated videos. If true, this would be a major step for text-to-video, integrating AI filmmaking with traditional CG workflows and greatly enhancing content controllability and detail.',
+                source: 'Reddit (r/OpenAI)',
+                tags: ['Sora', '3D模型', 'CG工作流', '功能泄露'],
+                cta_text_zh: '了解AI電影趨勢',
+                cta_text_en: 'Learn AI Film Trends',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 7,
+                category: 'AI電影',
+                time: '16小時前',
+                title_zh: 'Runway推出「多鏡頭協同」功能，Gen-3可同時渲染3個機位',
+                title_en: 'Runway Launches "Multi-Cam Sync" Feature, Gen-3 Can Render 3 Angles Simultaneously',
+                content_zh: 'Runway的Gen-3 Alpha版再次更新，增加「多鏡頭協同」（Multi-Cam Sync）功能。導演現在可以設置最多3個虛擬機位（如主鏡頭、特寫、過肩鏡頭），Gen-3將基於同一場景描述同時生成三個視角的視頻，並確保它們在時間和動作上完全同步。這對於製作複雜的對話場景極具價值，效率提升了近200%。',
+                content_en: 'Runway\'s Gen-3 Alpha updates again, adding "Multi-Cam Sync." Directors can now set up to 3 virtual cameras (e.g., master, close-up, over-the-shoulder). Gen-3 will simultaneously generate video from all three perspectives based on the same scene description, ensuring perfect temporal and action synchronization. This is invaluable for producing complex dialogue scenes, boosting efficiency by nearly 200%.',
+                source: 'RunwayML Blog',
+                tags: ['Gen-3', 'Runway', '多鏡頭', '效率提升'],
+                cta_text_zh: '探索AI工具',
+                cta_text_en: 'Explore AI Tools',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: false
+            },
+            {
+                id: 8,
+                category: 'AI電影',
+                time: '18小時前',
+                title_zh: '倫敦AI電影節宣布2025年主題：「數字永生與倫理」',
+                title_en: 'London AI Film Festival Announces 2025 Theme: "Digital Immortality and Ethics"',
+                content_zh: '繼紐約之後，倫敦AI電影節（LAIFF）宣布其2025年屆次將於明年3月舉行，主題定為「數字永生與倫理」。電影節主席表示，隨著AI在復現逝者音容方面的能力日益增強，是時候通過電影藝術來探討這一技術的深刻倫理邊界。電影節將特設「最佳AI倫理短片」獎項，獎金為5萬英鎊。',
+                content_en: 'Following New York, the London AI Film Festival (LAIFF) announced its 2025 edition will be held next March, with the theme "Digital Immortality and Ethics." The festival director stated that as AI\'s ability to replicate the likeness and voice of the deceased grows, it is time to explore the profound ethical boundaries of this technology through cinematic art. The festival will feature a special "Best AI Ethics Short" award with a £50,000 prize.',
+                source: 'LAIFF Official',
+                tags: ['AI電影節','倫理','數字永生','倫敦'],
+                cta_text_zh: '提交您的AI電影',
+                cta_text_en: 'Submit Your AI Film',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: false
+            },
+            {
+                id: 9,
+                category: 'AI電影',
+                time: '20小時前',
+                title_zh: 'Midjourney展示實驗性「世界模型」：可生成3D漫遊場景',
+                title_en: 'Midjourney Demos Experimental "World Model": Can Generate 3D Roaming Scenes',
+                content_zh: 'Midjourney創始人David Holz在一次非公開演示中，展示了他們正在研發的實驗性「世界模型」。該模型不僅能生成高質量圖像，還能生成一個可供用戶自由漫遊和探索的3D場景。雖然仍處於早期階段，但這預示著Midjourney可能正從2D圖像生成轉向完整的3D環境和體驗創建，為未來的AI電影和遊戲提供基礎。',
+                content_en: 'In a private demo, Midjourney founder David Holz showcased their experimental "World Model" in development. This model not only generates high-quality images but also creates a 3D scene that users can freely roam and explore. Although still in early stages, this signals Midjourney\'s potential shift from 2D image generation to creating complete 3D environments and experiences, laying the groundwork for future AI films and games.',
+                source: 'X (Twitter)',
+                tags: ['Midjourney','世界模型','3D生成','David Holz'],
+                cta_text_zh: '了解AI原生度',
+                cta_text_en: 'Learn AI-Native Score',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 10,
+                category: 'AI電影',
+                time: '22小時前',
+                title_zh: 'Netflix AI項目遇冷：編劇工會抵制使用AI生成劇本',
+                title_en: 'Netflix AI Project Faces Backlash: WGA Resists Use of AI-Generated Scripts',
+                content_zh: 'Netflix近期試圖推動一項使用AI輔助編寫情景喜劇劇本的試點項目，遭到了美國編劇工會（WGA）的強烈抵制。WGA發表聲明稱，AI應僅作為「輔助工具」而非「創作者」，並威脅如果Netflix強行推進，將發起新一輪罷工。目前，該試點項目已被迫暫停。這凸顯了AI在創意行業應用中面臨的勞資和倫理挑戰。',
+                content_en: 'Netflix\'s recent attempt to pilot a project using AI to assist in writing sitcom scripts has met strong resistance from the Writers Guild of America (WGA). The WGA stated AI should only be an "assistive tool," not a "creator," and threatened a new strike if Netflix proceeds. The pilot project has now been forced to pause, highlighting the labor and ethical challenges AI faces in creative industries.',
+                source: 'Variety',
+                tags: ['Netflix', 'WGA', 'AI編劇', '罷工'],
+                cta_text_zh: '查看HKAIIFF獎項',
+                cta_text_en: 'See HKAIIFF Awards',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 11,
+                category: 'AI電影',
+                time: '1天前',
+                title_zh: 'Sora電影《The Last Program》入圍翠貝卡電影節，時長達12分鐘',
+                title_en: 'Sora Film "The Last Program" Selected for Tribeca Festival, Runs 12 Minutes',
+                content_zh: '由Sora生成的12分鐘短片《The Last Program》已正式入圍2025年翠貝卡電影節（Tribeca Festival）的「AI敘事」單元。這是Sora生成的作品首次進入主流A類電影節。導演表示，製作該片耗時3個月，生成了約5000個片段，最終剪輯而成。這標誌著AI生成內容的藝術價值正逐步獲得業界認可。',
+                content_en: '"The Last Program," a 12-minute short film generated by Sora, has been officially selected for the "AI Narratives" section of the 2025 Tribeca Festival. This is the first time a Sora-generated work has entered a mainstream A-list film festival. The director stated it took 3 months to produce, generating about 5,000 clips for the final edit. This marks the growing industry recognition of AI-generated content\'s artistic value.',
+                source: 'IndieWire',
+                tags: ['Sora', '翠貝卡電影節', '12分鐘', 'AI敘事'],
+                cta_text_zh: '提交你的Sora作品',
+                cta_text_en: 'Submit Your Sora Film',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: false
+            },
+            {
+                id: 12,
+                category: 'AI電影',
+                time: '1天前',
+                title_zh: 'Runway CEO: Gen-3的目標是「按需生成好萊塢級長片」',
+                title_en: 'Runway CEO: Gen-3\'s Goal is "Generating Hollywood-Level Feature Films on Demand"',
+                content_zh: 'Runway CEO Cristóbal Valenzuela在一次採訪中表示，Gen-3 Alpha只是開始，他們的長期目標是讓用戶能夠「按需生成好萊塢級別的長篇電影」。他透露，Runway正在研發更強的敘事控制和邏輯一致性模型，預計在2026年能實現30分鐘以上的連續高質量內容生成。',
+                content_en: 'Runway CEO Cristóbal Valenzuela stated in an interview that Gen-3 Alpha is just the beginning, and their long-term goal is to enable users to "generate Hollywood-level feature films on demand." He revealed that Runway is developing models with stronger narrative control and logical consistency, expecting to achieve over 30 minutes of continuous high-quality content generation by 2026.',
+                source: 'Forbes',
+                tags: ['Gen-3', 'Runway', 'CEO', '長片電影'],
+                cta_text_zh: '了解AI電影未來',
+                cta_text_en: 'Learn AI Film Future',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 13,
+                category: 'AI電影',
+                time: '1天前',
+                title_zh: '首爾AI電影節2025宣布與三星合作，設立「移動AI影像獎」',
+                title_en: 'Seoul AI Film Festival 2025 Announces Partnership with Samsung, Establishes "Mobile AI Image Award"',
+                content_zh: '2025年首爾AI電影節（SAIFF）宣布與三星電子達成戰略合作。雙方將共同設立一個新的獎項類別－－「最佳移動AI影像獎」，專門表彰使用智能手機搭載的AI工具拍攝和製作的短片。三星將為該獎項提供價值10萬美元的設備和現金獎勵，旨在推動AI影像在移動端的普及。',
+                content_en: 'The 2025 Seoul AI Film Festival (SAIFF) has announced a strategic partnership with Samsung Electronics. They will jointly establish a new award category－the "Best Mobile AI Image Award"－to recognize short films shot and produced using AI tools on smartphones. Samsung will provide $100,000 in equipment and cash prizes for the award, aiming to promote the popularization of AI imaging on mobile devices.',
+                source: 'ZDNet Korea',
+                tags: ['AI電影節', '三星', '首爾', '移動AI'],
+                cta_text_zh: '探索HKAIIFF獎項',
+                cta_text_en: 'Explore HKAIIFF Awards',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 14,
+                category: 'AI電影',
+                time: '1天前',
+                title_zh: 'Midjourney CEO暗示V7將支持視頻輸出，或與Sora正面競爭',
+                title_en: 'Midjourney CEO Hints V7 Will Support Video Output, Potentially Competing Directly with Sora',
+                content_zh: 'David Holz在最新的Office Hours中暗示，Midjourney的下一個重要里程碑（可能是V7或V8）將不僅僅局限於靜態圖像。他提到團隊正在「積極探索時間維度」，引發社區猜測Midjourney即將加入視頻生成功能。如果實現，這將使其與OpenAI Sora和Runway Gen-3展開正面競爭。',
+                content_en: 'David Holz hinted in the latest Office Hours that Midjourney\'s next major milestone (possibly V7 or V8) will not be limited to static images. He mentioned the team is "actively exploring the temporal dimension," sparking community speculation that Midjourney is about to add video generation capabilities. If realized, this would put it in direct competition with OpenAI Sora and Runway Gen-3.',
+                source: 'Midjourney Office Hours',
+                tags: ['Midjourney', '視頻生成', 'Sora', 'David Holz'],
+                cta_text_zh: '使用AI工具創作',
+                cta_text_en: 'Create with AI Tools',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: false
+            },
+            {
+                id: 15,
+                category: 'AI電影',
+                time: '2天前',
+                title_zh: 'Netflix測試AI驅動的預告片剪輯工具，效率提升40%',
+                title_en: 'Netflix Tests AI-Driven Trailer Editing Tool, Boosting Efficiency by 40%',
+                content_zh: '據內部消息，Netflix正在測試一款名為「Highlight AI」的內部工具。該工具能自動分析一部完整的電影或劇集，識別出高光時刻、情感爆發點和關鍵劇情轉折，並自動生成多個不同風格的預告片初剪版本。據悉，該工具已將預告片的製作週期平均縮短了40%。',
+                content_en: 'According to internal sources, Netflix is testing an internal tool called "Highlight AI." The tool automatically analyzes a full movie or series, identifies highlights, emotional peaks, and key plot twists, and generates multiple rough cuts of trailers in different styles. This tool has reportedly reduced the trailer production cycle by an average of 40%.',
+                source: 'The Information',
+                tags: ['Netflix', 'AI剪輯', '預告片', '效率提升'],
+                cta_text_zh: '了解AI影視技術',
+                cta_text_en: 'Learn AI Video Tech',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 16,
+                category: 'AI電影',
+                time: '2天前',
+                title_zh: 'OpenAI與好萊塢六大影業秘密會談，商討Sora企業級應用',
+                title_en: 'OpenAI in Secret Talks with Hollywood\'s Big Six Studios to Discuss Sora Enterprise Applications',
+                content_zh: '好萊塢報導稱，OpenAI高層近期密集會見了迪士尼、華納兄弟、環球等六大影業的決策者。會談內容聚焦於Sora的企業級應用，包括提供私有化部署的Sora模型，以及為特定IP（如漫威角色）訓練定製化模型。影業高層對AI在特效和前期預覽方面的潛力表示濃厚興趣。',
+                content_en: 'The Hollywood Reporter states OpenAI executives recently met intensively with decision-makers from the "Big Six" studios, including Disney, Warner Bros., and Universal. The talks focused on enterprise applications of Sora, including offering privately deployed Sora models and training custom models for specific IPs (like Marvel characters). Studio execs showed strong interest in AI\'s potential for VFX and pre-visualization.',
+                source: 'The Hollywood Reporter',
+                tags: ['Sora', 'OpenAI', '好萊塢', '企業應用'],
+                cta_text_zh: '投資AI電影項目',
+                cta_text_en: 'Invest in AI Films',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: false
+            },
+            {
+                id: 17,
+                category: 'AI電影',
+                time: '2天前',
+                title_zh: 'Runway Gen-3被曝算力成本高昂，每分鐘視頻生成需3美元',
+                title_en: 'Runway Gen-3 Reportedly Has High Compute Costs, $3 Per Minute of Video Generation',
+                content_zh: '儘管Gen-3 Alpha表現驚艷，但有分析師估算了其運行成本。基於當前的H100 GPU市場價格，生成1分鐘1080p的Gen-3視頻，算力成本高達3至5美元。這遠高於Sora的預估成本（約1美元/分鐘）。Runway CEO承認成本是挑戰，但表示正通過模型優化快速降低成本。',
+                content_en: 'Despite Gen-3 Alpha\'s stunning performance, analysts estimate its operating costs. Based on current H100 GPU market prices, generating 1 minute of 1080p Gen-3 video costs $3 to $5 in compute. This is significantly higher than Sora\'s estimated cost (approx. $1/min). The Runway CEO acknowledged costs are a challenge but said they are rapidly reducing them through model optimization.',
+                source: 'Semianalysis',
+                tags: ['Gen-3', 'Runway', '算力成本', 'GPU'],
+                cta_text_zh: '了解AI電影市場',
+                cta_text_en: 'Learn AI Film Market',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: false
+            },
+            {
+                id: 18,
+                category: 'AI電影',
+                time: '2天前',
+                title_zh: '威尼斯電影節2025增設「AI沉浸式體驗」單元',
+                title_en: 'Venice Film Festival 2025 Adds "AI Immersive Experience" Section',
+                content_zh: '威尼斯國際電影節組委會宣布，將在2025年的「威尼斯沉浸式」（Venice Immersive）單元中，增設「AI沉浸式體驗」子單元。該單元將專注於表彰使用生成式AI技術創作的VR、AR和MR作品。此舉被視為頂級電影節對AI作為新藝術媒介的正式認可。',
+                content_en: 'The Venice International Film Festival committee announced it will add an "AI Immersive Experience" subsection to its 2025 "Venice Immersive" section. This unit will focus on recognizing VR, AR, and MR works created using generative AI. This move is seen as formal recognition of AI as a new artistic medium by a top-tier film festival.',
+                source: 'Screen Daily',
+                tags: ['威尼斯電影節', 'AI', 'VR', '沉浸式體驗'],
+                cta_text_zh: '提交您的AI作品',
+                cta_text_en: 'Submit Your AI Work',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: false
+            },
+            {
+                id: 19,
+                category: 'AI電影',
+                time: '2天前',
+                title_zh: 'Midjourney圖像風格被指過於「統一」，V7或將引入更多樣化模型',
+                title_en: 'Midjourney Image Style Criticized as Too "Uniform," V7 May Introduce More Diverse Models',
+                content_zh: '近日，一群數字藝術家在社交媒體上指出，Midjourney V6生成的圖像雖然精美，但「Midjourney美學」趨於統一，缺乏多樣性。David Holz回應稱，團隊已意識到此問題，並正在訓練多個風格迥異的子模型，預計在V7中以「風格包」的形式推出，讓用戶有更多選擇。',
+                content_en: 'Recently, a group of digital artists pointed out on social media that while Midjourney V6 images are beautiful, the "Midjourney aesthetic" is becoming uniform and lacks diversity. David Holz responded that the team is aware of this issue and is training multiple, distinctly styled sub-models, expected to launch as "style packs" in V7 to give users more choice.',
+                source: 'ArtStation Blogs',
+                tags: ['Midjourney', 'AI美學', '風格統一', 'V7'],
+                cta_text_zh: '學習AI美學',
+                cta_text_en: 'Learn AI Aesthetics',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 20,
+                category: 'AI電影',
+                time: '2天前',
+                title_zh: 'Netflix動畫部門裁員，轉向與AI動畫工作室合作',
+                title_en: 'Netflix Animation Department Lays Off Staff, Shifts to Collaborating with AI Animation Studios',
+                content_zh: 'Netflix確認對其內部動畫部門進行重組，裁員約120人。同時，Netflix宣布與三家專注於AI輔助製作的動畫工作室（包括Luma AI）簽訂了新的製作協議。此舉旨在降低動畫製作成本並縮短週期，但也引發了動畫行業對AI技術取代人工的擔憂。',
+                content_en: 'Netflix confirmed a restructuring of its in-house animation department, laying off about 120 people. Simultaneously, Netflix announced new production agreements with three animation studios specializing in AI-assisted production (including Luma AI). The move aims to reduce animation costs and timelines but has sparked industry concerns about AI replacing artists.',
+                source: 'Cartoon Brew',
+                tags: ['Netflix', '裁員', 'AI動畫', 'Luma AI'],
+                cta_text_zh: '查看AI電影市場',
+                cta_text_en: 'See AI Film Market',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: false
+            },
+            {
+                id: 21,
+                category: 'AI電影',
+                time: '10小時前',
+                title_zh: 'Sora模型開放API測試，首批合作夥伴包括Vimeo和Adobe',
+                title_en: 'Sora Model API Access Opens, First Partners Include Vimeo and Adobe',
+                content_zh: 'OpenAI宣布Sora API已進入有限測試階段，首批合作夥伴包括視頻平台Vimeo和創意軟件巨頭Adobe。Vimeo將探索Sora API與其視頻編輯工具的集成，而Adobe則計劃將Sora作為一個選項引入Adobe Premiere Pro的生成式AI工具集中。這預示著Sora將加速融入現有的創意工作流。',
+                content_en: 'OpenAI announced the Sora API has entered limited beta, with initial partners including video platform Vimeo and creative software giant Adobe. Vimeo will explore integrating the Sora API with its video editing tools, while Adobe plans to introduce Sora as an option within Adobe Premiere Pro\'s generative AI toolset. This signals Sora\'s accelerated integration into existing creative workflows.',
+                source: 'OpenAI Blog',
+                tags: ['Sora', 'API', 'Vimeo', 'Adobe'],
+                cta_text_zh: '學習AI工具組合',
+                cta_text_en: 'Learn AI Tool Stacks',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 22,
+                category: 'AI電影',
+                time: '20小時前',
+                title_zh: 'Runway Gen-3新增「風格鎖定」功能，精準複製電影大師風格',
+                title_en: 'Runway Gen-3 Adds "Style Lock" Feature, Precisely Replicates Master Filmmaker Styles',
+                content_zh: 'Runway為Gen-3添加了強大的「風格鎖定」（Style Lock）功能。用戶可以上傳一張參考圖像（如某部電影截圖），Gen-3便能在生成新視頻時精確複製其光影、色調和質感。演示中，該功能成功復刻了「王家衛式」的霓虹光影和「韋斯·安德森式」的對稱構圖，精準度極高。',
+                content_en: 'Runway added a powerful "Style Lock" feature to Gen-3. Users can upload a reference image (like a movie still), and Gen-3 will precisely replicate its lighting, color grading, and texture when generating new videos. Demos successfully replicated "Wong Kar-wai" neon lighting and "Wes Anderson" symmetrical compositions with high fidelity.',
+                source: 'RunwayML Updates',
+                tags: ['Gen-3', 'Runway', '風格遷移', '電影美學'],
+                cta_text_zh: '提升AI原生度',
+                cta_text_en: 'Boost AI-Native Score',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: false
+            },
+            {
+                id: 23,
+                category: 'AI電影',
+                time: '1天前',
+                title_zh: '戛納電影節2025或將設立首個AI單元，主席持開放態度',
+                title_en: 'Cannes Film Festival 2025 May Launch First AI Section, President Remains Open-Minded',
+                content_zh: '戛納電影節主席Iris Knobloch在接受《法國電影》採訪時表示，她對AI技術持「謹慎樂觀」態度，並透露組委會正在「嚴肅討論」是否在2025年為AI生成的電影設立一個專門的展示單元或獎項。她強調，重點將是「藝術表達，而非技術炫耀」。',
+                content_en: 'Cannes Film Festival President Iris Knobloch told Le Film Français she is "cautiously optimistic" about AI technology and revealed the committee is in "serious discussions" about creating a dedicated showcase or award for AI-generated films in 2025. She emphasized the focus would be on "artistic expression, not technological spectacle."',
+                source: 'Le Film Français',
+                tags: ['戛納電影節', 'AI單元', 'Iris Knobloch', '2025'],
+                cta_text_zh: 'HKAIIFF $2.5M獎池',
+                cta_text_en: 'HKAIIFF $2.5M Prize Pool',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 24,
+                category: 'AI電影',
+                time: '1天前',
+                title_zh: 'Midjourney CEO: 圖像的「物理真實性」是V7的關鍵挑戰',
+                title_en: 'Midjourney CEO: "Physical Realism" of Images is the Key Challenge for V7',
+                content_zh: 'David Holz表示，Midjourney V6在美學上已達很高水準，但V7面臨的最大挑戰是「物理真實性」。這包括正確的光線折射、物體間的引力互動以及複雜的人體姿態。他稱團隊正在使用合成數據和物理引擎來訓練新模型，以克服AI在理解現實世界物理規律方面的缺陷。',
+                content_en: 'David Holz stated that Midjourney V6 has reached a high aesthetic level, but the biggest challenge for V7 is "physical realism." This includes correct light refraction, gravitational interactions between objects, and complex human poses. He said the team is using synthetic data and physics engines to train the new model to overcome AI\'s deficits in understanding real-world physics.',
+                source: 'Midjourney Discord',
+                tags: ['Midjourney V7', '物理真實性', 'David Holz', '合成數據'],
+                cta_text_zh: '探索AI創作極限',
+                cta_text_en: 'Explore AI Creative Limits',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 25,
+                category: 'AI電影',
+                time: '2天前',
+                title_zh: 'Netflix與AI初創公司Haiper簽署協議，探索AI長劇集製作',
+                title_en: 'Netflix Signs Deal with AI Startup Haiper to Explore AI Long-Form Series Production',
+                content_zh: 'Netflix已與總部位於倫敦的AI視頻初創公司Haiper達成一項為期兩年的技術探索協議。Haiper以其在視頻一致性方面的技術見長。雙方將共同探索使用AI技術製作30分鐘長度的動畫或實驗性劇集的可能性。這是Netflix在Sora和Gen-3之外，對新興AI視頻工具的又一佈局。',
+                content_en: 'Netflix has entered a two-year technology exploration agreement with London-based AI video startup Haiper, known for its video consistency tech. They will jointly explore the possibility of using AI to produce 30-minute animated or experimental episodes. This is another move by Netflix to engage with emerging AI video tools beyond Sora and Gen-3.',
+                source: 'Deadline',
+                tags: ['Netflix', 'Haiper', 'AI劇集', '長視頻'],
+                cta_text_zh: '觀看AI原創內容',
+                cta_text_en: 'Watch AI Original Content',
+                cta_link: 'http://404.world',
+                is_hkaiiff: false
+            },
             // AI遊戲: 20條
             {
                 id: 26,
@@ -562,17 +891,300 @@
                 time: '2小時前',
                 title_zh: 'Unity 6發布：深度集成Sentis AI，實現設備端實時神經渲染',
                 title_en: 'Unity 6 Released: Deep Sentis AI Integration for Real-Time On-Device Neural Rendering',
-                content_zh: 'Unity 6正式版今日發布，其最大亮點是深度集成了Sentis AI框架。開發者現在可以直接在Unity編輯器中運行AI模型，無需依賴雲端。Sentis支持設備端實時神經渲染，可顯著提升圖形質量，並用於AI驅動的動畫和物理模擬。此更新旨在讓AI工具在遊戲運行時發揮更大作用。',
+                content_zh: 'Unity 6正式版今日發布，其最大亮點是深度集成了Sentis AI框架。開發者現在可以直接在Unity編輯器中運行AI模型，無需依賴雲端。Sentis支持設備端（On-Device）實時神經渲染，可顯著提升圖形質量，並用於AI驅動的動畫和物理模擬。此更新旨在讓AI工具在遊戲運行時發揮更大作用。',
                 content_en: 'Unity 6 official release is out, highlighting deep integration with the Sentis AI framework. Developers can now run AI models directly in the Unity editor, no cloud dependency needed. Sentis supports on-device real-time neural rendering, significantly boosting graphics quality and enabling AI-driven animation and physics simulations. This update aims to make AI tools more impactful at game runtime.',
                 source: 'Unity Blog',
                 tags: ['Unity 6', 'Sentis AI', '神經渲染', '設備端AI'],
                 cta_text_zh: '學習AI遊戲開發',
                 cta_text_en: 'Learn AI Game Dev',
-                cta_link: 'http://www.HKAIFA.Academy',
+                cta_link: 'http://aif.academy',
                 is_hkaiiff: false
             },
-            // 繼續添加更多AI遊戲新聞...
-            
+            {
+                id: 27,
+                category: 'AI遊戲',
+                time: '4小時前',
+                title_zh: 'Unreal Engine 5.5預覽：MetalHuman AI實現實時情感驅動的面部表情',
+                title_en: 'Unreal Engine 5.5 Preview: MetalHuman AI Achieves Real-Time Emotion-Driven Facial Expressions',
+                content_zh: 'Epic Games展示了Unreal Engine 5.5的最新預覽，其中MetalHuman框架集成了新的AI功能。該AI能實時分析語音音調，並驅動MetalHuman角色做出匹配的情感表情，如憤怒、喜悅或悲傷，延遲低於50毫秒。這項技術將使AI NPC的表現力提升到新高度，使對話更具沉浸感。',
+                content_en: 'Epic Games showcased the latest Unreal Engine 5.5 preview, featuring new AI capabilities in the MetaHuman framework. The AI can analyze voice tone in real-time to drive matching emotional facial expressions (like anger, joy, or sadness) in MetaHuman characters, with latency under 50ms. This tech will elevate AI NPC expressiveness to new heights, making dialogue more immersive.',
+                source: 'Unreal Engine Blog',
+                tags: ['UE 5.5', 'MetaHuman', 'AI NPC', '面部表情'],
+                cta_text_zh: '探索AI NPC技術',
+                cta_text_en: 'Explore AI NPC Tech',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 28,
+                category: 'AI遊戲',
+                time: '6小時前',
+                title_zh: 'Inworld AI獲5000萬美元融資，將推出「AI NPC記憶系統」',
+                title_en: 'Inworld AI Raises $50M, Set to Launch "AI NPC Memory System"',
+                content_zh: 'AI NPC開發平台Inworld AI宣布完成5000萬美元B輪融資，由Intel Capital領投。公司宣布將利用這筆資金推出「長期記憶系統」。這意味著遊戲中的NPC將能記住玩家過去的行為和對話，並在未來的互動中提及這些記憶，從而建立更深入、動態發展的玩家-NPC關係。',
+                content_en: 'AI NPC platform Inworld AI announced a $50M Series B funding round led by Intel Capital. The company will use the funds to launch a "Long-Term Memory System." This means NPCs can remember players\' past actions and dialogue, referencing these memories in future interactions, thus building deeper, evolving player-NPC relationships.',
+                source: 'VentureBeat',
+                tags: ['Inworld AI', 'AI NPC', '5000萬美元', '融資'],
+                cta_text_zh: '了解AI遊戲融資',
+                cta_text_en: 'Learn AI Game Funding',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: false
+            },
+            {
+                id: 29,
+                category: 'AI遊戲',
+                time: '9小時前',
+                title_zh: 'AI程序化生成新突破：模型可按「藝術風格」生成3D世界地圖',
+                title_en: 'AI PCG Breakthrough: Model Can Generate 3D World Maps by "Art Style"',
+                content_zh: '斯坦福大學研究團隊展示了一種新的程序化內容生成（PCG）模型。該模型不僅能生成地形、植被，還能接受「藝術風格」提示詞（如「賽博朋克」或「宮崎駿風格」），自動生成符合該美學的3D世界地圖和建築。這項技術有望讓獨立遊戲團隊以極低成本創建風格獨特的開放世界。',
+                content_en: 'A Stanford research team demonstrated a new Procedural Content Generation (PCG) model. It not only generates terrain and vegetation but also accepts "art style" prompts (like "cyberpunk" or "Ghibli-style") to automatically generate 3D world maps and buildings matching that aesthetic. This tech could allow indie teams to create unique open worlds at very low cost.',
+                source: 'Stanford AI Lab',
+                tags: ['PCG', 'AI生成', '3D世界', '遊戲開發'],
+                cta_text_zh: '查看HKAIIFF遊戲單元',
+                cta_text_en: 'See HKAIIFF Game Section',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 30,
+                category: 'AI遊戲',
+                time: '11小時前',
+                title_zh: 'Unity Muse 2.0更新：支持AI生成紋理和3D模型動畫',
+                title_en: 'Unity Muse 2.0 Update: Supports AI-Generated Textures and 3D Model Animation',
+                content_zh: 'Unity的AI工具套件Muse迎來2.0更新。新版本引入了Muse Texture，允許開發者通過文本提示生成高質量的PBR紋理。同時，Muse Animate功能也已上線，開發者可以上傳3D模型骨骼，僅通過文本描述（如「跳躍並揮拳」）即可快速生成動畫片段，大幅簡化了原型製作流程。',
+                content_en: 'Unity\'s AI suite, Muse, gets its 2.0 update. The new version introduces Muse Texture, allowing devs to generate high-quality PBR textures from text prompts. Muse Animate is also live; devs can upload a 3D model rig and generate animation clips (e.g., "jump and punch") purely from text, greatly simplifying the prototyping process.',
+                source: 'Unity',
+                tags: ['Unity Muse', 'AI紋理', 'AI動畫', '原型製作'],
+                cta_text_zh: '學習AI工具',
+                cta_text_en: 'Learn AI Tools',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 31,
+                category: 'AI遊戲',
+                time: '13小時前',
+                title_zh: 'Epic Games推出「UES AI導航」工具，NPC尋路更智能',
+                title_en: 'Epic Games Launches "UES AI Navigation" Tool for Smarter NPC Pathfinding',
+                content_zh: 'Epic Games為Unreal Engine 5發布了新的AI導航插件。該工具利用機器學習，使NPC能夠更智能地在複雜動態環境中尋路。與傳統A*算法不同，AI導航系統能讓NPC學會「預判」玩家動作、尋找掩體，甚至在集體行動時自動形成戰術隊形，使群體AI的表現提升了70%。',
+                content_en: 'Epic Games released a new AI navigation plugin for Unreal Engine 5. The tool uses machine learning to enable smarter NPC pathfinding in complex, dynamic environments. Unlike traditional A*, the AI navigation system allows NPCs to "predict" player movements, find cover, and even form tactical formations during group actions, improving group AI performance by 70%.',
+                source: 'Epic Games Store',
+                tags: ['UE5', 'AI導航', 'NPC尋路', '機器學習'],
+                cta_text_zh: '探索AI遊戲技術',
+                cta_text_en: 'Explore AI Game Tech',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 32,
+                category: 'AI遊戲',
+                time: '15小時前',
+                title_zh: '微軟收購Inworld AI? 傳言稱談判已進入後期階段',
+                title_en: 'Microsoft to Acquire Inworld AI? Rumors Say Talks in Late Stages',
+                content_zh: '據知情人士透露，微軟正就收購AI NPC技術公司Inworld AI進行深入談判，估值可能超過5億美元。如果收購成功，微軟很可能將Inworld的技術深度整合到Xbox遊戲工作室和Azure雲服務中，為《上古卷軸6》等未來大作提供革命性的NPC交互體驗。目前雙方均未回應。',
+                content_en: 'According to sources, Microsoft is in advanced talks to acquire AI NPC tech company Inworld AI, with a potential valuation exceeding $500 million. If successful, Microsoft will likely integrate Inworld\'s technology deeply into its Xbox Game Studios and Azure cloud services, providing revolutionary NPC interactions for future blockbusters like The Elder Scrolls VI. Neither party has commented.',
+                source: 'Bloomberg Terminal',
+                tags: ['微軟','Inworld AI', '收購','AI NPC'],
+                cta_text_zh: '關注行業融資',
+                cta_text_en: 'Follow Industry Funding',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: false
+            },
+            {
+                id: 33,
+                category: 'AI遊戲',
+                time: '17小時前',
+                title_zh: '《No Man\'s Sky》開發商新作：完全由AI程序化生成的「地球」',
+                title_en: '"No Man\'s Sky" Developer\'s New Game: An "Earth" Entirely Generated by AI PCG',
+                content_zh: 'Hello Games創始人Sean Murray展示了他們的新項目《Light No Fire》。這是一個幻想題材的開放世界，其核心是一個1:1大小、完全由AI程序化生成的地球。AI不僅生成了地形，還生成了獨特的生態系統、生物和文明遺跡。Murray稱，這是他們10年來在PCG領域探索的結晶。',
+                content_en: 'Hello Games founder Sean Murray unveiled their new project, "Light No Fire." It\'s a fantasy open-world game centered on a 1:1 scale Earth, entirely generated by AI PCG. The AI not only generated the terrain but also unique ecosystems, creatures, and civilization ruins. Murray called it the culmination of their 10-year exploration in PCG.',
+                source: 'The Game Awards',
+                tags: ['Light No Fire', 'Hello Games', 'PCG', '開放世界'],
+                cta_text_zh: '體驗AI生成的世界',
+                cta_text_en: 'Experience AI Worlds',
+                cta_link: 'http://404.world',
+                is_hkaiiff: false
+            },
+            {
+                id: 34,
+                category: 'AI遊戲',
+                time: '19小時前',
+                title_zh: 'Unity AI工具包遭質疑：Sentis性能在低端設備上表現不佳',
+                title_en: 'Unity AI Toolkit Questioned: Sentis Performance Poor on Low-End Devices',
+                content_zh: '儘管Unity 6和Sentis AI備受期待，但早期開發者測試報告指出，Sentis AI在低端移動設備和舊款PC上的性能表現不佳。運行複雜的神經網絡模型會導致幀率嚴重下降，最高達50%。這引發了擔憂，即設備端AI的實際應用門檻可能仍然很高，限制了其在中小型遊戲中的普及。',
+                content_en: 'Despite high hopes for Unity 6 and Sentis AI, early developer test reports indicate Sentis AI performs poorly on low-end mobile devices and older PCs. Running complex neural network models causes severe frame drops, up to 50%. This raises concerns that the practical barrier for on-device AI remains high, limiting its adoption in small to mid-sized games.',
+                source: 'Gamasutra',
+                tags: ['Unity', 'Sentis AI', '性能問題', '移動設備'],
+                cta_text_zh: '了解AI原生度標準',
+                cta_text_en: 'Learn AI-Native Score',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 35,
+                category: 'AI遊戲',
+                time: '21小時前',
+                title_zh: 'Unreal Engine 5.5的AI NPC工具被指「過於復雜」，學習曲線陡峭',
+                title_en: 'Unreal Engine 5.5\'s AI NPC Tools Criticized as "Overly Complex" with Steep Learning Curve',
+                content_zh: '隨著UE 5.5預覽版發布，許多獨立開發者在論壇上抱怨其新的AI NPC和MetaHuman AI工具集「功能強大但過於復雜」。開發者表示，僅配置一個具有情感響應的NPC就需要涉及多個複雜的藍圖和AI行為樹，學習曲線遠超預期。Epic Games回應稱將在正式版中簡化工作流程。',
+                content_en: 'With the UE 5.5 preview, many indie developers on forums complain its new AI NPC and MetaHuman AI toolsets are "powerful but overly complex." Devs report that configuring just one emotionally responsive NPC involves multiple complex Blueprints and AI Behavior Trees, with a much steeper learning curve than expected. Epic Games responded they will simplify the workflow in the full release.',
+                source: 'Unreal Developer Network',
+                tags: ['UE 5.5', 'AI NPC', '學習曲線', '獨立開發'],
+                cta_text_zh: '報名AI開發課程',
+                cta_text_en: 'Join AI Dev Courses',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 36,
+                category: 'AI遊戲',
+                time: '1天前',
+                title_zh: 'Convai推出AI NPC「視覺感知」功能，NPC能「看見」玩家行為',
+                title_en: 'Convai Launches AI NPC "Visual Perception," NPCs Can "See" Player Actions',
+                content_zh: 'AI NPC平台Convai推出重大更新，為其NPC增加了「視覺感知」能力。通過攝像頭和AI模型，NPC現在能「看見」並響應玩家的非語言行為。例如，如果玩家在NPC面前拔出武器，NPC會表現出恐懼或防禦姿態；如果玩家丟下物品，NPC可能會上前查看。這項功能使NPC的交互維度大大增加。',
+                content_en: 'AI NPC platform Convai launched a major update, adding "visual perception" to its NPCs. Using cameras and AI models, NPCs can now "see" and react to players\' non-verbal actions. For example, if a player draws a weapon, the NPC will react with fear or defense; if a player drops an item, the NPC might investigate. This feature greatly expands NPC interaction dimensions.',
+                source: 'Convai Blog',
+                tags: ['Convai', 'AI NPC', '視覺感知','交互'],
+                cta_text_zh: '探索AI遊戲交互',
+                cta_text_en: 'Explore AI Game Interaction',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 37,
+                category: 'AI遊戲',
+                time: '1天前',
+                title_zh: '程序化生成新標杆？《Star Citizen》使用AI PCG生成行星生態',
+                title_en: 'New PCG Benchmark? "Star Citizen" Uses AI PCG to Generate Planetary Ecosystems',
+                content_zh: 'Cloud Imperium Games在CitizenCon 2955上展示了《Star Citizen》的最新進展。開發團隊透露，他們正在使用先進的AI PCG（程序化內容生成）技術來創建數百個行星的獨特生態系統。AI系統會根據行星的氣候、地質和引力數據，自動生成科學上可信的動植物群落，其規模和細節達到了前所未有的水平。',
+                content_en: 'Cloud Imperium Games showed "Star Citizen\'s" latest progress at CitizenCon 2955. The dev team revealed they are using advanced AI PCG to create unique ecosystems for hundreds of planets. The AI system generates scientifically plausible flora and fauna based on planetary climate, geology, and gravity data, achieving unprecedented scale and detail.',
+                source: 'CitizenCon',
+                tags: ['Star Citizen', 'PCG', 'AI生態', '開放世界'],
+                cta_text_zh: '體驗AI生成的宇宙',
+                cta_text_en: 'Experience AI Universes',
+                cta_link: 'http://404.world',
+                is_hkaiiff: false
+            },
+            {
+                id: 38,
+                category: 'AI遊戲',
+                time: '1天前',
+                title_zh: 'Unity與谷歌合作，Sentis AI將原生支持Gemini Nano模型',
+                title_en: 'Unity Partners with Google, Sentis AI to Natively Support Gemini Nano Models',
+                content_zh: 'Unity宣布與谷歌建立合作夥伴關係。Unity的Sentis AI框架將原生支持谷歌的設備端AI模型Gemini Nano。這意味著開發者可以更輕鬆地在Unity遊戲中部署Gemini Nano，以實現更高級的AI功能，例如設備上的實時語音翻譯和複雜的NPC決策，尤其是在Android平台上。',
+                content_en: 'Unity announced a partnership with Google. Unity\'s Sentis AI framework will natively support Google\'s on-device AI model, Gemini Nano. This means developers can more easily deploy Gemini Nano in Unity games for advanced AI features, such as real-time on-device voice translation and complex NPC decision-making, especially on the Android platform.',
+                source: 'Google AI Blog',
+                tags: ['Unity', 'Sentis AI', 'Gemini Nano', '谷歌'],
+                cta_text_zh: '了解AI工具集成',
+                cta_text_en: 'Learn AI Tool Integration',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 39,
+                category: 'AI遊戲',
+                time: '1天前',
+                title_zh: 'Unreal Engine的AI工具版權引爭議：使用AI生成的資產歸誰？',
+                title_en: 'Unreal Engine\'s AI Tool Copyright Sparks Debate: Who Owns AI-Generated Assets?',
+                content_zh: '隨著Unreal Engine 5.5中AI生成工具的增加，其服務條款引發了開發者社區的激烈討論。條款中提到，使用UE內置AI工具生成的資產，Epic Games可能擁有「有限的許可」。這引發了關於版權歸屬的擔憂，開發者擔心他們在遊戲中使用的AI生成內容可能在未來面臨版權糾紛。',
+                content_en: 'As AI generation tools increase in Unreal Engine 5.5, its terms of service have sparked heated debate in the developer community. The terms mention that Epic Games may hold a "limited license" to assets generated using UE\'s built-in AI tools. This raises copyright ownership concerns, with developers fearing their in-game AI-generated content could face future legal disputes.',
+                source: 'Game Developer',
+                tags: ['UE5', 'AI資產', '版權', 'Epic Games'],
+                cta_text_zh: '了解AI內容版權',
+                cta_text_en: 'Learn AI Content Rights',
+                cta_link: 'http://aif.exchange',
+                is_hkaiiff: false
+            },
+            {
+                id: 40,
+                category: 'AI遊戲',
+                time: '2天前',
+                title_zh: 'NVIDIA推出「ACE for Digital Humans」更新，支持UE 5.5',
+                title_en: 'NVIDIA Launches "ACE for Digital Humans" Update, Supports UE 5.5',
+                content_zh: 'NVIDIA宣布其ACE（Avatar Cloud Engine）for Digital Humans迎來重大更新，現已完全支持Unreal Engine 5.5和MetaHuman。新版本提供了更逼真的AI NPC面部動畫（Audio2Face）和更自然的對話系統（Riva）。NVIDIA展示了一個demo，其中AI NPC能與玩家進行完全由AI驅動、長達10分鐘的流暢即興對話。',
+                content_en: 'NVIDIA announced a major update to its ACE (Avatar Cloud Engine) for Digital Humans, now with full support for Unreal Engine 5.5 and MetaHuman. The new version offers more realistic AI NPC facial animations (Audio2Face) and more natural dialogue systems (Riva). NVIDIA showed a demo where an AI NPC held a smooth, 10-minute, fully AI-driven improvised conversation with the player.',
+                source: 'NVIDIA Blog',
+                tags: ['NVIDIA ACE', 'UE 5.5', 'AI NPC', 'Audio2Face'],
+                cta_text_zh: '查看AI NPC技術',
+                cta_text_en: 'See AI NPC Tech',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 41,
+                category: 'AI遊戲',
+                time: '2天前',
+                title_zh: 'AI NPC公司Charisma AI融資1200萬美元，專注情感AI引擎',
+                title_en: 'AI NPC Company Charisma AI Raises $12M, Focuses on Emotional AI Engine',
+                content_zh: '專注於為遊戲和虛擬體驗提供情感AI NPC的Charisma AI宣布完成1200萬美元A輪融資。該公司的技術核心是其「情感引擎」，它不僅生成對話，還會為NPC分配一個動態的情感狀態（如信任度、恐懼感），該狀態會根據玩家的語氣和選擇而改變，從而影響後續劇情。',
+                content_en: 'Charisma AI, a company focused on providing emotional AI NPCs for games and virtual experiences, announced $12M in Series A funding. The core of its technology is its "Emotion Engine," which not only generates dialogue but also assigns NPCs a dynamic emotional state (like trust, fear) that changes based on the player\'s tone and choices, influencing the subsequent plot.',
+                source: 'GamesIndustry.biz',
+                tags: ['Charisma AI', 'AI NPC', '融資', '情感AI'],
+                cta_text_zh: '探索AI遊戲投資',
+                cta_text_en: 'Explore AI Game Investing',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: false
+            },
+            {
+                id: 42,
+                category: 'AI遊戲',
+                time: '2天前',
+                title_zh: '程序化生成新用途：AI用於《模擬人生5》玩家行為預測',
+                title_en: 'New Use for PCG: AI Used in "The Sims 5" for Player Behavior Prediction',
+                content_zh: 'EA Maxis工作室在一篇技術博客中透露，即將到來的《模擬人生5》（代號Project Rene）將使用一種新型AI系統。該系統利用程序化生成和機器學習來「預測」玩家可能的建造和社交行為，並提前生成相關的NPC反應和世界事件，以創造一個更具響應性的沙盒世界。',
+                content_en: 'An EA Maxis tech blog revealed the upcoming "The Sims 5" (Project Rene) will use a novel AI system. This system uses PCG and machine learning to "predict" likely player building and social behaviors, proactively generating relevant NPC reactions and world events to create a more responsive sandbox world.',
+                source: 'EA Tech Blog',
+                tags: ['模擬人生5', 'AI', 'PCG', '行為預測'],
+                cta_text_zh: '了解AI在遊戲的應用',
+                cta_text_en: 'Learn AI in Games',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 43,
+                category: 'AI遊戲',
+                time: '2天前',
+                title_zh: 'Unity Sentis遭破解？開發者繞過限制加載自定義AI模型',
+                title_en: 'Unity Sentis Hacked? Developers Bypass Restrictions to Load Custom AI Models',
+                content_zh: '在Unity 6發布僅一天後，就有開發者聲稱已成功繞過Sentis AI框架的模型限制。Unity原計劃限制Sentis只能運行經過其優化的模型，但開發者通過修改運行時庫，成功在Unity中加載並運行了自定義的第三方AI模型。此舉可能帶來版權和安全風險，但也被視為Sentis潛力的證明。',
+                content_en: 'Just one day after Unity 6\'s release, a developer claims to have successfully bypassed the Sentis AI framework\'s model restrictions. Unity originally planned to limit Sentis to its optimized models, but the developer managed to load and run custom third-party AI models in Unity by modifying runtime libraries. This move could pose copyright and security risks but is also seen as proof of Sentis\'s potential.',
+                source: 'GitHub',
+                tags: ['Unity 6', 'Sentis AI', '破解', '自定義模型'],
+                cta_text_zh: '關注AI技術安全',
+                cta_text_en: 'Follow AI Tech Security',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 44,
+                category: 'AI遊戲',
+                time: '2天前',
+                title_zh: 'Unreal Engine AI聲音工具：根據環境實時生成NPC對白',
+                title_en: 'Unreal Engine AI Voice Tool: Generates NPC Dialogue in Real-Time Based on Environment',
+                content_zh: 'Epic Games展示了一款集成在UE 5.5中的實驗性AI聲音工具。該工具能分析NPC所處的環境（如「戰場」、「雨天」、「洞穴」），並實時調整NPC的聲音濾鏡和情感。例如，在戰場上NPC的聲音會自動變得嘶啞和急促，在洞穴中則會帶有混響，無需音頻工程師手動調整。',
+                content_en: 'Epic Games demonstrated an experimental AI voice tool integrated into UE 5.5. The tool analyzes the NPC\'s environment (e.g., "battlefield," "rainy," "cave") and adjusts the NPC\'s voice filter and emotion in real-time. For example, an NPC\'s voice will automatically become hoarse and urgent on a battlefield, or have reverb in a cave, without manual adjustment by an audio engineer.',
+                source: 'Unreal Engine Showcase',
+                tags: ['UE 5.5', 'AI聲音','NPC對白','實時生成'],
+                cta_text_zh: '探索AI聲音技術',
+                cta_text_en: 'Explore AI Voice Tech',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 45,
+                category: 'AI遊戲',
+                time: '1天前',
+                title_zh: 'AI PCG用於關卡設計：《暗黑破壞神4》團隊分享AI生成地牢經驗',
+                title_en: 'AI PCG for Level Design: "Diablo IV" Team Shares Experience Generating Dungeons with AI',
+                content_zh: '暴雪《暗黑破壞神4》的開發團隊在GDC上分享了他們如何使用AI輔助的程序化生成技術來設計無盡的地牢。他們開發了一套AI系統，該系統學習了數百個手工設計的關卡佈局，能夠生成「既隨機又符合設計美學」的地牢。AI將地牢的生成效率提高了約300%。',
+                content_en: 'Blizzard\'s "Diablo IV" team shared at GDC how they use AI-assisted PCG to design endless dungeons. They developed an AI system that learned hundreds of hand-designed level layouts and can generate dungeons that are "both random and aesthetically designed." The AI increased dungeon generation efficiency by about 300%',
+                source: 'GDC Vault',
+                tags: ['暗黑4', 'PCG', 'AI關卡設計', 'GDC'],
+                cta_text_zh: '學習AI遊戲設計',
+                cta_text_en: 'Learn AI Game Design',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
             // AI技術: 15條
             {
                 id: 46,
@@ -580,17 +1192,225 @@
                 time: '4小時前',
                 title_zh: '谷歌DeepMind推出VLOGGER：僅需一張照片即可生成可控視頻',
                 title_en: 'Google DeepMind Launches VLOGGER: Generates Controllable Video from a Single Photo',
-                content_zh: '谷歌DeepMind發布了名為VLOGGER的新AI模型。與Sora不同，VLOGGER專注於人物，僅需一張靜態照片和一段音頻，即可生成該人物說話、眨眼、頭部轉動的逼真視頻。該模型在控制面部表情和口型同步方面達到了行業頂尖水平，但目前為防止濫用，尚未公開發布。',
-                content_en: 'Google DeepMind unveiled a new AI model called VLOGGER. Unlike Sora, VLOGGER focuses on people, generating a realistic video of a person talking, blinking, and moving their head from just a single static photo and an audio clip. The model achieves State-of-the-Art performance in controlling facial expressions and lip-sync, but remains unreleased publicly to prevent misuse.',
+                content_zh: '谷歌DeepMind發布了名為VLOGGER的新AI模型。與Sora不同，VLOGGER專注於人物，僅需一張靜態照片和一段音頻，即可生成該人物說話、眨眼、頭部轉動的逼真視頻。該模型在控制面部表情和口型同步方面達到了S.O.T.A（行業頂尖）水平，但目前為防止濫用，尚未公開發布。',
+                content_en: 'Google DeepMind unveiled a new AI model called VLOGGER. Unlike Sora, VLOGGER focuses on people, generating a realistic video of a person talking, blinking, and moving their head from just a single static photo and an audio clip. The model achieves S.O.T.A (State-of-the-Art) performance in controlling facial expressions and lip-sync, but remains unreleased publicly to prevent misuse.',
                 source: 'DeepMind Blog',
                 tags: ['VLOGGER', 'DeepMind', '照片生成視頻', '口型同步'],
                 cta_text_zh: '了解AI倫理',
                 cta_text_en: 'Learn AI Ethics',
-                cta_link: 'http://www.hkaiiff.org',
+                cta_link: 'http://hkaiiff.org',
                 is_hkaiiff: false
             },
-            // 繼續添加更多AI技術新聞...
-            
+            {
+                id: 47,
+                category: 'AI技術',
+                time: '7小時前',
+                title_zh: 'Adobe展示Project Neo: AI驅動的3D動畫工具，簡化綁定流程',
+                title_en: 'Adobe Showcases Project Neo: AI-Driven 3D Animation Tool Simplifying Rigging',
+                content_zh: '在Adobe MAX 2025上，Adobe展示了Project Neo，一款面向2D動畫師的AI 3D動畫工具。該工具允許動畫師導入2D插畫，AI會自動將其轉換為可綁定的3D模型，並提供基於物理的自然動畫。這大大降低了3D動畫的門檻，傳統上需要數天的綁定工作現在僅需幾分鐘。',
+                content_en: 'At Adobe MAX 2025, Adobe showcased Project Neo, an AI 3D animation tool for 2D animators. It allows animators to import 2D illustrations, which AI automatically converts into riggable 3D models with physics-based natural animation. This significantly lowers the barrier to 3D animation, reducing days of traditional rigging work to minutes.',
+                source: 'Adobe MAX',
+                tags: ['Adobe', 'Project Neo', 'AI動畫', '3D綁定'],
+                cta_text_zh: '學習AI動畫工具',
+                cta_text_en: 'Learn AI Animation Tools',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 48,
+                category: 'AI技術',
+                time: '10小時前',
+                title_zh: 'ElevenLabs發布Voice-R: 實時情感遷移的聲音克隆技術',
+                title_en: 'ElevenLabs Releases Voice-R: Voice Cloning Tech with Real-Time Emotion Transfer',
+                content_zh: 'ElevenLabs推出了其下一代聲音克隆技術Voice-R。該技術的最大突破在於「情感遷移」。用戶可以用自己的聲音（如憤怒地）說一句話，Voice-R可以捕捉這種情感，並將其應用到克隆的聲音上（如某個名人的聲音），同時保持克隆聲音的音色不變。這項技術在遊戲配音和電影後期製作中潛力巨大。',
+                content_en: 'ElevenLabs launched its next-gen voice cloning tech, Voice-R. Its biggest breakthrough is "Emotion Transfer." A user can speak a sentence in their own voice (e.g., angrily), and Voice-R captures that emotion and applies it to a cloned voice (e.g., a celebrity\'s), while preserving the cloned timbre. This tech has huge potential in game VO and film post-production.',
+                source: 'ElevenLabs Blog',
+                tags: ['ElevenLabs', '聲音克隆', '情感遷移', 'Voice-R'],
+                cta_text_zh: '探索AI配音',
+                cta_text_en: 'Explore AI Dubbing',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 49,
+                category: 'AI技術',
+                time: '14小時前',
+                title_zh: '哥倫比亞大學新研究：AI可將黑白老電影「神經升級」至4K HDR',
+                title_en: 'Columbia U. New Study: AI Can "Neurally Upscale" Old B&W Films to 4K HDR',
+                content_zh: '哥倫比亞大學計算機視覺實驗室發表論文，展示了一種新的神經網絡模型。該模型能對黑白老電影進行「神經升級」，不僅將分辨率提升至4K，還能智能分析光照並生成高動態範圍（HDR）信息。演示中，《公民凱恩》的黑白影像被賦予了前所未有的層次感和深度。',
+                content_en: 'Columbia University\'s Computer Vision Lab published a paper showcasing a new neural network model. It "neurally upscales" old B&W films, not only increasing resolution to 4K but also intelligently analyzing lighting to generate High Dynamic Range (HDR) information. In a demo, "Citizen Kane" B&W footage was given unprecedented depth and contrast.',
+                source: 'Columbia University',
+                tags: ['AI修復', '4K', 'HDR', '神經網絡'],
+                cta_text_zh: '觀看AI修復內容',
+                cta_text_en: 'Watch AI-Restored Content',
+                cta_link: 'http://404.world',
+                is_hkaiiff: false
+            },
+            {
+                id: 50,
+                category: 'AI技術',
+                time: '16小時前',
+                title_zh: 'Disney Research展示「風格化神經渲染器」，實時卡通化真人視頻',
+                title_en: 'Disney Research Demos "Stylized Neural Renderer," Turns Live-Action Video into Cartoons in Real-Time',
+                content_zh: '迪士尼研究院（Disney Research）展示了一項名為「風格化神經渲染器」的新技術。該系統能捕捉真人演員的表演，並實時將其渲染成特定風格的卡通角色（如皮克斯風格）。與傳統濾鏡不同，該技術是3D感知的，能正確處理光照和陰影，為未來的實時動畫直播提供了可能。',
+                content_en: 'Disney Research presented a new tech called "Stylized Neural Renderer." The system captures a live-action actor\'s performance and renders it in real-time as a stylized cartoon character (e.g., Pixar-style). Unlike traditional filters, this tech is 3D-aware, correctly handling lighting and shadows, opening possibilities for live animated broadcasts.',
+                source: 'Disney Research',
+                tags: ['迪士尼', '神經渲染', 'AI動畫', '實時渲染'],
+                cta_text_zh: '了解AI動畫趨勢',
+                cta_text_en: 'Learn AI Animation Trends',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 51,
+                category: 'AI技術',
+                time: '18小時前',
+                title_zh: 'AI聲音克隆第一案：女演員起訴某應用未經許可克隆其聲音',
+                title_en: 'First AI Voice Cloning Lawsuit: Actress Sues App for Cloning Her Voice Without Permission',
+                content_zh: '美國一名配音演員正式對一款移動應用提起訴訟，聲稱該應用抓取了她在公共採訪中的聲音片段，並使用AI技術克隆了她的聲音，用於生成該應用內的旁白。這被認為是美國首例針對AI聲音克隆的重大訴訟，其判決結果可能對未來AI聲音的版權和「形象權」產生深遠影響。',
+                content_en: 'A US-based voice actress has filed a lawsuit against a mobile app, claiming it scraped her voice from public interviews and used AI to clone it for in-app narration. This is considered the first major US lawsuit targeting AI voice cloning, and its verdict could have profound implications for future AI voice copyrights and "right of publicity."',
+                source: 'Reuters',
+                tags: ['聲音克隆', '法律訴訟', '版權', 'AI倫理'],
+                cta_text_zh: 'HKAIIFF關注AI倫理',
+                cta_text_en: 'HKAIIFF on AI Ethics',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 52,
+                category: 'AI技術',
+                time: '20小時前',
+                title_zh: 'Pika 2.0推出：支持4K升格和更強的物理模擬',
+                title_en: 'Pika 2.0 Launched: Supports 4K Upscaling and Stronger Physics Simulation',
+                content_zh: 'AI視頻工具Pika Labs宣布推出Pika 2.0。新版本重點提升了生成視頻的質量，增加了AI驅動的4K升格功能。此外，Pika 2.0的物理模擬引擎得到了加強，現在能更準確地處理流體（如水花）和柔性物體（如布料）的運動。Pika CEO稱，他們的目標是追趕Sora在物理真實性方面的表現。',
+                content_en: 'AI video tool Pika Labs announced Pika 2.0. The new version focuses on improving generated video quality, adding AI-driven 4K upscaling. Furthermore, Pika 2.0\'s physics simulation engine is enhanced, now handling motion of fluids (like water splashes) and soft bodies (like cloth) more accurately. Pika\'s CEO stated their goal is to catch up to Sora\'s performance in physical realism.',
+                source: 'Pika Labs',
+                tags: ['Pika 2.0', '4K', '物理模擬', 'AI視頻'],
+                cta_text_zh: '使用AI工具創作',
+                cta_text_en: 'Create with AI Tools',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: false
+            },
+            {
+                id: 53,
+                category: 'AI技術',
+                time: '22小時前',
+                title_zh: 'AI動畫公司Wonder Dynamics被Adobe收購，估值1.5億美元',
+                title_en: 'AI Animation Company Wonder Dynamics Acquired by Adobe for $150M',
+                content_zh: 'Adobe宣布已完成對AI動畫初創公司Wonder Dynamics的收購，交易金額約為1.5億美元。Wonder Dynamics的核心產品是Wonder Studio，它能自動將真人演員的動作捕捉並應用於CG角色，無需動捕服。此次收購將極大增強Adobe在AI視頻和動畫領域的實力，與Runway等對手競爭。',
+                content_en: 'Adobe announced it has completed the acquisition of AI animation startup Wonder Dynamics for approximately $150 million. Wonder Dynamics\' core product, Wonder Studio, automatically captures a live-action actor\'s performance and applies it to a CG character, no mocap suit needed. This acquisition will significantly boost Adobe\'s capabilities in AI video and animation, competing with rivals like Runway.',
+                source: 'TechCrunch',
+                tags: ['Adobe', 'Wonder Dynamics', '收購', 'AI動畫'],
+                cta_text_zh: '關注行業動態',
+                cta_text_en: 'Follow Industry News',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: false
+            },
+            {
+                id: 54,
+                category: 'AI技術',
+                time: '1天前',
+                title_zh: 'Meta發布「協同擴散」模型，視頻生成速度提升5倍',
+                title_en: 'Meta Releases "Collaborative Diffusion" Model, Boosts Video Gen Speed 5x',
+                content_zh: 'Meta AI研究院發布了一種名為「協同擴散」（Collaborative Diffusion）的新型視頻生成架構。該模型通過將生成任務分解給多個小型AI代理協同完成，顯著降低了計算複雜性。實驗結果表明，在保持與Sora相當質量的前提下，其生成視頻的速度提升了近5倍，推理成本大幅降低。',
+                content_en: 'Meta AI Research released a new video generation architecture called "Collaborative Diffusion." The model significantly reduces computational complexity by breaking down the generation task for multiple small AI agents to complete collaboratively. Experimental results show that while maintaining quality comparable to Sora, its video generation speed is increased by nearly 5x, drastically lowering inference costs.',
+                source: 'Meta AI Blog',
+                tags: ['Meta', 'AI視頻','擴散模型','速度提升'],
+                cta_text_zh: '了解AI底層技術',
+                cta_text_en: 'Learn AI Core Tech',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 55,
+                category: 'AI技術',
+                time: '1天前',
+                title_zh: 'Luma AI推出「Gaussian Splatting」編輯器，實時編輯3D場景',
+                title_en: 'Luma AI Launches "Gaussian Splatting" Editor for Real-Time 3D Scene Editing',
+                content_zh: 'Luma AI發布了一款基於3D高斯濾射（Gaussian Splatting）技術的新型場景編輯器。用戶可以使用手機拍攝一段視頻，Luma AI會將其重建為高質量的3D場景。更重要的是，用戶可以在網頁端實時編輯這些場景，如刪除物體、調整光照，為AI電影製作提供了極為便捷的3D場景素材庫。',
+                content_en: 'Luma AI released a new scene editor based on 3D Gaussian Splatting technology. Users can capture a video with their phone, and Luma AI reconstructs it into a high-quality 3D scene. More importantly, users can edit these scenes in real-time on the web, such as deleting objects or adjusting lighting, providing an extremely convenient 3D asset library for AI filmmaking.',
+                source: 'Luma AI',
+                tags: ['Luma AI', 'Gaussian Splatting', '3D重建','場景編輯'],
+                cta_text_zh: '探索3D AI工具',
+                cta_text_en: 'Explore 3D AI Tools',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 56,
+                category: 'AI技術',
+                time: '1天前',
+                title_zh: 'AI動畫工具Plask 3.0：從視頻到3D動畫僅需30秒',
+                title_en: 'AI Animation Tool Plask 3.0: From Video to 3D Animation in Just 30 Seconds',
+                content_zh: 'AI動作捕捉工具Plask發布了3.0版本。新版本極大優化了其AI動捕算法，用戶只需上傳一段普通2D視頻（如手機拍攝的人物跳舞），Plask 3.0能在30秒內提取動作數據並自動應用到用戶的3D模型上，生成流暢的3D動畫。其精度相比舊版本提升了40%。',
+                content_en: 'AI motion capture tool Plask released version 3.0. The new version greatly optimizes its AI mocap algorithm. Users just upload a regular 2D video (e.g., phone footage of dancing), and Plask 3.0 can extract motion data and automatically apply it to the user\'s 3D model within 30 seconds, generating smooth 3D animation. Its accuracy is improved by 40% compared to the old version.',
+                source: 'Plask Blog',
+                tags: ['Plask', 'AI動捕', '3D動畫', '效率'],
+                cta_text_zh: '學習AI動捕',
+                cta_text_en: 'Learn AI Mocap',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 57,
+                category: 'AI技術',
+                time: '1天前',
+                title_zh: 'ElevenLabs推新安全措施：克隆聲音需提供「聲音護照」',
+                title_en: 'ElevenLabs Introduces New Security: Voice Cloning Requires "Voice Passport"',
+                content_zh: '為應對日益增長的AI聲音濫用問題，ElevenLabs宣布推出「聲音護照」（Voice Passport）系統。從11月起，用戶若想克隆某個聲音，必須上傳一段該聲音主人的「授權錄音」，錄音中需包含特定口令。ElevenLabs將通過AI比對這段錄音和樣本的聲紋，確保克隆操作獲得了本人的明確授權。',
+                content_en: 'To combat rising AI voice misuse, ElevenLabs announced the "Voice Passport" system. Starting in November, users wanting to clone a voice must upload an "authorization recording" from the voice owner, containing a specific passphrase. ElevenLabs will use AI to compare the voiceprints of the recording and the sample to ensure the cloning is explicitly authorized by the owner.',
+                source: 'ElevenLabs Security',
+                tags: ['ElevenLabs', '聲音克隆', 'AI安全', 'AI倫理'],
+                cta_text_zh: '了解AI倫理標準',
+                cta_text_en: 'Learn AI Ethical Standards',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 58,
+                category: 'AI技術',
+                time: '2天前',
+                title_zh: 'AI視頻生成新趨勢：從「擴散模型」轉向「狀態空間模型」',
+                title_en: 'New Trend in AI Video Gen: Shifting from "Diffusion Models" to "State Space Models"',
+                content_zh: '一篇來自MIT的最新論文指出，當前主流的擴散模型（如Sora）在處理長視頻的邏輯一致性時存在瓶頸。論文提出了一種基於狀態空間模型（SSM）的新架構，該架構能更好地理解時序關係。實驗表明，SSM在生成超過5分鐘的視頻時，其「物體恆常性」錯誤率比擴散模型低60%。',
+                content_en: 'A new paper from MIT suggests that current mainstream diffusion models (like Sora) have bottlenecks in handling logical consistency for long videos. The paper proposes a new architecture based on State Space Models (SSM), which better understands temporal relationships. Experiments show SSMs have a 60% lower "object permanence" error rate than diffusion models when generating videos over 5 minutes.',
+                source: 'MIT CSAIL',
+                tags: ['AI視頻','狀態空間模型','SSM','擴散模型'],
+                cta_text_zh: '深入了解AI技術',
+                cta_text_en: 'Dive into AI Tech',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 59,
+                category: 'AI技術',
+                time: '2天前',
+                title_zh: 'Cascadeur 2.0發布：AI輔助的物理動畫工具',
+                title_en: 'Cascadeur 2.0 Released: AI-Assisted Physics Animation Tool',
+                content_zh: '3D動畫軟件Cascadeur發布了2.0版本。該軟件的核心是其AI輔助工具，能自動處理動畫中的物理校正。動畫師只需設置關鍵幀，AI系統（如AutoPhysics）就會自動計算角色的重心、速度和力，生成符合物理規律的流暢動作，極大減少了手動調整「拖影」和「滑步」的時間。',
+                content_en: '3D animation software Cascadeur released version 2.0. Its core is its AI-assist tools, which automatically handle physics correction in animations. Animators only need to set keyframes, and the AI system (like AutoPhysics) automatically calculates the character\'s center of mass, velocity, and forces, generating smooth, physically accurate motion, drastically reducing time spent manually fixing "ghosting" and "foot sliding."',
+                source: 'Cascadeur',
+                tags: ['Cascadeur', 'AI動畫', '物理模擬', '3D動畫'],
+                cta_text_zh: '學習AI動畫流程',
+                cta_text_en: 'Learn AI Animation Workflow',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 60,
+                category: 'AI技術',
+                time: '2天前',
+                title_zh: 'AI克隆聲音的情感維度不足，Resemble AI推新模型彌補',
+                title_en: 'AI Cloned Voices Lack Emotional Dimension, Resemble AI Launches New Model to Compensate',
+                content_zh: 'AI聲音公司Resemble AI指出，當前聲音克隆在音色上很像，但在情感表達（如諷刺、猶豫）上很欠缺。他們推出了一個新的「語義情感」模型，該模型不僅分析文本，還會分析上下文語義，來決定使用何種情感。例如，在說「太好了」時，AI能分辨是真的高興還是諷刺。',
+                content_en: 'AI voice company Resemble AI notes that current voice cloning is good at timbre but lacks emotional expression (like sarcasm, hesitation). They launched a new "Semantic Emotion" model that analyzes not just text but also context to decide which emotion to use. For example, when saying "Great," the AI can distinguish between genuine happiness and sarcasm.',
+                source: 'Resemble AI',
+                tags: ['Resemble AI', '聲音克隆', '情感AI', '語義分析'],
+                cta_text_zh: '探索AI聲音工具',
+                cta_text_en: 'Explore AI Voice Tools',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
             // 融資動態: 10條
             {
                 id: 61,
@@ -604,40 +1424,173 @@
                 tags: ['Adobe', 'Wonder Dynamics', '收購', '1.5億美元'],
                 cta_text_zh: '了解AI市場格局',
                 cta_text_en: 'Understand AI Market',
-                cta_link: 'http://www.aif.market',
+                cta_link: 'http://aif.market',
                 is_hkaiiff: false
             },
-            // 繼續添加更多融資動態新聞...
-            
+            {
+                id: 62,
+                category: '融資動態',
+                time: '9小時前',
+                title_zh: '專注AI NPC的Inworld AI獲5000萬美元B輪融資，Intel領投',
+                title_en: 'AI NPC-Focused Inworld AI Raises $50M Series B Led by Intel Capital',
+                content_zh: '遊戲AI NPC開發商Inworld AI宣布完成5000萬美元B輪融資，由Intel Capital領投，微軟和三星跟投。Inworld AI的引擎能讓遊戲NPC擁有長期記憶和復雜的情感反應。公司CEO表示，這筆資金將用於擴大與3A遊戲工作室的合作，並研發更低延遲的NPC響應模型。',
+                content_en: 'Game AI NPC developer Inworld AI announced a $50M Series B round led by Intel Capital, with participation from Microsoft and Samsung. Inworld AI\'s engine gives game NPCs long-term memory and complex emotional responses. The CEO said the funds will be used to expand partnerships with AAA game studios and develop lower-latency NPC response models.',
+                source: 'VentureBeat',
+                tags: ['Inworld AI', '融資', '5000萬美元', 'AI NPC'],
+                cta_text_zh: '投資AI遊戲項目',
+                cta_text_en: 'Invest in AI Game Projects',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: false
+            },
+            {
+                id: 63,
+                category: '融資動態',
+                time: '12小時前',
+                title_zh: '前DeepMind團隊創辦AI電影公司「Artisan AI」，獲8000萬美元種子輪融資',
+                title_en: 'Ex-DeepMind Team Founds AI Film Co "Artisan AI," Raises $80M Seed Round',
+                content_zh: '由前谷歌DeepMind研究員創立的新公司Artisan AI今日宣布完成了高達8000萬美元的巨額種子輪融資，領投方為a16z。Artisan AI的目標是建立一個「端到端」的AI電影生成平台，不僅包括視頻生成，還包括AI編劇、AI配樂和AI選角。這筆融資創下了AI電影領域種子輪的新紀錄。',
+                content_en: 'Artisan AI, a new company founded by ex-Google DeepMind researchers, announced a massive $80 million seed round led by a16z. Artisan AI aims to build an "end-to-end" AI film generation platform, including not just video generation, but also AI screenwriting, AI scoring, and AI casting. This funding sets a new record for a seed round in the AI film space.',
+                source: 'The Information',
+                tags: ['Artisan AI', '融資','8000萬美元','DeepMind'],
+                cta_text_zh: '尋找AI潛力項目',
+                cta_text_en: 'Find AI Potential Projects',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: false
+            },
+            {
+                id: 64,
+                category: '融資動態',
+                time: '15小時前',
+                title_zh: 'AI音樂初創公司Suno獲1.25億美元B輪融資，估值達10億美元',
+                title_en: 'AI Music Startup Suno Raises $125M Series B, Reaches $1B Valuation',
+                content_zh: 'AI音樂生成工具Suno宣布完成1.25億美元B輪融資，使其估值達到10億美元，躋身獨角獸行列。Suno以其能同時生成高質量人聲和伴奏而聞名。公司表示，新資金將用於獲取更多音樂版權數據，並改進其人聲模型的自然度和情感表達。',
+                content_en: 'AI music generation tool Suno announced a $125M Series B funding, pushing its valuation to $1 billion, achieving unicorn status. Suno is known for generating high-quality vocals and instruments simultaneously. The company said the new funds will be used to acquire more music rights data and improve its vocal model\'s naturalness and emotional expression.',
+                source: 'Music Business Worldwide',
+                tags: ['Suno', 'AI音樂', '融資','1.25億美元'],
+                cta_text_zh: '了解AI音樂工具',
+                cta_text_en: 'Learn AI Music Tools',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 65,
+                category: '融資動態',
+                time: '1天前',
+                title_zh: '倫敦AI視頻初創Haiper融資3000萬美元，將與Netflix合作',
+                title_en: 'London AI Video Startup Haiper Raises $30M, Partners with Netflix',
+                content_zh: '總部位於倫敦的AI視頻生成公司Haiper宣布獲得3000萬美元A輪融資，由Accel領投。Haiper的技術特點是能生成更長（超過10秒）且保持高度一致性的視頻片段。公司同時確認已與Netflix簽署協議，共同探索AI在長劇集製作中的應用。',
+                content_en: 'London-based AI video generation company Haiper announced $30M in Series A funding led by Accel. Haiper\'s tech is characterized by generating longer (10+ seconds) video clips with high consistency. The company also confirmed a deal with Netflix to explore AI applications in long-form series production.',
+                source: 'Sifted',
+                tags: ['Haiper', '融資', '3000萬美元', 'Netflix'],
+                cta_text_zh: '關注AI電影初創',
+                cta_text_en: 'Follow AI Film Startups',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: false
+            },
+            {
+                id: 66,
+                category: '融資動態',
+                time: '1天前',
+                title_zh: 'AI創意協作平台Krea AI獲4000萬美元A輪融資',
+                title_en: 'AI Creative Collaboration Platform Krea AI Raises $40M Series A',
+                content_zh: 'AI創意工具Krea AI宣布獲得4000萬美元A輪融資。Krea的平台整合了AI圖像生成、AI視頻增強和AI畫布等多種功能，並允許團隊實時協作。新資金將用於開發其「企業級」套件，幫助大型設計和電影工作室建立內部的AI生成工作流。',
+                content_en: 'AI creative tool Krea AI announced $40M in Series A funding. Krea\'s platform integrates AI image generation, AI video enhancement, and an AI canvas, allowing real-time team collaboration. The new funds will be used to develop its "Enterprise Suite" to help large design and film studios build internal AI generation workflows.',
+                source: 'TechCrunch',
+                tags: ['Krea AI', '融資', '4000萬美元', '創意工具'],
+                cta_text_zh: '探索AI協作工具',
+                cta_text_en: 'Explore AI Collab Tools',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 67,
+                category: '融資動態',
+                time: '1天前',
+                title_zh: '創意AI投資降溫？2025年Q3融資額環比下降35%',
+                title_en: 'Creative AI Investment Cooling? Q3 2025 Funding Down 35% QoQ',
+                content_zh: '根據PitchBook最新數據，2025年第三季度，全球針對創意AI（GenAI for creativity）領域的風險投資總額為12億美元，較第二季度的18.5億美元環比下降了35%。分析師指出，儘管Sora等模型引發熱潮，但投資者開始對高昂的算力成本和尚不清晰的商業模式持謹慎態度。',
+                content_en: 'According to new PitchBook data, global VC funding for the Creative AI (GenAI for creativity) sector totaled $1.2 billion in Q3 2025, a 35% decrease from $1.85 billion in Q2. Analysts note that despite the hype from models like Sora, investors are becoming cautious about high compute costs and unclear business models.',
+                source: 'PitchBook',
+                tags: ['AI融資','下降35%','創意AI','投資趨勢'],
+                cta_text_zh: '查看AIF.Market分析',
+                cta_text_en: 'See AIF.Market Analysis',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: false
+            },
+            {
+                id: 68,
+                category: '融資動態',
+                time: '2天前',
+                title_zh: 'AI電影發行平台「CineAI」獲500萬美元種子輪融資',
+                title_en: 'AI Film Distribution Platform "CineAI" Raises $5M Seed Round',
+                content_zh: '一家名為「CineAI」的初創公司獲得了500萬美元種子輪融資，旨在打造一個專門針對AI生成電影的發行和流媒體平台。該平台將使用AI來分析電影內容，並將其精準推送給感興趣的觀眾。這類似於HKAIIFF生態中的404.world平台。',
+                content_en: 'A startup called "CineAI" raised a $5M seed round to build a distribution and streaming platform specifically for AI-generated films. The platform will use AI to analyze film content and precisely target interested audiences, similar to the 404.world platform in the HKAIIFF ecosystem.',
+                source: 'Startup Weekly',
+                tags: ['CineAI', '融資', '500萬美元', 'AI發行'],
+                cta_text_zh: '了解HKAIIFF發行網絡',
+                cta_text_en: 'Learn HKAIIFF Distribution',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: false
+            },
+            {
+                id: 69,
+                category: '融資動態',
+                time: '2天前',
+                title_zh: 'a16z合夥人：AI電影的「iPhone時刻」尚未到來，仍在尋找殺手級應用',
+                title_en: 'a16z Partner: AI Film\'s "iPhone Moment" Hasn\'t Arrived, Still Seeking Killer App',
+                content_zh: 'Andreessen Horowitz (a16z) 的合夥人Connie Chan表示，儘管AI視頻工具進步神速，但AI電影的「iPhone時刻」——即誕生一個真正面向消費者的殺手級應用——尚未到來。她指出，目前大多投資仍集中在B2B工具層，a16z正在積極尋找能讓普通人輕鬆創作AI電影的平台級公司。',
+                content_en: 'Andreessen Horowitz (a16z) partner Connie Chan stated that despite rapid advances in AI video tools, the "iPhone moment" for AI film—a true consumer-facing killer app—has not yet arrived. She noted most investment is still focused on B2B tools, and a16z is actively seeking a platform-level company that allows ordinary people to easily create AI films.',
+                source: 'a16z Blog',
+                tags: ['a16z', '投資', 'AI電影', '殺手級應用'],
+                cta_text_zh: 'HKAIIFF生態打造閉環',
+                cta_text_en: 'HKAIIFF Builds Closed Loop',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: false
+            },
+            {
+                id: 70,
+                category: '融資動態',
+                time: '2天前',
+                title_zh: 'AI視覺特效公司「Catalyst AI」融資2200萬美元，專注替代綠幕',
+                title_en: 'AI VFX Company "Catalyst AI" Raises $22M, Focuses on Green Screen Replacement',
+                content_zh: 'Catalyst AI公司宣布完成2200萬美元A輪融資，其技術專注於使用AI實時替換電影背景，旨在完全替代傳統綠幕。他們的模型能以極高精度處理毛髮和透明物體，且無需預先訓練。資金將用於租用更多H100 GPU以擴大算力。',
+                content_en: 'Catalyst AI announced $22M in Series A funding. Its technology focuses on using AI for real-time background replacement in films, aiming to completely replace traditional green screens. Their model handles hair and transparent objects with extremely high precision, requiring no pre-training. Funds will be used to rent more H100 GPUs to scale compute.',
+                source: 'VFX Voice',
+                tags: ['Catalyst AI', '融資', 'AI特效', '綠幕'],
+                cta_text_zh: '探索AI特效技術',
+                cta_text_en: 'Explore AI VFX Tech',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
             // HKAIIFF生態: 15條
             {
                 id: 71,
                 category: 'HKAIIFF生態',
                 time: '最新',
-                title_zh: '🏆 HKAIIFF首創「AI原生度」評分，40%門檻定義未來電影',
-                title_en: '🏆 HKAIIFF Pioneers "AI-Native Score" with 40% Threshold to Define Future Films',
-                content_zh: '香港AI國際電影節創新建立全球首個AI原生電影評價標準。參賽作品必須達到40%的「AI原生度」門檻，評委會將從概念、劇本、視覺、聲音、剪輯五大維度進行量化評分。這一標準旨在鼓勵創作者深度使用AI，而不僅是將其作為輔助工具，從而推動真正AI驅動的敘事革新。',
-                content_en: 'The Hong Kong AI International Film Festival innovatively establishes the world\'s first AI-native film evaluation standard. Entries must meet a 40% "AI-Native Score" threshold. The jury will quantitatively score based on five dimensions: Concept, Script, Visuals, Audio, and Editing. This standard aims to encourage creators to use AI deeply, not just as a tool, fostering true AI-driven narrative innovation.',
+                title_zh: 'HKAIIFF首創「AI原生度」評分，40%門檻定義未來電影',
+                title_en: 'HKAIIFF Pioneers "AI-Native Score" with 40% Threshold to Define Future Films',
+                content_zh: '香港AI國際電影節（HKAIIFF）創新建立全球首個AI原生電影評價標準。參賽作品必須達到40%的「AI原生度」門檻，評委會將從概念、劇本、視覺、聲音、剪輯五大維度進行量化評分。這一標準旨在鼓勵創作者深度使用AI，而不僅是將其作為輔助工具，從而推動真正AI驅動的敘事革新。',
+                content_en: 'The Hong Kong AI International Film Festival (HKAIIFF) innovatively establishes the world\'s first AI-native film evaluation standard. Entries must meet a 40% "AI-Native Score" threshold. The jury will quantitatively score based on five dimensions: Concept, Script, Visuals, Audio, and Editing. This standard aims to encourage creators to use AI deeply, not just as a tool, fostering true AI-driven narrative innovation.',
                 source: 'HKAIIFF',
                 tags: ['HKAIIFF', 'AI原生度', '評分標準', '40%門檻'],
                 cta_text_zh: '了解評分規則',
                 cta_text_en: 'Learn Rating Rules',
-                cta_link: 'http://www.hkaiiff.org',
+                cta_link: 'http://hkaiiff.org',
                 is_hkaiiff: true
             },
             {
                 id: 72,
                 category: 'HKAIIFF生態',
                 time: '最新',
-                title_zh: '🏆 27個獎項類別！HKAIIFF 2026設250萬美元總獎金池',
-                title_en: '🏆 27 Award Categories! HKAIIFF 2026 Features $2.5 Million Prize Pool',
-                content_zh: '首屆香港AI國際電影節宣布設立高達250萬美元的總獎金池，旨在激勵全球最頂尖的AI電影創作者。電影節共設27個獎項類別，不僅包括「最佳AI長片」、「最佳AI短片」，還細分了「最佳AI導演」、「最佳AI視覺效果」和「最佳AI原生劇本」等專業獎項，是目前全球獎金額度最高的AI電影盛事。',
-                content_en: 'The inaugural Hong Kong AI International Film Festival has announced a total prize pool of $2.5 million, aiming to incentivize the world\'s top AI filmmakers. The festival features 27 award categories, including not only "Best AI Feature" and "Best AI Short," but also specialized awards like "Best AI Director," "Best AI Visual Effects," and "Best AI-Native Screenplay," making it the highest-prize AI film event globally.',
+                title_zh: '27個獎項類別！HKAIIFF 2026設250萬美元總獎金池',
+                title_en: '27 Award Categories! HKAIIFF 2026 Features $2.5 Million Prize Pool',
+                content_zh: '首屆香港AI國際電影節（2026）宣布設立高達250萬美元的總獎金池，旨在激勵全球最頂尖的AI電影創作者。電影節共設27個獎項類別，不僅包括「最佳AI長片」、「最佳AI短片」，還細分了「最佳AI導演」、「最佳AI視覺效果」和「最佳AI原生劇本」等專業獎項，是目前全球獎金額度最高的AI電影盛事。',
+                content_en: 'The inaugural Hong Kong AI International Film Festival (2026) has announced a total prize pool of $2.5 million, aiming to incentivize the world\'s top AI filmmakers. The festival features 27 award categories, including not only "Best AI Feature" and "Best AI Short," but also specialized awards like "Best AI Director," "Best AI Visual Effects," and "Best AI-Native Screenplay," making it the highest-prize AI film event globally.',
                 source: 'HKAIIFF',
                 tags: ['HKAIIFF', '250萬美元', '獎金池', '27個獎項'],
                 cta_text_zh: '立即報名參賽',
                 cta_text_en: 'Apply Now',
-                cta_link: 'http://www.aif.Center',
+                cta_link: 'http://aif.center',
                 is_hkaiiff: true
             },
             {
@@ -652,125 +1605,468 @@
                 tags: ['HKAIIFF', '東西方', '全球樞紐', '香港'],
                 cta_text_zh: '了解電影節願景',
                 cta_text_en: 'Learn Festival Vision',
-                cta_link: 'http://www.hkaiiff.org',
+                cta_link: 'http://hkaiiff.org',
                 is_hkaiiff: true
             },
-            // 繼續添加更多HKAIIFF生態新聞...
-            
+            {
+                id: 74,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: 'AIF代幣五大權益解鎖：不止是門票，更是生態治理權',
+                title_en: 'AIF Token 5 Key Utilities Unlocked: More Than a Ticket, It\'s Governance Power',
+                content_zh: 'HKAIIFF生態代幣AIF不僅是支付工具，更賦予持有者五大核心權益：1. 參賽與購票優惠；2. 對特定獎項（如社區選擇獎）的投票治理權；3. 解鎖404.world平台上的獨家AI內容；4. 優先參與AIF.Market上的電影項目IDO；5. HKAIIFF社區的專屬特權。AIF旨在構建一個由創作者和觀眾共同治理的去中心化影視生態。',
+                content_en: 'The HKAIIFF ecosystem token, AIF, is more than a payment tool; it grants holders 5 core utilities: 1. Discounts on submissions and tickets; 2. Voting governance rights for specific awards (like Community Choice); 3. Unlocking exclusive AI content on 404.world; 4. Priority access to film project IDOs on AIF.Market; 5. Exclusive privileges in the HKAIIFF community. AIF aims to build a decentralized film ecosystem governed by creators and audiences.',
+                source: 'AIF Whitepaper',
+                tags: ['AIF代幣', '五大權益', '投票治理', 'IDO'],
+                cta_text_zh: '購買AIF代幣',
+                cta_text_en: 'Buy AIF Token',
+                cta_link: 'http://genesis.aif.market',
+                is_hkaiiff: true
+            },
+            {
+                id: 75,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: 'AIF代幣經濟模型公布：5億總量，打造通縮與激勵閉環',
+                title_en: 'AIF Tokenomics Released: 500M Total Supply, Building Deflation & Incentive Loop',
+                content_zh: 'AIF代幣總供應量恆定為5億枚。其經濟模型設計精妙，生態系統（如AIF.Market的融資手續費、AIF.Exchange的交易費）產生的收入將有一定比例用於回購和銷毀AIF，形成通縮機制。同時，大部分代幣將用於激勵創作者、電影節獎金池和社區貢獻者，確保生態的長期繁榮。',
+                content_en: 'The total supply of AIF tokens is fixed at 500 million. Its economic model is designed so that a portion of revenue from the ecosystem (e.g., AIF.Market fees, AIF.Exchange trading fees) will be used to buy back and burn AIF, creating a deflationary mechanism. Meanwhile, the majority of tokens will incentivize creators, fund the festival prize pool, and reward community contributors, ensuring long-term prosperity.',
+                source: 'AIF Whitepaper',
+                tags: ['AIF代幣', '經濟模型', '5億', '通縮'],
+                cta_text_zh: '查看代幣經濟學',
+                cta_text_en: 'View Tokenomics',
+                cta_link: 'http://genesis.aif.market',
+                is_hkaiiff: true
+            },
+            {
+                id: 76,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: '一幣通用： AIF代幣打通電影節、市場、學院全生態',
+                title_en: 'One Token, Full Ecosystem: AIF Connects Festival, Market, and Academy',
+                content_zh: 'AIF代幣是貫穿HKAIIFF四大板塊的唯一價值媒介。創作者使用AIF支付AIF.Center的參賽費；投資者使用AIF在AIF.Market參與電影融資；交易者在AIF.Exchange上交易影視內容代幣；學員使用AIF購買AIF.Academy的AI創作課程。這種「一幣通用」的設計極大地增強了AIF的流動性和應用場景。',
+                content_en: 'The AIF token is the sole medium of exchange across all four HKAIIFF pillars. Creators use AIF to pay submission fees on AIF.Center; investors use AIF for film financing on AIF.Market; traders use AIF on AIF.Exchange for content tokens; and students use AIF for AIF.Academy courses. This "One Token, Full Ecosystem" design greatly enhances AIF\'s liquidity and utility.',
+                source: 'HKAIIFF',
+                tags: ['AIF代幣', '一幣通用', '生態閉環', '應用場景'],
+                cta_text_zh: '獲取AIF',
+                cta_text_en: 'Get AIF',
+                cta_link: 'http://genesis.aif.market',
+                is_hkaiiff: true
+            },
+            {
+                id: 77,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: 'AIF.Market：全球首個AI電影項目代幣化融資平台',
+                title_en: 'AIF.Market: The World\'s First Tokenized Financing Platform for AI Film Projects',
+                content_zh: '作為HKAIIFF生態核心， AIF.Market為AI電影創作者提供了革命性的融資渠道。優秀的電影項目可以通過平台將其未來收益權或版權代幣化（STO），面向全球AIF持有者進行募資（IDO）。這打破了傳統電影融資的高門檻，讓社區直接投資和支持他們看好的AI電影。',
+                content_en: 'As the core of the HKAIIFF ecosystem, AIF.Market offers a revolutionary financing channel for AI filmmakers. Excellent film projects can tokenize their future revenue rights or copyrights (STO) on the platform, raising funds (IDO) from global AIF holders. This breaks the high barriers of traditional film financing, allowing the community to directly invest in and support the AI films they believe in.',
+                source: 'AIF.Market',
+                tags: ['AIF.Market', '代幣化', 'STO', '電影融資'],
+                cta_text_zh: '探索電影項目',
+                cta_text_en: 'Explore Film Projects',
+                cta_link: 'http://aif.market',
+                is_hkaiiff: true
+            },
+            {
+                id: 78,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: 'AIF.Exchange: 打造AI影視內容代幣的「納斯達克」',
+                title_en: 'AIF.Exchange: Building the "NASDAQ" for AI Film Content Tokens',
+                content_zh: 'AIF.Exchange是全球首個專注於影視內容代幣的二級交易所。在AIF.Market上成功融資的電影代幣，可以在AIF.Exchange上自由流轉和交易。這為早期投資者提供了退出渠道，也讓電影的價值能被市場實時定價。平台將使用AI監控異常交易，確保市場公平透明。',
+                content_en: 'AIF.Exchange is the world\'s first secondary exchange focused on film content tokens. Film tokens successfully financed on AIF.Market can be freely traded on AIF.Exchange. This provides an exit channel for early investors and allows the market to price films in real-time. The platform will use AI to monitor abnormal trading, ensuring a fair and transparent market.',
+                source: 'AIF.Exchange',
+                tags: ['AIF.Exchange', '二級市場', '內容代幣', '流動性'],
+                cta_text_zh: '查看交易市場',
+                cta_text_en: 'View Exchange',
+                cta_link: 'http://aif.exchange',
+                is_hkaiiff: true
+            },
+            {
+                id: 79,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: 'AIF.Academy: 系統化AI電影課程，培養下一代創作者',
+                title_en: 'AIF.Academy: Systematic AI Film Courses to Cultivate Next-Gen Creators',
+                content_zh: '面對AI工具的快速迭代，AIF.Academy（AI電影學院）應運而生。學院提供從入門到精通的系統化課程，內容涵蓋AI編劇、Sora/Gen-3導演技巧、AI聲音設計到HKAIIFF參賽指導。課程由一線AI藝術家和電影節評委親授，旨在為行業快速培養具備高AI原生度的專業人才。',
+                content_en: 'Facing the rapid iteration of AI tools, AIF.Academy was established. The academy offers systematic courses from beginner to advanced, covering AI screenwriting, Sora/Gen-3 directing techniques, AI sound design, and HKAIIFF submission guidance. Taught by frontline AI artists and festival jurors, the academy aims to rapidly cultivate professionals with high AI-native skills for the industry.',
+                source: 'AIF.Academy',
+                tags: ['AIF.Academy', 'AI課程', '人才培養', 'Sora'],
+                cta_text_zh: '報名AI課程',
+                cta_text_en: 'Enroll in AI Courses',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: true
+            },
+            {
+                id: 80,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: '404.world: HKAIIFF官方AI內容流媒體平台',
+                title_en: '404.world: HKAIIFF\'s Official AI Content Streaming Platform',
+                content_zh: '404.world是HKAIIFF生態中的專屬流媒體平台，專注於放映高品質的AI原生電影和劇集。HKAIIFF的獲獎作品將在此平台獨家首映。AIF代幣持有者可解鎖平台上的付費內容和幕後花絮。404.world旨在為優秀的AI電影提供一個垂直的、高質量的展示窗口，解決其發行難題。',
+                content_en: '404.world is the exclusive streaming platform within the HKAIIFF ecosystem, focusing on high-quality AI-native films and series. HKAIIFF award-winning works will premiere exclusively here. AIF token holders can unlock premium content and behind-the-scenes footage. 404.world aims to provide a vertical, high-quality showcase for excellent AI films, solving their distribution challenges.',
+                source: '404.world',
+                tags: ['404.world', '流媒體', 'AI電影', '獨家首映'],
+                cta_text_zh: '觀看AI電影',
+                cta_text_en: 'Watch AI Films',
+                cta_link: 'http://404.world',
+                is_hkaiiff: true
+            },
+            {
+                id: 81,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: 'HKAIIFF參賽指南：3步完成提交，衝擊250萬美元大獎',
+                title_en: 'HKAIIFF Submission Guide: 3 Steps to Compete for the $2.5M Prize',
+                content_zh: 'HKAIIFF全球征片已開啟，參賽流程僅需3步：1. 訪問AIF.Center官網註冊賬號；2. 準備符合40% AI原生度標準的影片和相關材料（如AI使用聲明）；3. 支付參賽費（使用AIF代幣可享折扣）並提交作品。全球創作者均可報名，截止日期為2026年3月1日。',
+                content_en: 'HKAIIFF global call for entries is open! The submission process takes just 3 steps: 1. Visit AIF.Center to register; 2. Prepare your film meeting the 40% AI-Native standard and required materials (like an AI usage statement); 3. Pay the submission fee (discounted with AIF) and submit. Open to all creators worldwide. Deadline: March 1, 2026.',
+                source: 'AIF.Center',
+                tags: ['HKAIIFF', '參賽指南', 'AIF.Center', '3步提交'],
+                cta_text_zh: '立即參賽',
+                cta_text_en: 'Submit Now',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: true
+            },
+            {
+                id: 82,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: '推薦工具組合：Sora+ElevenLabs+ChatGPT，輕鬆達到60%+ AI原生度',
+                title_en: 'Recommended Tool Stack: Sora + ElevenLabs + ChatGPT to Easily Hit 60%+ AI-Native Score',
+                content_zh: 'HKAIIFF評委會分享了高分AI原生度作品的常用工具組合。推薦使用ChatGPT-4o進行劇本和概念生成（20%），使用Sora或Gen-3生成核心視覺（30%），並使用ElevenLabs或Resemble AI生成全部配音和旁白（10%）。僅此組合即可輕鬆超過60%的原生度，是參賽者的首選工作流。',
+                content_en: 'The HKAIIFF jury shared a common tool stack for high AI-native score films. Recommended workflow: Use ChatGPT-4o for script and concept generation (20%), Sora or Gen-3 for core visuals (30%), and ElevenLabs or Resemble AI for all voice-overs (10%). This combination alone easily surpasses the 60% native score threshold and is the go-to workflow for entrants.',
+                source: 'AIF.Academy',
+                tags: ['AI原生度', '工具組合', 'Sora', 'ElevenLabs'],
+                cta_text_zh: '學習AI工作流',
+                cta_text_en: 'Learn AI Workflow',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: true
+            },
+            {
+                id: 83,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: 'HKAIIFF評委陣容揭曉：包括前奧斯卡評委和AI藝術家',
+                title_en: 'HKAIIFF Jury Lineup Revealed: Includes Former Oscar Jurors & AI Artists',
+                content_zh: 'HKAIIFF 2026評委會陣容強大，包括前奧斯卡最佳外語片評委、多位知名AI藝術家和技術專家。評委會主席表示，他們將嚴格遵循AI原生度評分標準，重點考察作品的創意、技術融合度和情感表達，而非僅僅是技術炫技。',
+                content_en: 'The HKAIIFF 2026 jury lineup is impressive, including former Oscar jurors for Best International Feature, renowned AI artists, and technical experts. The jury chair stated they will strictly follow the AI-Native Score criteria, focusing on creativity, technical integration, and emotional expression, not just technical spectacle.',
+                source: 'HKAIIFF',
+                tags: ['HKAIIFF', '評委陣容', '奧斯卡', 'AI藝術家'],
+                cta_text_zh: '了解評委',
+                cta_text_en: 'Meet the Jury',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: true
+            },
+            {
+                id: 84,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: 'AIF代幣空投活動開啟，前1000名參賽者將獲100 AIF',
+                title_en: 'AIF Token Airdrop Live: First 1000 Submitters Get 100 AIF Each',
+                content_zh: '為鼓勵全球創作者踴躍參與，HKAIIFF宣布啟動AIF代幣空投活動。前1000名成功提交參賽作品的創作者，每人將獲得100枚AIF代幣空投。這些代幣可用於支付參賽費、購買課程或參與AIF.Market的項目融資。空投將在作品審核通過後發放。',
+                content_en: 'To encourage global participation, HKAIIFF has launched an AIF token airdrop. The first 1000 creators who successfully submit their entries will receive an airdrop of 100 AIF tokens each. These tokens can be used for submission fees, purchasing courses, or participating in AIF.Market project financing. Airdrops will be distributed after entry review.',
+                source: 'AIF.Center',
+                tags: ['AIF代幣', '空投', '1000名', '100 AIF'],
+                cta_text_zh: '立即提交作品',
+                cta_text_en: 'Submit Your Work Now',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: true
+            },
+            {
+                id: 85,
+                category: 'HKAIIFF生態',
+                time: '最新',
+                title_zh: 'HKAIIFF 2026合作夥伴公布：包括谷歌、英偉達和OpenAI',
+                title_en: 'HKAIIFF 2026 Partners Announced: Include Google, NVIDIA, and OpenAI',
+                content_zh: 'HKAIIFF 2026迎來首批重量級合作夥伴，包括谷歌AI、英偉達和OpenAI。這些合作夥伴將為電影節提供技術支持、算力贊助和專家資源。英偉達將設立「最佳AI視覺效果」特別獎，谷歌AI則將提供Gemini模型的API額度，幫助參賽者進行AI編劇。',
+                content_en: 'HKAIIFF 2026 has announced its first wave of heavyweight partners, including Google AI, NVIDIA, and OpenAI. These partners will provide technical support, compute sponsorship, and expert resources. NVIDIA will sponsor a special "Best AI Visual Effects" award, while Google AI will provide Gemini model API credits to assist entrants with AI screenwriting.',
+                source: 'HKAIIFF',
+                tags: ['HKAIIFF', '合作夥伴', '谷歌', '英偉達'],
+                cta_text_zh: '查看合作夥伴',
+                cta_text_en: 'See Partners',
+                cta_link: 'http://hkaiiff.org',
+                is_hkaiiff: true
+            },
             // 工具更新: 10條
             {
                 id: 86,
                 category: '工具更新',
                 time: '3小時前',
-                title_zh: 'Adobe Premiere Pro Beta集成OpenAI Sora API',
-                title_en: 'Adobe Premiere Pro Beta Integrates OpenAI Sora API',
-                content_zh: 'Adobe宣布在其Premiere Pro Beta版本中，已首批集成OpenAI的Sora API。剪輯師現在可以在時間線上選定一個片段，右鍵選擇「使用Sora生成擴展內容」，Sora將自動分析前後鏡頭，生成一個長達5秒的過渡鏡頭或擴展鏡頭。這項功能目前僅向部分Creative Cloud企業用戶開放測試。',
-                content_en: 'Adobe announced its Premiere Pro Beta version is among the first to integrate OpenAI\'s Sora API. Editors can now right-click a clip on the timeline and select "Generate Extension with Sora." Sora will automatically analyze the preceding and following shots to generate a transition or extension shot up to 5 seconds long. This feature is currently in testing for select Creative Cloud enterprise users.',
-                source: 'Adobe Blog',
-                tags: ['Adobe', 'Premiere Pro', 'Sora', 'AI剪輯'],
-                cta_text_zh: '學習AI剪輯流程',
-                cta_text_en: 'Learn AI Editing Flow',
-                cta_link: 'http://www.HKAIFA.Academy',
+                title_zh: 'Midjourney V7發布：新增「故事板模式」和「物理引擎」',
+                title_en: 'Midjourney V7 Released: Adds "Storyboard Mode" and "Physics Engine"',
+                content_zh: 'Midjourney V7正式上線，帶來了兩大核心功能：「故事板模式」允許用戶通過一個提示詞生成4到6格的連續分鏡圖；「物理引擎」則使生成的圖像在光影和物體互動上更符合現實物理規律，如正確的陰影投射和反射。V7在人物手部和復雜構圖的細節上也得到了顯著改善。',
+                content_en: 'Midjourney V7 is officially live, introducing two core features: "Storyboard Mode" allows users to generate a 4 to 6-panel continuous storyboard from a single prompt; the "Physics Engine" makes generated images more physically plausible in lighting, object interaction, like correct shadow casting and reflections. V7 also significantly improves details in hands and complex compositions.',
+                source: 'Midjourney',
+                tags: ['Midjourney V7', '故事板', '物理引擎', 'AI圖像'],
+                cta_text_zh: '學習V7新功能',
+                cta_text_en: 'Learn V7 Features',
+                cta_link: 'http://aif.academy',
                 is_hkaiiff: false
             },
-            // 繼續添加更多工具更新新聞...
-            
-            // 創作者故事: 5條
+            {
+                id: 87,
+                category: '工具更新',
+                time: '6小時前',
+                title_zh: 'ElevenLabs Voice-R：實時情感遷移的聲音克隆工具',
+                title_en: 'ElevenLabs Voice-R: Voice Cloning Tool with Real-Time Emotion Transfer',
+                content_zh: 'ElevenLabs發布了其下一代聲音克隆技術Voice-R。該工具的最大亮點是「情感遷移」功能。用戶可以用自己的聲音（如憤怒地）說一句話，Voice-R可以捕捉這種情感，並將其應用到克隆的聲音上（如某個名人的聲音），同時保持克隆聲音的音色不變。這在遊戲配音和電影ADR中極具潛力。',
+                content_en: 'ElevenLabs launched its next-gen voice cloning tech, Voice-R. Its standout feature is "Emotion Transfer." A user can speak a sentence in their own voice (e.g., angrily), and Voice-R captures that emotion and applies it to a cloned voice (e.g., a celebrity\'s) while preserving the cloned timbre. This holds great potential for game VO and film ADR.',
+                source: 'ElevenLabs',
+                tags: ['ElevenLabs', 'Voice-R', '聲音克隆', '情感遷移'],
+                cta_text_zh: '體驗AI配音',
+                cta_text_en: 'Try AI Dubbing',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 88,
+                category: '工具更新',
+                time: '8小時前',
+                title_zh: 'Pika 2.0發布：支持4K升格和更強的物理模擬',
+                title_en: 'Pika 2.0 Launched: Supports 4K Upscaling and Enhanced Physics Simulation',
+                content_zh: 'AI視頻工具Pika Labs推出2.0版本。新版本重點提升了生成視頻的質量，增加了AI驅動的4K升格功能。此外，Pika 2.0的物理模擬引擎得到了加強，現在能更準確地處理流體（如水花）和柔性物體（如布料）的運動。Pika CEO稱，他們的目標是追趕Sora在物理真實性方面的表現。',
+                content_en: 'AI video tool Pika Labs released version 2.0. The new version focuses on improving generated video quality, adding AI-driven 4K upscaling. Furthermore, Pika 2.0\'s physics simulation engine is enhanced, now handling motion of fluids (like water splashes) and soft bodies (like cloth) more accurately. Pika\'s CEO stated their goal is to catch up to Sora\'s performance in physical realism.',
+                source: 'Pika Labs',
+                tags: ['Pika 2.0', '4K', '物理模擬', 'AI視頻'],
+                cta_text_zh: '使用AI工具創作',
+                cta_text_en: 'Create with AI Tools',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: false
+            },
+            {
+                id: 89,
+                category: '工具更新',
+                time: '10小時前',
+                title_zh: 'Runway Gen-3 Alpha更新：新增「多鏡頭協同」功能',
+                title_en: 'Runway Gen-3 Alpha Update: Adds "Multi-Cam Sync" Feature',
+                content_zh: 'Runway的Gen-3 Alpha版再次更新，增加「多鏡頭協同」（Multi-Cam Sync）功能。導演現在可以設置最多3個虛擬機位（如主鏡頭、特寫、過肩鏡頭），Gen-3將基於同一場景描述同時生成三個視角的視頻，並確保它們在時間和動作上完全同步。這對於製作複雜的對話場景極具價值，效率提升了近200%。',
+                content_en: 'Runway\'s Gen-3 Alpha updates again, adding "Multi-Cam Sync." Directors can now set up to 3 virtual cameras (e.g., master, close-up, over-the-shoulder). Gen-3 will simultaneously generate video from all three perspectives based on the same scene description, ensuring perfect temporal and action synchronization. This is invaluable for producing complex dialogue scenes, boosting efficiency by nearly 200%.',
+                source: 'RunwayML',
+                tags: ['Gen-3', 'Runway', '多鏡頭', '效率提升'],
+                cta_text_zh: '探索AI工具',
+                cta_text_en: 'Explore AI Tools',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: false
+            },
+            {
+                id: 90,
+                category: '工具更新',
+                time: '12小時前',
+                title_zh: 'Adobe Project Neo：AI驅動的3D動畫工具，簡化綁定流程',
+                title_en: 'Adobe Project Neo: AI-Driven 3D Animation Tool Simplifying Rigging',
+                content_zh: '在Adobe MAX 2025上，Adobe展示了Project Neo，一款面向2D動畫師的AI 3D動畫工具。該工具允許動畫師導入2D插畫，AI會自動將其轉換為可綁定的3D模型，並提供基於物理的自然動畫。這大大降低了3D動畫的門檻，傳統上需要數天的綁定工作現在僅需幾分鐘。',
+                content_en: 'At Adobe MAX 2025, Adobe showcased Project Neo, an AI 3D animation tool for 2D animators. It allows animators to import 2D illustrations, which AI automatically converts into riggable 3D models with physics-based natural animation. This significantly lowers the barrier to 3D animation, reducing days of traditional rigging work to minutes.',
+                source: 'Adobe MAX',
+                tags: ['Adobe', 'Project Neo', 'AI動畫', '3D綁定'],
+                cta_text_zh: '學習AI動畫工具',
+                cta_text_en: 'Learn AI Animation Tools',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 91,
+                category: '工具更新',
+                time: '15小時前',
+                title_zh: 'Unity 6正式版發布：深度集成Sentis AI，設備端實時神經渲染',
+                title_en: 'Unity 6 Official Release: Deep Sentis AI Integration, On-Device Real-Time Neural Rendering',
+                content_zh: 'Unity 6正式版今日發布，其最大亮點是深度集成了Sentis AI框架。開發者現在可以直接在Unity編輯器中運行AI模型，無需依賴雲端。Sentis支持設備端（On-Device）實時神經渲染，可顯著提升圖形質量，並用於AI驅動的動畫和物理模擬。此更新旨在讓AI工具在遊戲運行時發揮更大作用。',
+                content_en: 'Unity 6 official release is out, highlighting deep integration with the Sentis AI framework. Developers can now run AI models directly in the Unity editor, no cloud dependency needed. Sentis supports on-device real-time neural rendering, significantly boosting graphics quality and enabling AI-driven animation and physics simulations. This update aims to make AI tools more impactful at game runtime.',
+                source: 'Unity Blog',
+                tags: ['Unity 6', 'Sentis AI', '神經渲染', '設備端AI'],
+                cta_text_zh: '學習AI遊戲開發',
+                cta_text_en: 'Learn AI Game Dev',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 92,
+                category: '工具更新',
+                time: '18小時前',
+                title_zh: 'Unreal Engine 5.5預覽：MetaHuman AI實現實時情感驅動的面部表情',
+                title_en: 'Unreal Engine 5.5 Preview: MetaHuman AI Achieves Real-Time Emotion-Driven Facial Expressions',
+                content_zh: 'Epic Games展示了Unreal Engine 5.5的最新預覽，其中MetaHuman框架集成了新的AI功能。該AI能實時分析語音音調，並驅動MetaHuman角色做出匹配的情感表情，如憤怒、喜悅或悲傷，延遲低於50毫秒。這項技術將使AI NPC的表現力提升到新高度，使對話更具沉浸感。',
+                content_en: 'Epic Games showcased the latest Unreal Engine 5.5 preview, featuring new AI capabilities in the MetaHuman framework. The AI can analyze voice tone in real-time to drive matching emotional facial expressions (like anger, joy, or sadness) in MetaHuman characters, with latency under 50ms. This tech will elevate AI NPC expressiveness to new heights, making dialogue more immersive.',
+                source: 'Unreal Engine Blog',
+                tags: ['UE 5.5', 'MetaHuman', 'AI NPC', '面部表情'],
+                cta_text_zh: '探索AI NPC技術',
+                cta_text_en: 'Explore AI NPC Tech',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 93,
+                category: '工具更新',
+                time: '20小時前',
+                title_zh: 'Luma AI推出「Gaussian Splatting」編輯器，實時編輯3D場景',
+                title_en: 'Luma AI Launches "Gaussian Splatting" Editor for Real-Time 3D Scene Editing',
+                content_zh: 'Luma AI發布了一款基於3D高斯濾射（Gaussian Splatting）技術的新型場景編輯器。用戶可以使用手機拍攝一段視頻，Luma AI會將其重建為高質量的3D場景。更重要的是，用戶可以在網頁端實時編輯這些場景，如刪除物體、調整光照，為AI電影製作提供了極為便捷的3D場景素材庫。',
+                content_en: 'Luma AI released a new scene editor based on 3D Gaussian Splatting technology. Users can capture a video with their phone, and Luma AI reconstructs it into a high-quality 3D scene. More importantly, users can edit these scenes in real-time on the web, such as deleting objects or adjusting lighting, providing an extremely convenient 3D asset library for AI filmmaking.',
+                source: 'Luma AI',
+                tags: ['Luma AI', 'Gaussian Splatting', '3D重建','場景編輯'],
+                cta_text_zh: '探索3D AI工具',
+                cta_text_en: 'Explore 3D AI Tools',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 94,
+                category: '工具更新',
+                time: '22小時前',
+                title_zh: 'AI動畫工具Plask 3.0：從視頻到3D動畫僅需30秒',
+                title_en: 'AI Animation Tool Plask 3.0: From Video to 3D Animation in Just 30 Seconds',
+                content_zh: 'AI動作捕捉工具Plask發布了3.0版本。新版本極大優化了其AI動捕算法，用戶只需上傳一段普通2D視頻（如手機拍攝的人物跳舞），Plask 3.0能在30秒內提取動作數據並自動應用到用戶的3D模型上，生成流暢的3D動畫。其精度相比舊版本提升了40%。',
+                content_en: 'AI motion capture tool Plask released version 3.0. The new version greatly optimizes its AI mocap algorithm. Users just upload a regular 2D video (e.g., phone footage of dancing), and Plask 3.0 can extract motion data and automatically apply it to the user\'s 3D model within 30 seconds, generating smooth 3D animation. Its accuracy is improved by 40% compared to the old version.',
+                source: 'Plask Blog',
+                tags: ['Plask', 'AI動捕', '3D動畫', '效率'],
+                cta_text_zh: '學習AI動捕',
+                cta_text_en: 'Learn AI Mocap',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 95,
+                category: '工具更新',
+                time: '1天前',
+                title_zh: 'Cascadeur 2.0發布：AI輔助的物理動畫工具',
+                title_en: 'Cascadeur 2.0 Released: AI-Assisted Physics Animation Tool',
+                content_zh: '3D動畫軟件Cascadeur發布了2.0版本。該軟件的核心是其AI輔助工具，能自動處理動畫中的物理校正。動畫師只需設置關鍵幀，AI系統（如AutoPhysics）就會自動計算角色的重心、速度和力，生成符合物理規律的流暢動作，極大減少了手動調整「拖影」和「滑步」的時間。',
+                content_en: '3D animation software Cascadeur released version 2.0. Its core is its AI-assist tools, which automatically handle physics correction in animations. Animators only need to set keyframes, and the AI system (like AutoPhysics) automatically calculates the character\'s center of mass, velocity, and forces, generating smooth, physically accurate motion, drastically reducing time spent manually fixing "ghosting" and "foot sliding."',
+                source: 'Cascadeur',
+                tags: ['Cascadeur', 'AI動畫', '物理模擬', '3D動畫'],
+                cta_text_zh: '學習AI動畫流程',
+                cta_text_en: 'Learn AI Animation Workflow',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            // 創作者: 15條
             {
                 id: 96,
                 category: '創作者',
-                time: '8小時前',
-                title_zh: '獨立導演: Sora如何讓我用1000美元拍出「百萬美元」的科幻短片',
-                title_en: 'Indie Director: How Sora Let Me Make a "$1M" Sci-Fi Short for $1000',
-                content_zh: '獨立導演Alex Ramirez在Vimeo上發布了他的5分鐘科幻短片《Quantum Echo》。該片90%的鏡頭由Sora生成。Ramirez分享說，整部電影的製作成本僅為1000美元（主要用於Sora點數和ElevenLabs配音），而呈現的視覺效果堪比百萬美元的製作。他稱：「Sora不是取代導演，而是給了我一個百萬美元的VFX團隊。」',
-                content_en: 'Indie director Alex Ramirez released his 5-min sci-fi short "Quantum Echo" on Vimeo, with 90% of shots generated by Sora. Ramirez shared the film\'s total budget was only $1,000 (mostly for Sora credits and ElevenLabs VO), yet the visuals rival a $1M production. He stated: "Sora isn\'t replacing directors; it\'s giving me a million-dollar VFX team."',
-                source: 'Vimeo Blog',
-                tags: ['創作者','Sora','獨立電影','成本控制'],
-                cta_text_zh: '提交你的Sora作品',
-                cta_text_en: 'Submit Your Sora Film',
-                cta_link: 'http://www.aif.Center',
+                time: '4小時前',
+                title_zh: 'AI藝術家團體「Synthia」使用Sora製作短片，獲HKAIIFF預選提名',
+                title_en: 'AI Artist Collective "Synthia" Uses Sora for Short Film, Gets HKAIIFF Pre-selection Nod',
+                content_zh: '由5名AI藝術家組成的團體「Synthia」宣布，他們使用OpenAI Sora製作的5分鐘短片《量子之夢》已獲得HKAIIFF 2026的預選提名。該團體成員分布在全球不同時區，通過Discord協作，整個項目耗時僅3週。他們表示，AI原生度評分系統是他們選擇深度使用Sora的原因。',
+                content_en: 'The AI artist collective "Synthia," comprising 5 members, announced their 5-minute short film "Quantum Dream," created using OpenAI Sora, has received a pre-selection nod for HKAIIFF 2026. The group, spread across global time zones, collaborated via Discord, completing the project in just 3 weeks. They stated the AI-Native Score system motivated their deep use of Sora.',
+                source: 'Synthia Studio',
+                tags: ['AI藝術家', 'Sora', 'HKAIIFF提名', '協作'],
+                cta_text_zh: '了解HKAIIFF參賽',
+                cta_text_en: 'Learn HKAIIFF Submission',
+                cta_link: 'http://aif.center',
+                is_hkaiiff: false
+            },
+            {
+                id: 97,
+                category: '創作者',
+                time: '7小時前',
+                title_zh: '前皮克斯動畫師轉型AI導演：談Gen-3如何改變工作流',
+                title_en: 'Ex-Pixar Animator Turns AI Director: On How Gen-3 Changes Workflows',
+                content_zh: '曾在皮克斯工作12年的資深動畫師Sarah Chen宣布轉型為全職AI電影導演。她表示，Runway Gen-3的「多鏡頭協同」功能讓她能像在真實片場一樣工作，極大地提升了創作自由度。她正在製作一部名為《記憶邊境》的AI短片，並計劃提交給HKAIIFF。',
+                content_en: 'Sarah Chen, a veteran animator with 12 years at Pixar, announced her transition to a full-time AI film director. She stated Runway Gen-3\'s "Multi-Cam Sync" allows her to work like on a real set, greatly enhancing creative freedom. She is currently producing an AI short titled "Memory Frontier" for submission to HKAIIFF.',
+                source: 'Animation Magazine',
+                tags: ['皮克斯', 'AI導演', 'Gen-3', '工作流'],
+                cta_text_zh: '學習AI導演技巧',
+                cta_text_en: 'Learn AI Directing',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 98,
+                category: '創作者',
+                time: '10小時前',
+                title_zh: '獨立遊戲開發者使用AI PCG，一人打造浩瀚宇宙',
+                title_en: 'Indie Game Dev Uses AI PCG to Build a Vast Universe Solo',
+                content_zh: '獨立遊戲開發者「星雲」在社交媒體上分享了他的新項目《星海漫遊者》。他利用AI程序化生成技術，僅憑一人之力，在6個月內創造了一個包含數百個星系的開放世界。他表示，AI PCG不僅節省了時間，更帶來了許多他自己從未想過的獨特星球設計，極大地激發了創意。',
+                content_en: 'Indie game developer "Nebula" shared his new project "Stellar Wanderer" on social media. Leveraging AI PCG, he single-handedly created an open world with hundreds of galaxies in just 6 months. He said AI PCG not only saved time but also generated unique planet designs he never imagined, greatly inspiring creativity.',
+                source: 'Reddit (r/gamedev)',
+                tags: ['獨立開發', 'AI PCG', '開放世界', '一人開發'],
+                cta_text_zh: '探索AI遊戲開發',
+                cta_text_en: 'Explore AI Game Dev',
+                cta_link: 'http://aif.academy',
+                is_hkaiiff: false
+            },
+            {
+                id: 99,
+                category: '創作者',
+                time: '13小時前',
+                title_zh: 'AI音樂人「Echo」使用Suno製作專輯，登上Spotify新歌榜',
+                title_en: 'AI Musician "Echo" Uses Suno for Album, Hits Spotify New Music Chart',
+                content_zh: 'AI音樂人「Echo」使用Suno AI生成工具創作的專輯《神經元之歌》成功登上Spotify「電子音樂新歌榜」第15位。Echo表示，她主要使用Suno生成旋律和伴奏，然後進行人聲錄製和混音。她認為AI是強大的靈感來源，但最終的藝術表達仍需人類的引導和情感投入。',
+                content_en: 'AI musician "Echo," using the Suno AI tool, has reached #15 on Spotify\'s "Electronic New Music" chart with her album "Songs of Neurons." Echo stated she primarily uses Suno for melody and accompaniment generation, followed by vocal recording and mixing. She believes AI is a powerful inspiration source, but final artistic expression still requires human guidance and emotional input.',
+                source: 'Spotify Charts',
+                tags: ['AI音樂', 'Suno', 'Spotify', '專輯'],
+                cta_text_zh: '聆聽AI音樂',
+                cta_text_en: 'Listen to AI Music',
+                cta_link: 'http://404.world',
+                is_hkaiiff: false
+            },
+            {
+                id: 100,
+                category: '創作者',
+                time: '16小時前',
+                title_zh: '好萊塢編劇擁抱AI：使用ChatGPT進行「腦力激盪」和「劇情反轉」',
+                title_en: 'Hollywood Writers Embrace AI: Use ChatGPT for "Brainstorming" and "Plot Twists"',
+                content_zh: '儘管存在爭議，但一些好萊塢編劇開始公開分享他們使用AI（主要是ChatGPT）輔助創作的經驗。他們用AI來快速生成多個故事開頭、角色設定和意想不到的劇情反轉，然後從中篩選和改編。他們強調，AI是「創意夥伴」而非「替代者」，最終的決策和打磨仍由人類完成。',
+                content_en: 'Despite controversy, some Hollywood writers are openly sharing their experiences using AI (primarily ChatGPT) to assist creation. They use AI to rapidly generate multiple story openings, character settings, and unexpected plot twists, then select and adapt. They emphasize AI is a "creative partner," not a "replacement," with final decisions and polishing done by humans.',
+                source: 'Writers Guild Forum',
+                tags: ['好萊塢', '編劇', 'ChatGPT', '腦力激盪'],
+                cta_text_zh: '學習AI編劇',
+                cta_text_en: 'Learn AI Screenwriting',
+                cta_link: 'http://aif.academy',
                 is_hkaiiff: false
             }
-            // 繼續添加更多創作者故事...
         ];
 
-        // 倒計時計算
-        function updateCountdown() {
-            const targetDate = new Date("2026-05-01T00:00:00"); // 假設HKAIIFF 2026年5月1日開幕
-            const now = new Date();
-            const diffTime = Math.abs(targetDate - now);
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            const daysElement = document.getElementById('countdown-days');
-            if (daysElement) {
-                const daysText = currentLang === 'zh' ? `${diffDays}天` : `${diffDays} Days`;
-                daysElement.textContent = daysText;
-            }
-        }
-
-        function renderNews() {
+        // 渲染新聞卡片
+        function renderNews(category = '全部') {
             const container = document.getElementById('newsContainer');
-            if (!container) return;
-            container.innerHTML = "";
-            const filtered = currentCategory === '全部'
-                ? newsData
-                : newsData.filter(n => n.category === currentCategory);
+            container.innerHTML = '';
 
-            filtered.forEach(news => {
-                const card = document.createElement('article');
+            const filteredNews = category === '全部' ? newsData : newsData.filter(news => news.category === category);
+
+            filteredNews.forEach(news => {
+                const card = document.createElement('div');
                 card.className = `news-card ${news.is_hkaiiff ? 'hkaiiff' : ''}`;
-                card.setAttribute('data-category', news.category);
 
                 const title = currentLang === 'zh' ? news.title_zh : news.title_en;
                 const content = currentLang === 'zh' ? news.content_zh : news.content_en;
                 const cta = currentLang === 'zh' ? news.cta_text_zh : news.cta_text_en;
-                const category_zh = news.category;
-                const category_en = {
-                    'AI電影': 'AI Film',
-                    'AI遊戲': 'AI Game',
-                    'AI技術': 'AI Tech',
-                    '融資動態': 'Funding',
-                    'HKAIIFF生態': 'HKAIIFF Eco',
-                    '工具更新': 'Tools',
-                    '創作者': 'Creators'
-                }[category_zh] || category_zh;
-                const category_name = currentLang === 'zh' ? category_zh : category_en;
 
                 card.innerHTML = `
-                    <div class="card-category">${category_name}</div>
-                    <h2 class="card-title">${title}</h2>
-                    <div class="card-content">${content}</div>
+                    <div class="card-category">${news.category}</div>
+                    <h3 class="card-title">${title}</h3>
+                    <p class="card-content">${content}</p>
                     <div class="card-meta">
-                        <span><i class="fa-solid fa-globe" style="margin-right: 5px;"></i>${news.source}</span>
-                        <span><i class="fa-solid fa-clock" style="margin-right: 5px;"></i>${news.time}</span>
+                        <span>${news.time}</span>
+                        <span>${news.source}</span>
                     </div>
                     <div class="card-tags">
-                        ${news.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+                        ${news.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                     </div>
-                    <a href="${news.cta_link}" class="card-cta" ${news.cta_link.startsWith('http') ? 'target="_blank" rel="noopener noreferrer"' : ''}>${cta} →</a>
                 `;
+
                 container.appendChild(card);
             });
         }
 
-        function filterCategory(cat) {
-            currentCategory = cat;
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.textContent === cat) btn.classList.add('active');
-            });
-            renderNews();
+        // 篩選類別
+        function filterCategory(category) {
+            currentCategory = category;
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderNews(category);
         }
 
+        // 切換語言
         function toggleLanguage() {
-            const btn = document.querySelector('.filter-btn[onclick="toggleLanguage()"]');
             currentLang = currentLang === 'zh' ? 'en' : 'zh';
-            btn.textContent = currentLang === 'zh' ? 'English' : '繁體中文';
-            renderNews();
+            document.querySelector('.navbar-actions .filter-btn').textContent = currentLang === 'zh' ? 'English' : '中文';
+            renderNews(currentCategory);
         }
 
         // 初始化
-        document.addEventListener('DOMContentLoaded', () => {
-            updateCountdown();
+        document.addEventListener('DOMContentLoaded', function() {
             renderNews();
         });
     </script>
