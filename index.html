@@ -75,22 +75,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
         gap: 1rem;
     }
 
     .navbar-logo {
         font-size: 2rem;
         cursor: pointer;
-    }
-
-    .navbar-filters {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-        flex: 1;
-        justify-content: center;
-        min-width: 300px;
     }
 
     .navbar-actions {
@@ -148,7 +138,7 @@
     .main-container {
         max-width: 1600px;
         margin: 0 auto;
-        padding: 0 2rem;
+        padding: 2rem 2rem 0;
         display: grid;
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -164,7 +154,7 @@
     .masonry-container {
         column-count: 1;
         column-gap: 1.5rem;
-        padding: 2rem 0;
+        padding: 0;
         max-width: 1400px;
     }
 
@@ -381,25 +371,12 @@
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-logo logo-font">AIFIPEDIA</div>
-            <div class="navbar-filters">
-                <button class="filter-btn active" onclick="filterCategory('全部')">全部</button>
-                <button class="filter-btn" onclick="filterCategory('產業鏈與未來趨勢')">產業鏈與未來趨勢</button>
-                <button class="filter-btn" onclick="filterCategory('AI原生邏輯與技術發展')">AI原生邏輯與技術發展</button>
-                <button class="filter-btn" onclick="filterCategory('影視發展趨勢與電影節')">影視發展趨勢與電影節</button>
-                <button class="filter-btn" onclick="filterCategory('遊戲發展趨勢')">遊戲發展趨勢</button>
-            </div>
             <div class="navbar-actions">
                 <button class="filter-btn" onclick="toggleLanguage()">English</button>
                 <a href="http://genesis.aif.market" class="aif-buy-btn" target="_blank">購買 AIF</a>
             </div>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <h1 class="hero-title logo-font">AI娛樂產業百科</h1>
-        <p class="hero-subtitle">探索AI如何重塑電影、遊戲與創意產業的未來</p>
-    </div>
 
     <!-- 主內容區 -->
     <div class="main-container">
