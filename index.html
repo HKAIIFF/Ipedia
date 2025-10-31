@@ -462,311 +462,1217 @@
         let currentCategory = '全部';
         let currentLang = 'zh';
 
-        // 新聞數據
+        // 新聞數據 - 更新為PDF中的100條積極資訊
         const newsData = [
-            // 產業鏈與未來趨勢 (約25條)
+            // 產業鏈與未來趨勢 (1-25)
             {
                 id: 1,
                 category: '產業鏈與未來趨勢',
                 time: '2小時前',
-                title_zh: 'PwC 報告：AI 廣告將成娛樂業救星，2029 年營收上看 3.5 兆美元',
-                title_en: 'PwC Report: AI Advertising Will Save Entertainment Industry, Revenue Expected to Reach $3.5 Trillion by 2029',
-                content_zh: '資誠 (PwC) 最新《全球娛樂暨媒體業展望報告》指出，AI 驅動的個性化廣告將是行業未來五年的主要增長引擎。報告強調，在內容成本上升的壓力下，AI 變現能力已成為投資者關注的核心焦點。',
-                content_en: 'PwC\'s latest "Global Entertainment and Media Outlook" report indicates that AI-driven personalized advertising will be the main growth engine for the industry over the next five years. The report emphasizes that under pressure from rising content costs, AI monetization capabilities have become the core focus of investors.',
-                source: 'PwC 報告 / 工商時報',
-                tags: ['PwC', 'AI廣告', '產業趨勢', '營收預測'],
+                title_zh: '市場報告：AI 在 VFX 市場的年複合增長率預計高達 36.1%',
+                title_en: 'Market Report: AI in VFX Market Expected to Grow at 36.1% CAGR',
+                content_zh: '一份來自 GlobeNewswire 的最新市場分析報告指出，AI 在 VFX（視覺效果）市場的規模預計在 2024 年至 2029 年間將擴大 68.4 億美元。這一驚人的增長由對「增強的生產效率」、「超逼真體驗」和「生成式 AI」的強勁需求所驅動。',
+                content_en: 'A latest market analysis report from GlobeNewswire indicates that the AI in VFX market is expected to expand by $6.84 billion between 2024 and 2029. This remarkable growth is driven by strong demand for "enhanced production efficiency", "ultra-realistic experiences", and "generative AI".',
+                source: 'GlobeNewswire',
+                tags: ['VFX', '市場增長', 'AI視覺效果'],
                 is_hkaiiff: false
             },
             {
                 id: 2,
                 category: '產業鏈與未來趨勢',
                 time: '4小時前',
-                title_zh: 'AI 產業進入「產品為先」階段，告別純模型競賽',
-                title_en: 'AI Industry Enters "Product-First" Phase, Moving Beyond Model Competition',
-                content_zh: '易觀分析 (Analysys) 指出，2025 年的 AI 產業焦點已從 2024 年的「誰的模型更大」轉向「誰的產品落地更快」。在娛樂領域，擁有具體場景解決方案（如 AI 剪輯、智能 NPC）的公司更具投資價值。',
-                content_en: 'Analysys points out that the focus of the AI industry in 2025 has shifted from "who has the bigger model" in 2024 to "who can land products faster". In entertainment, companies with specific scenario solutions (such as AI editing, intelligent NPCs) have more investment value.',
-                source: '易觀分析',
-                tags: ['產業趨勢', '產品化', 'AI落地', '投資價值'],
+                title_zh: 'Luma AI 推出 Dream Machine，AI 視頻生成競爭加劇',
+                title_en: 'Luma AI Launches Dream Machine, Intensifying AI Video Generation Competition',
+                content_zh: 'Luma Labs 於 2024 年 6 月 12 日正式推出了其文生視頻模型 Dream Machine。該模型一經發布便因其捕捉逼真運動和電影級運鏡的能力而受到創作者的廣泛讚譽，用戶可以通過文本提示或靜態圖像生成 5 秒鐘的高質量視頻片段。',
+                content_en: 'Luma Labs officially launched its text-to-video model Dream Machine on June 12, 2024. Upon release, it received widespread praise from creators for its ability to capture realistic motion and cinematic camera work, allowing users to generate 5-second high-quality video clips through text prompts or static images.',
+                source: 'Luma AI',
+                tags: ['Dream Machine', '視頻生成', 'Luma AI'],
                 is_hkaiiff: false
             },
             {
                 id: 3,
                 category: '產業鏈與未來趨勢',
                 time: '6小時前',
-                title_zh: '券商看好 AI 漫劇賽道：成本減半、效率提升 80%',
-                title_en: 'Brokerages Bullish on AI Comic Drama Track: Cost Halved, Efficiency Up 80%',
-                content_zh: '據 AASTOCKS 報導，東吳證券分析稱 AI 漫劇（動態漫畫）正迎來爆發期。AI 已將單分鐘成本從 2-5 千元降至 1-2.5 千元，並在分鏡、動效等環節提效 50-80%。IP 持有方如閱文集團被列為潛在受益者。',
-                content_en: 'According to AASTOCKS, DBS Securities analysis shows that AI comic dramas (dynamic comics) are entering an explosive period. AI has reduced per-minute costs from 2-5 thousand yuan to 1-2.5 thousand yuan, improving efficiency by 50-80% in storyboarding, animation effects, etc. IP holders like China Literature are listed as potential beneficiaries.',
-                source: 'AASTOCKS / 東吳證券',
-                tags: ['AI漫劇', '成本降低', '效率提升', '投資機會'],
+                title_zh: 'GDC 2025 趨勢報告發布：VR/AR/MR 創新重塑遊戲體驗',
+                title_en: 'GDC 2025 Trend Report Released: VR/AR/MR Innovation Reshapes Gaming Experience',
+                content_zh: '最新的《2025 年 GDC 趨勢報告》已發布。報告指出，行業的討論焦點正轉向沉浸式技術的創新，這些技術正在重塑遊戲體驗，同時移動和網頁遊戲也在強勢復甦。',
+                content_en: 'The latest "2025 GDC Trend Report" has been released. The report indicates that industry discussions are shifting towards innovations in immersive technologies that are reshaping gaming experiences, while mobile and web games are also making a strong recovery.',
+                source: 'GDC 報告',
+                tags: ['GDC', 'VR/AR', '遊戲趨勢'],
                 is_hkaiiff: false
             },
             {
                 id: 4,
                 category: '產業鏈與未來趨勢',
                 time: '8小時前',
-                title_zh: '《使命召喚》證實使用 AI 創收，生成式資產成新商業模式',
-                title_en: 'Call of Duty Confirms Use of AI for Revenue, Generative Assets Become New Business Model',
-                content_zh: 'DataAgent 分析報告揭示，動視 (Activision) 已在《使命召喚》系列中，使用生成式 AI 製作可解鎖的外觀物品（如呼叫卡）。這些 AI 生成的資產被捆綁在營運商包中出售，為遊戲公司開闢了新的收入來源。',
-                content_en: 'DataAgent analysis report reveals that Activision has used generative AI in the Call of Duty series to create unlockable cosmetic items (such as calling cards). These AI-generated assets are bundled in operator packs for sale, opening up new revenue streams for game companies.',
-                source: 'DataAgent',
-                tags: ['使命召喚', 'AI變現', '商業模式', '遊戲收入'],
+                title_zh: 'NVIDIA 在 GDC 2025 展示 AI 如何賦能遊戲開發',
+                title_en: 'NVIDIA Demonstrates How AI Empowers Game Development at GDC 2025',
+                content_zh: 'NVIDIA 在 GDC 2025 上展示了其最新技術，包括搭載於 GeForce RTX 50 系列的 DLSS 4 和神經渲染技術。NVIDIA 還演示了利用 ACE 技術實現的 AI 驅動 NPC，這些 NPC 能執行複雜的戰術任務，極大增強了遊戲的戰術深度和可玩性。',
+                content_en: 'NVIDIA showcased its latest technologies at GDC 2025, including DLSS 4 and neural rendering technologies featured in the GeForce RTX 50 series. NVIDIA also demonstrated AI-driven NPCs using ACE technology, which can perform complex tactical tasks, greatly enhancing the tactical depth and playability of games.',
+                source: 'NVIDIA',
+                tags: ['NVIDIA', '遊戲開發', 'AI NPC'],
                 is_hkaiiff: false
             },
             {
                 id: 5,
                 category: '產業鏈與未來趨勢',
                 time: '10小時前',
-                title_zh: '台灣 NCC 示警：AI 娛樂產業面臨三大監管挑戰',
-                title_en: 'Taiwan NCC Warning: AI Entertainment Industry Faces Three Major Regulatory Challenges',
-                content_zh: '台灣 NCC 近期發布報告，指出演藝產業導入 AI 需面對「內容創作與權利保護」、「製作流程衝擊」及「行銷倫理」三大課題。報告呼籲建立治理機制，確保 IP 權利清晰度。',
-                content_en: 'Taiwan\'s NCC recently released a report pointing out that the entertainment industry\'s adoption of AI needs to address three major issues: "content creation and rights protection", "production process impact", and "marketing ethics". The report calls for establishing governance mechanisms to ensure IP rights clarity.',
-                source: 'NCC 報告',
-                tags: ['監管', 'IP保護', '倫理', '台灣NCC'],
+                title_zh: '模式分析：AIF.Market 旨在解決電影融資難的百年痛點',
+                title_en: 'Model Analysis: AIF.Market Aims to Solve Century-Old Pain Points in Film Financing',
+                content_zh: 'AIF.Market（香港 AI 電影市場）的區塊鏈平台是為了解決傳統電影產業的結構性問題而設計的。通過區塊鏈技術，該平台旨在解決融資困難和利潤分配不透明這兩大核心痛點，為全球創作者釋放新的資本來源，並通過透明度建立投資者信心。',
+                content_en: 'The blockchain platform of AIF.Market (Hong Kong AI Film Market) is designed to address structural issues in the traditional film industry. Through blockchain technology, the platform aims to solve two core pain points: financing difficulties and opaque profit distribution, unlocking new capital sources for global creators and building investor confidence through transparency.',
+                source: 'AIF.Market 分析',
+                tags: ['AIF.Market', '電影融資', '區塊鏈'],
                 is_hkaiiff: false
             },
             {
                 id: 6,
                 category: '產業鏈與未來趨勢',
                 time: '12小時前',
-                title_zh: '分析師預測：首部全 AI 長片電影將在 3-5 年內問世',
-                title_en: 'Analysts Predict: First Full AI Feature Film Will Debut in 3-5 Years',
-                content_zh: '據《南佛羅里達論壇報》報導，業內分析師預測，一部完全由 AI 生成（包括演員、劇本、場景）的長片電影將在 3-5 年內上映。預計該片將憑藉其「好奇心價值」獲得巨大商業成功，但可能引發好萊塢的「AI fatigue」（AI 疲勞）。',
-                content_en: 'According to the South Florida Tribune, industry analysts predict that a feature film completely generated by AI (including actors, scripts, and scenes) will be released within 3-5 years. The film is expected to achieve great commercial success with its "curiosity value", but may trigger "AI fatigue" in Hollywood.',
-                source: 'South Florida Tribune',
-                tags: ['AI電影', '長片預測', '好萊塢', '產業趨勢'],
+                title_zh: 'Arm 在 GDC 2025 助力打造「終極移動遊戲體驗」',
+                title_en: 'Arm Helps Create "Ultimate Mobile Gaming Experience" at GDC 2025',
+                content_zh: 'Arm 在 GDC 2025 上分享了其如何利用 AI 增強遊戲開發。該公司推出了 Arm Accuracy Super Resolution (ASR) 解決方案，並已通過 Unreal Engine 插件提供，旨在幫助開發者在移動設備上實現更高質量、更流暢的圖形性能。',
+                content_en: 'Arm shared how it uses AI to enhance game development at GDC 2025. The company launched Arm Accuracy Super Resolution (ASR) solution, available through Unreal Engine plugin, aiming to help developers achieve higher quality and smoother graphics performance on mobile devices.',
+                source: 'Arm',
+                tags: ['Arm', '移動遊戲', '圖形性能'],
                 is_hkaiiff: false
             },
             {
                 id: 7,
                 category: '產業鏈與未來趨勢',
                 time: '14小時前',
-                title_zh: 'A16Z 調查：超 60% 遊戲工作室已在「前期製作」中使用 AI',
-                title_en: 'A16Z Survey: Over 60% of Game Studios Already Use AI in "Pre-production"',
-                content_zh: '據 Meshy AI 博客引述 A16Z 的調查，AI 在遊戲開發中的應用已相當普遍。超過 60% 的工作室表示，他們主要在「原型設計」和「前期製作」階段使用 AI 工具來激發創意和簡化流程。',
-                content_en: 'According to Meshy AI blog citing A16Z\'s survey, AI application in game development is already quite common. Over 60% of studios stated they mainly use AI tools in "prototype design" and "pre-production" stages to inspire creativity and simplify workflows.',
-                source: 'Meshy AI / A16Z',
-                tags: ['遊戲開發', 'AI應用', '前期製作', 'A16Z'],
+                title_zh: 'AI 視頻工具對比：Kling 在「時長」上實現關鍵突破',
+                title_en: 'AI Video Tool Comparison: Kling Achieves Key Breakthrough in "Duration"',
+                content_zh: '根據 Clixie.ai 在 2025 年 8 月的分析，快手 (Kuaishou) 的 Kling AI 目前在視頻生成「時長」上處於行業領先，能夠產生 2 分鐘的輸出（並可擴展至 3 分鐘）。這一時長對於敘事性短片和廣告製作至關重要，標誌著 AI 視頻正從「片段」走向「場景」。',
+                content_en: 'According to Clixie.ai analysis in August 2025, Kuaishou\'s Kling AI currently leads the industry in video generation "duration", capable of producing 2-minute outputs (expandable to 3 minutes). This duration is crucial for narrative short films and advertising production, marking AI video\'s transition from "clips" to "scenes".',
+                source: 'Clixie.ai',
+                tags: ['Kling AI', '視頻時長', '敘事視頻'],
                 is_hkaiiff: false
             },
             {
                 id: 8,
                 category: '產業鏈與未來趨勢',
                 time: '16小時前',
-                title_zh: '世界經濟論壇：AI 將顛覆內容發現機制，「搜索」模式面臨挑戰',
-                title_en: 'World Economic Forum: AI Will Disrupt Content Discovery Mechanisms, "Search" Model Faces Challenges',
-                content_zh: 'WEF 在其最新報告中指出，AI 將從根本上改變用戶發現內容的方式。傳統的「關鍵字搜索」將被「AI 驅動的個性化推薦」取代，這對現有流媒體和搜索引擎構成了巨大挑戰。',
-                content_en: 'WEF points out in its latest report that AI will fundamentally change how users discover content. Traditional "keyword search" will be replaced by "AI-driven personalized recommendations", posing enormous challenges to existing streaming and search engines.',
-                source: 'World Economic Forum',
-                tags: ['WEF', '內容發現', 'AI推薦', '產業變革'],
+                title_zh: 'VFX 市場報告：到 2029 年，VFX 市場預計將增長超 150 億美元',
+                title_en: 'VFX Market Report: VFX Market Expected to Grow Over $15 Billion by 2029',
+                content_zh: 'Technavio 的一份市場報告預測，全球 VFX 市場規模在 2024 年至 2029 年間將增長 152.4 億美元，年複合增長率為 17.2%。報告指出，AI 技術在 VFX 渲染中的整合是推動市場增長的關鍵因素之一。',
+                content_en: 'A market report from Technavio predicts that the global VFX market will grow by $15.24 billion between 2024 and 2029, with a CAGR of 17.2%. The report indicates that the integration of AI technology in VFX rendering is one of the key factors driving market growth.',
+                source: 'Technavio',
+                tags: ['VFX市場', '市場預測', 'AI渲染'],
                 is_hkaiiff: false
             },
             {
                 id: 9,
                 category: '產業鏈與未來趨勢',
                 time: '18小時前',
-                title_zh: 'AI 技術應用轉向：從「生成資產」到「自動化流程」',
-                title_en: 'AI Technology Application Shift: From "Generating Assets" to "Automating Workflows"',
-                content_zh: '根據 JETIR.org 的行業研究，AI 在媒體業的應用正進入新階段。除了生成圖像或音樂，AI 正被用於自動化元數據標記、預測分析（如預測劇本的市場反應）和自動化剪輯，實現全流程增效。',
-                content_en: 'According to JETIR.org industry research, AI applications in the media industry are entering a new stage. Beyond generating images or music, AI is being used for automated metadata tagging, predictive analysis (such as predicting script market reactions), and automated editing, achieving full-process efficiency improvements.',
-                source: 'JETIR.org',
-                tags: ['AI應用', '自動化', '流程優化', '技術轉向'],
+                title_zh: 'AI 賦能獨立創作者：Luma AI Dream Machine 推出「Modify」指令',
+                title_en: 'AI Empowers Independent Creators: Luma AI Dream Machine Launches "Modify" Command',
+                content_zh: 'Luma Labs 在 2025 年為其 Dream Machine 平台增加了「Modify with Instructions」新功能。這允許創作者通過自然語言指令來編輯已生成的視頻，極大地降低了後期製作的技術門檻，賦予獨立電影人更強的創意控制力。',
+                content_en: 'Luma Labs added the new "Modify with Instructions" feature to its Dream Machine platform in 2025. This allows creators to edit generated videos through natural language instructions, significantly lowering the technical barriers of post-production and giving independent filmmakers stronger creative control.',
+                source: 'Luma AI',
+                tags: ['Dream Machine', '視頻編輯', '獨立創作者'],
                 is_hkaiiff: false
             },
             {
                 id: 10,
                 category: '產業鏈與未來趨勢',
                 time: '20小時前',
-                title_zh: 'AI 驅動獨立電影繁榮？分析稱好萊塢大廠反面臨風險',
-                title_en: 'AI-Driven Independent Film Boom? Analysis Says Hollywood Studios Face Risks',
-                content_zh: '《南佛羅里達論壇報》分析稱，AI 降低了製作門檻，將為獨立電影製作帶來「前所未有的繁榮」。相反，過度依賴 AI 的好萊塢大廠可能因內容同質化，而面臨觀眾的「AI 疲勞」反噬。',
-                content_en: 'The South Florida Tribune analysis states that AI has lowered production barriers, bringing "unprecedented prosperity" to independent filmmaking. Conversely, Hollywood studios over-relying on AI may face audience "AI fatigue" backlash due to content homogenization.',
-                source: 'South Florida Tribune',
-                tags: ['獨立電影', 'AI機會', '好萊塢風險', '內容同質化'],
+                title_zh: 'Ubisoft 展示「NEO NPC」技術，實現遊戲內動態非腳本對話',
+                title_en: 'Ubisoft Showcases "NEO NPC" Technology, Enabling Dynamic Unscripted Dialogue in Games',
+                content_zh: '遊戲巨頭 Ubisoft 在其最新的技術演示中展示了名為「NEO NPC」的生成式 AI 技術。該技術允許 NPC 脫離預設腳本，根據玩家的行為和遊戲環境，實時生成動態、有記憶的對話和行為，旨在大幅提升遊戲的沉浸感。',
+                content_en: 'Gaming giant Ubisoft showcased generative AI technology called "NEO NPC" in its latest technical demonstration. This technology allows NPCs to break away from preset scripts and generate dynamic, memorable dialogues and behaviors in real-time based on player actions and game environment, aiming to significantly enhance game immersion.',
+                source: 'Ubisoft',
+                tags: ['Ubisoft', 'NEO NPC', '生成式AI'],
                 is_hkaiiff: false
             },
             {
                 id: 11,
                 category: '產業鏈與未來趨勢',
                 time: '22小時前',
-                title_zh: '投資觀察：AI 漫劇 IP 持有方（如閱文）受券商關注',
-                title_en: 'Investment Watch: AI Comic Drama IP Holders (like China Literature) Attract Broker Attention',
-                content_zh: '隨著 AI 漫劇製作成本下降，擁有大量 IP 儲備的公司成為直接受益者。東吳證券在報告中點名中文在線、閱文集團等公司，認為其 IP 價值將被 AI 技術放大。',
-                content_en: 'As AI comic drama production costs decrease, companies with large IP reserves become direct beneficiaries. DBS Securities named companies like China Literature Group in its report, believing their IP value will be amplified by AI technology.',
-                source: 'AASTOCKS',
-                tags: ['投資機會', 'IP價值', '閱文集團', 'AI漫劇'],
+                title_zh: '投資者視角：AlF.Market 的「FilmToken」機制旨在解決電影投資流動性難題',
+                title_en: 'Investor Perspective: AlF.Market\'s "FilmToken" Mechanism Aims to Solve Film Investment Liquidity Challenges',
+                content_zh: '傳統電影投資面臨退出週期長、流動性差的痛點。AlF.Market 提出的「電影專屬代幣 (FilmToken)」機制，允許投資者獲得特定電影未來收益的分享權，並且這些代幣支持在二級市場交易。分析認為，這為早期投資者提供了前所未有的流動性和靈活的退出機制。',
+                content_en: 'Traditional film investment faces pain points of long exit cycles and poor liquidity. The "Film Token" mechanism proposed by AlF.Market allows investors to obtain shares of future revenue from specific films, and these tokens support secondary market trading. Analysis suggests this provides unprecedented liquidity and flexible exit mechanisms for early investors.',
+                source: 'AIF.Market 分析',
+                tags: ['FilmToken', '投資流動性', '區塊鏈'],
                 is_hkaiiff: false
             },
             {
                 id: 12,
                 category: '產業鏈與未來趨勢',
                 time: '1天前',
-                title_zh: '雲遊戲與 AI 結合，或將實現「即時生成」的開放世界',
-                title_en: 'Cloud Gaming Combined with AI May Enable "Real-Time Generated" Open Worlds',
-                content_zh: 'Meshy AI 分析認為，雲遊戲的興起解決了本地硬體的算力瓶頸。這使得 AI 驅動的複雜計算（如即時生成的世界和高度智能的 NPC）成為可能，玩家的體驗將不再受限於預設腳本。',
-                content_en: 'Meshy AI analysis suggests that the rise of cloud gaming solves local hardware computing bottlenecks. This makes AI-driven complex computations (such as real-time generated worlds and highly intelligent NPCs) possible, and player experiences will no longer be limited by preset scripts.',
-                source: 'Meshy AI Blog',
-                tags: ['雲遊戲', 'AI生成', '開放世界', '技術融合'],
+                title_zh: 'AI 音樂初創公司 Suno 完成 1.25 億美元 B 輪融資',
+                title_en: 'AI Music Startup Suno Completes $125 Million Series B Funding',
+                content_zh: '僅憑文本提示即可生成完整歌曲（包括人聲和配器）的 AI 公司 Suno，宣布完成了 1.25 億美元的新一輪融資。此輪融資由 Lightspeed Venture Partners 領投，顯示了資本市場對 AI 音樂生成這一新興賽道的高度看好。',
+                content_en: 'Suno, an AI company capable of generating complete songs (including vocals and instrumentation) from text prompts alone, announced completion of a new $125 million funding round. This round was led by Lightspeed Venture Partners, demonstrating strong capital market optimism for the emerging AI music generation track.',
+                source: 'Suno',
+                tags: ['Suno', 'AI音樂', '融資'],
                 is_hkaiiff: false
             },
             {
                 id: 13,
                 category: '產業鏈與未來趨勢',
                 time: '1天前',
-                title_zh: 'PwC 預測：AI 廣告將補貼內容成本，成媒體業新常態',
-                title_en: 'PwC Predicts: AI Advertising Will Subsidize Content Costs, Becoming New Normal for Media Industry',
-                content_zh: '資誠 (PwC) 美國娛樂與媒體事業全球主管 Bart Spiegel 表示，面對總體經濟壓力，未來娛樂內容的成本將越來越依賴 AI 驅動的高效廣告收入來補貼，這將成為行業新常態。',
-                content_en: 'PwC\'s Global Leader for US Entertainment and Media Bart Spiegel stated that facing macroeconomic pressures, future entertainment content costs will increasingly rely on subsidies from AI-driven efficient advertising revenue, which will become the industry\'s new normal.',
-                source: 'PwC / 工商時報',
-                tags: ['PwC預測', 'AI廣告', '成本補貼', '產業常態'],
+                title_zh: 'VFX 行業報告：AI 攝像 (Roto) 工具使製作效率提升 40%',
+                title_en: 'VFX Industry Report: AI Roto Tools Increase Production Efficiency by 40%',
+                content_zh: '一份來自視覺效果協會 (VES) 的新報告指出，AI 驅動的 Roto（旋轉描摹）和 Inpainting（畫面修復）工具已在行業內迅速普及。這些工具將 VFX 藝術家從繁瑣的重複勞動中解放出來，平均製作效率提升了約 40%。',
+                content_en: 'A new report from the Visual Effects Society (VES) indicates that AI-driven Roto (rotoscoping) and Inpainting tools have rapidly gained popularity within the industry. These tools free VFX artists from tedious repetitive work, increasing average production efficiency by approximately 40%.',
+                source: 'VES 報告',
+                tags: ['VFX', 'Roto工具', '效率提升'],
                 is_hkaiiff: false
             },
             {
                 id: 14,
                 category: '產業鏈與未來趨勢',
                 time: '1天前',
-                title_zh: 'VFX 行業洗牌：AI 工具使獨立工作室能挑戰大廠特效',
-                title_en: 'VFX Industry Reshuffling: AI Tools Enable Independent Studios to Challenge Major Studio Effects',
-                content_zh: 'AI 正在拉平視覺效果 (VFX) 的技術鴻溝。80 Level 上的許多討論表明，Runway、Pika 等 AI 工具使小型團隊和獨立電影人也能實現以往只有大廠才能負擔的 Roto（摳像）和畫面修復。',
-                content_en: 'AI is leveling the technical gap in visual effects (VFX). Many discussions on 80 Level indicate that AI tools like Runway and Pika enable small teams and independent filmmakers to achieve roto (rotoscoping) and frame restoration that previously only major studios could afford.',
-                source: '80 Level',
-                tags: ['VFX', 'AI工具', '獨立工作室', '技術民主化'],
+                title_zh: 'Adobe 演示 Firefly 3 模型，增強對圖像結構和風格的控制力',
+                title_en: 'Adobe Demonstrates Firefly 3 Model, Enhancing Control Over Image Structure and Style',
+                content_zh: 'Adobe 在其年度大會上演示了 Firefly 3 圖像模型。新版本顯著增強了「結構參考」 (Structure Reference) 功能，允許用戶上傳一張圖像作為精確的構圖模板，同時應用全新的風格提示，為商業設計師提供了更高的可控性和商業安全性。',
+                content_en: 'Adobe demonstrated the Firefly 3 image model at its annual conference. The new version significantly enhances the "Structure Reference" function, allowing users to upload an image as a precise composition template while applying new style prompts, providing commercial designers with higher controllability and commercial safety.',
+                source: 'Adobe',
+                tags: ['Adobe', 'Firefly 3', '圖像生成'],
                 is_hkaiiff: false
             },
             {
                 id: 15,
                 category: '產業鏈與未來趨勢',
                 time: '1天前',
-                title_zh: '動視《COD》的啟示：AI 不僅降成本，更能創造新營收',
-                title_en: 'Activision\'s COD Insight: AI Not Only Reduces Costs But Creates New Revenue',
-                content_zh: 'DataAgent 的分析指出，動視在《使命召喚》中使用 AI 生成外觀物品，這一舉措的關鍵不在於節省美術成本，而在於創造了新的、可無限擴展的「數字商品」類別，直接轉化為營收。',
-                content_en: 'DataAgent\'s analysis points out that Activision\'s use of AI-generated cosmetic items in Call of Duty is key not for saving art costs, but for creating new, infinitely scalable "digital goods" categories that directly convert to revenue.',
-                source: 'DataAgent',
-                tags: ['動視', '營收創新', 'AI商業化', '數字商品'],
+                title_zh: '好萊塢六大製片廠成立 AI 研發聯盟，探索聯合採購算力',
+                title_en: 'Hollywood\'s Six Major Studios Form AI R&D Alliance, Explore Joint Computing Power Procurement',
+                content_zh: '為應對高昂的 AI 模型訓練和推理成本，迪士尼、華納兄弟、環球影業等主要製片廠正商討成立 AI 研發聯盟。該聯盟旨在聯合採購 GPU 算力，並共同開發針對電影製作流程（如劇本分析、預覽）的專有模型。',
+                content_en: 'To address the high costs of AI model training and inference, major studios including Disney, Warner Bros., and Universal Pictures are discussing forming an AI R&D alliance. The alliance aims to jointly procure GPU computing power and co-develop proprietary models for film production processes (such as script analysis and previews).',
+                source: '行業動態',
+                tags: ['好萊塢', 'AI聯盟', '算力採購'],
                 is_hkaiiff: false
             },
             {
                 id: 16,
                 category: '產業鏈與未來趨勢',
-                time: '1天前',
-                title_zh: 'AI 娛樂投資轉向：從「底層模型」轉向「垂直應用」',
-                title_en: 'AI Entertainment Investment Shift: From "Foundation Models" to "Vertical Applications"',
-                content_zh: '易觀分析的報告建議投資者，隨著底層模型趨於成熟，2025 年的投資機會更多在於「垂直應用」。例如，專注於 AI 劇本分析、AI 虛擬製片或 AI 遊戲測試的 B2B 公司。',
-                content_en: 'Analysys report advises investors that as foundation models mature, investment opportunities in 2025 are more in "vertical applications". For example, B2B companies focusing on AI script analysis, AI virtual production, or AI game testing.',
-                source: '易觀分析',
-                tags: ['投資趨勢', '垂直應用', 'B2B機會', 'AI商業化'],
+                time: '2天前',
+                title_zh: '獨立遊戲《Nightingale》使用 AI 語音，探索高效敘事方式',
+                title_en: 'Independent Game "Nightingale" Uses AI Voice, Exploring Efficient Narrative Methods',
+                content_zh: 'Inflexion Games 工作室確認其生存遊戲《Nightingale》中的部分 NPC 語音使用了 AI 生成技術以替代「畫外音」。此舉被視為一種在有限預算內，探索豐富遊戲世界敘事和角色多樣性的高效解決方案。',
+                content_en: 'Inflexion Games studio confirmed that some NPC voices in its survival game "Nightingale" use AI generation technology as a substitute for "voice-over". This move is seen as an efficient solution to enrich game world narratives and character diversity within limited budgets.',
+                source: 'Inflexion Games',
+                tags: ['Nightingale', 'AI語音', '遊戲敘事'],
                 is_hkaiiff: false
             },
             {
                 id: 17,
                 category: '產業鏈與未來趨勢',
                 time: '2天前',
-                title_zh: 'AI 智能體 (Agent) 將使遊戲從「被動」轉向「主動交互」',
-                title_en: 'AI Agents Will Transform Games from "Passive" to "Active Interaction"',
-                content_zh: 'AI 技術的下一個突破口被認為是「智能體」(Agent)。在遊戲中，這意味著 NPC 將不再依賴預設腳本，而是能根據玩家行為和環境做出即時、動態的反應，創造獨一無二的劇情。',
-                content_en: 'The next breakthrough in AI technology is considered to be "Agents". In games, this means NPCs will no longer rely on preset scripts, but can make real-time, dynamic responses based on player behavior and environment, creating unique storylines.',
-                source: '易觀分析 / 行業趨勢',
-                tags: ['AI智能體', '遊戲NPC', '動態交互', '技術突破'],
+                title_zh: 'Meta 宣布 Llama 3 開源模型在多項基準測試中表現優異',
+                title_en: 'Meta Announces Llama 3 Open Source Model Performs Excellently in Multiple Benchmarks',
+                content_zh: 'Meta 發布了其 Llama 3 系列開源大模型。其最大的 400B+ 參數版本在 MMLU、GPQA 等多項行業基準測試中表現出色。Meta 強調，開源將加速 AI 安全性和能力的發展，進一步推動 AI 在各行業的應用。',
+                content_en: 'Meta released its Llama 3 series of open-source large models. Its largest 400B+ parameter version performed excellently in multiple industry benchmarks including MMLU and GPQA. Meta emphasized that open source will accelerate the development of AI safety and capabilities, further promoting AI applications across industries.',
+                source: 'Meta',
+                tags: ['Llama 3', '開源模型', '基準測試'],
                 is_hkaiiff: false
             },
             {
                 id: 18,
                 category: '產業鏈與未來趨勢',
                 time: '2天前',
-                title_zh: '券商警告：AI 漫劇雖火熱，仍需警惕 IP 版權風險',
-                title_en: 'Brokerages Warn: Despite AI Comic Drama Heat, Beware of IP Copyright Risks',
-                content_zh: '儘管東吳證券等機構看好 AI 漫劇賽道，但 NCC 等監管機構的報告也發出警告。AI 訓練數據的版權問題，以及生成內容的歸屬問題，仍是該行業未來發展的重大法律隱患。',
-                content_en: 'Despite institutions like DBS Securities being bullish on the AI comic drama track, reports from regulators like NCC also issue warnings. Copyright issues with AI training data and attribution of generated content remain major legal risks for the industry\'s future development.',
-                source: 'AASTOCKS / NCC',
-                tags: ['版權風險', 'IP保護', '法律隱患', 'AI監管'],
+                title_zh: 'Netflix 內部成立 AI 實驗室，專注於個性化內容生成',
+                title_en: 'Netflix Establishes Internal AI Lab Focused on Personalized Content Generation',
+                content_zh: 'Netflix 宣布成立一個新的內部 AI 實驗室，名為「Project Hermes」。該實驗室的任務不僅是優化推薦算法，更將探索利用生成式 AI，為不同用戶群體動態生成「個性化預告片」和「定製化海報」，以提高內容點擊率。',
+                content_en: 'Netflix announced the establishment of a new internal AI lab called "Project Hermes". The lab\'s mission is not only to optimize recommendation algorithms but also to explore using generative AI to dynamically generate "personalized trailers" and "customized posters" for different user groups to improve content click-through rates.',
+                source: 'Netflix',
+                tags: ['Netflix', 'AI實驗室', '個性化內容'],
                 is_hkaiiff: false
             },
             {
                 id: 19,
                 category: '產業鏈與未來趨勢',
                 time: '2天前',
-                title_zh: '世界經濟論壇 (WEF) 呼籲：AI 治理需全球合作',
-                title_en: 'World Economic Forum (WEF) Calls: AI Governance Needs Global Cooperation',
-                content_zh: 'WEF 在其關於 AI 對媒體影響的白皮書中強調，AI 技術是全球性的，單一國家的監管遠遠不夠。論壇呼籲建立全球性的合作框架，共同應對 AI 帶來的虛假信息和版權挑戰。',
-                content_en: 'WEF emphasizes in its white paper on AI\'s impact on media that AI technology is global, and single-country regulation is far from enough. The forum calls for establishing a global cooperation framework to jointly address misinformation and copyright challenges brought by AI.',
-                source: 'World Economic Forum',
-                tags: ['WEF', 'AI治理', '全球合作', '政策框架'],
+                title_zh: 'Epic Games 在 GDC 上展示 Unreal Engine 5.5，集成 AI 行為樹',
+                title_en: 'Epic Games Showcases Unreal Engine 5.5 at GDC, Integrating AI Behavior Trees',
+                content_zh: '在遊戲開發者大會 (GDC) 上，Epic Games 展示了 Unreal Engine 5.5 的新功能。最受關注的是集成了 AI 驅動的行為樹，使開發者能更便捷地創建複雜、動態的 NPC 行為，而無需編寫大量複雜腳本。',
+                content_en: 'At the Game Developers Conference (GDC), Epic Games showcased new features of Unreal Engine 5.5. The most attention-grabbing was the integration of AI-driven behavior trees, enabling developers to more easily create complex, dynamic NPC behaviors without writing extensive complex scripts.',
+                source: 'Epic Games',
+                tags: ['Unreal Engine', 'AI行為樹', '遊戲開發'],
                 is_hkaiiff: false
             },
             {
                 id: 20,
                 category: '產業鏈與未來趨勢',
-                time: '2天前',
-                title_zh: 'PwC 建議：娛樂媒體企業應立即「擁抱新技術」',
-                title_en: 'PwC Recommends: Entertainment Media Companies Should Immediately "Embrace New Technologies"',
-                content_zh: '面對 AI 浪潮，PwC 報告向行業領袖發出明確信號：企業若要滿足日益挑剔的消費者，就需要「持續擁抱新技術與打造專屬內容」，觀望和等待將錯失良機。',
-                content_en: 'Facing the AI wave, PwC\'s report sends a clear signal to industry leaders: companies must "continuously embrace new technologies and create exclusive content" to meet increasingly discerning consumers, and waiting will miss opportunities.',
-                source: 'PwC / 工商時報',
-                tags: ['PwC建議', '技術擁抱', '企業策略', '產業轉型'],
+                time: '3天前',
+                title_zh: 'Midjourney v7 內測版展示：對空間佈局和光影的理解大幅提升',
+                title_en: 'Midjourney v7 Beta Showcase: Significant Improvement in Understanding Spatial Layout and Lighting',
+                content_zh: 'AI 繪畫工具 Midjourney 的 v7 內測版本範圍在社交媒體上流傳。圖片顯示，新版本在處理複雜的空內空間佈局、多光源反射以及人物肢體一致性方面取得了顯著進步，圖像的「物理真實感」再次躍升。',
+                content_en: 'Screenshots of Midjourney v7 beta version circulated on social media. Images show the new version has made significant progress in handling complex interior spatial layouts, multi-light source reflections, and character limb consistency, with image "physical realism" leaping forward again.',
+                source: 'Midjourney',
+                tags: ['Midjourney', 'v7版本', '圖像質量'],
                 is_hkaiiff: false
             },
             {
                 id: 21,
                 category: '產業鏈與未來趨勢',
-                time: '2天前',
-                title_zh: 'PwC 報告的另一面：AI 將加劇媒體行業的「贏家通吃」',
-                title_en: 'PwC Report\'s Other Side: AI Will Intensify Media Industry\'s "Winner Takes All"',
-                content_zh: 'PwC 報告雖預測了行業總營收的增長，但也暗示了風險。能夠負擔得起強大 AI 基礎設施和數據分析能力的大型平台（如 Netflix、Google），將比小型參與者獲得更大的不成比例優勢。',
-                content_en: 'While PwC\'s report predicts industry revenue growth, it also hints at risks. Large platforms that can afford powerful AI infrastructure and data analysis capabilities (like Netflix, Google) will gain disproportionately greater advantages over smaller players.',
-                source: 'PwC 報告',
-                tags: ['贏家通吃', '平台優勢', '市場集中', '產業風險'],
-                is_hkaiiff: false
+                time: '3天前',
+                title_zh: '人才培養：HKAIIFA 旨在培養「跨域複合型人才」',
+                title_en: 'Talent Cultivation: HKAIIFA Aims to Cultivate "Cross-Domain Composite Talents"',
+                content_zh: '香港 AI 電影學院 (HKAIFA) 的核心理念是「技術職能藝術，藝術引領技術」。學院的使命是培養兼具技術專長與藝術視野的「跨域複合型人才」，以滿足 AI 導演、神經敘事設計師等新興職位對人才的迫切需求。',
+                content_en: 'The core philosophy of Hong Kong AI Film Academy (HKAIFA) is "technology serves art, art leads technology". The academy\'s mission is to cultivate "cross-domain composite talents" with both technical expertise and artistic vision to meet the urgent talent demands for emerging positions like AI directors and neural narrative designers.',
+                source: 'HKAIFA',
+                tags: ['HKAIFA', '人才培養', '跨域人才'],
+                is_hkaiiff: true
             },
             {
                 id: 22,
                 category: '產業鏈與未來趨勢',
                 time: '3天前',
-                title_zh: 'PwC 展望：AI 將重塑「家庭娛樂」體驗',
-                title_en: 'PwC Outlook: AI Will Reshape "Home Entertainment" Experience',
-                content_zh: 'PwC 的報告不僅關注廣告，也展望了未來的家庭娛樂。AI 可能會成為家庭娛樂的中樞，整合流媒體、遊戲和智能家居，根據家庭成員的狀態和偏好，主動推薦和創造娛樂體驗。',
-                content_en: 'PwC\'s report not only focuses on advertising but also looks ahead to future home entertainment. AI may become the hub of home entertainment, integrating streaming, gaming, and smart homes, proactively recommending and creating entertainment experiences based on family members\' states and preferences.',
-                source: 'PwC 報告',
-                tags: ['家庭娛樂', 'AI中樞', '智能整合', '未來展望'],
+                title_zh: 'Runway 發布 Gen-3 Alpha 模型，增強對人物動作的控制',
+                title_en: 'Runway Releases Gen-3 Alpha Model, Enhancing Control Over Character Movements',
+                content_zh: 'AI 視頻工具開發商 Runway 推出了其 Gen-3 Alpha 模型。新版本在生成具有複雜動作的人物方面取得了重大 breakthrough，尤其是在保持人物面部特徵和服裝一致性方面。這對於製作虛擬數字人短片至關重要。',
+                content_en: 'AI video tool developer Runway launched its Gen-3 Alpha model. The new version has made significant breakthroughs in generating characters with complex movements, especially in maintaining consistency of facial features and clothing. This is crucial for producing virtual digital human short films.',
+                source: 'Runway',
+                tags: ['Runway', 'Gen-3', '人物動作'],
                 is_hkaiiff: false
             },
             {
                 id: 23,
                 category: '產業鏈與未來趨勢',
                 time: '3天前',
-                title_zh: '易觀分析：AI 娛樂的下半場是「生態」競爭',
-                title_en: 'Analysys: Second Half of AI Entertainment is "Ecosystem" Competition',
-                content_zh: '易觀分析認為，AI 娛樂的上半場是「模型」和「工具」的競爭，下半場將是「生態」的競爭。誰能圍繞其 AI 模型建立起最活躍的創作者社區和最完善的變現渠道，誰才能最終勝出。',
-                content_en: 'Analysys believes the first half of AI entertainment was competition over "models" and "tools", and the second half will be "ecosystem" competition. Whoever can build the most active creator community and most complete monetization channels around their AI models will ultimately win.',
-                source: '易觀分析',
-                tags: ['生態競爭', '創作者社區', '變現渠道', '產業趨勢'],
+                title_zh: 'Pika 1.0 推出「Lip Sync」（唇形同步）功能，簡化配音流程',
+                title_en: 'Pika 1.0 Launches "Lip Sync" Function, Simplifying Dubbing Process',
+                content_zh: 'AI 視頻生成工具 Pika 宣布推出「Lip Sync」功能。用戶可以上傳自己的音頻，AI 會自動分析音頻波形，並使視頻中的角色（無論是真人還是卡通）的嘴唇運動與之精確匹配，極大簡化了影視配音和本地化流程。',
+                content_en: 'AI video generation tool Pika announced the launch of "Lip Sync" function. Users can upload their own audio, and AI will automatically analyze the audio waveform and precisely match the lip movements of characters in the video (whether real people or cartoons), greatly simplifying film and television dubbing and localization processes.',
+                source: 'Pika',
+                tags: ['Pika', '唇形同步', '配音'],
                 is_hkaiiff: false
             },
             {
                 id: 24,
                 category: '產業鏈與未來趨勢',
-                time: '3天前',
-                title_zh: '易觀總結：2025 年是 AI 娛樂「場景落地」的關鍵年',
-                title_en: 'Analysys Summary: 2025 is Critical Year for AI Entertainment "Scenario Implementation"',
-                content_zh: '易觀分析的報告總結稱，2025 年將是 AI 娛樂從「概念」走向「現實」的關鍵一年。市場將會淘汰掉只講故事的 AI 公司，而那些能拿出具體產品、解決真實場景痛點（降本、增效、創收）的公司將脫穎而出。',
-                content_en: 'Analysys report summarizes that 2025 will be a critical year for AI entertainment moving from "concept" to "reality". The market will eliminate AI companies that only tell stories, while those that can deliver concrete products and solve real scenario pain points (cost reduction, efficiency improvement, revenue generation) will stand out.',
-                source: '易觀分析',
-                tags: ['2025趨勢', '場景落地', '產品化', '市場淘汰'],
+                time: '4天前',
+                title_zh: '韓國政府宣布投入 5 億美元，扶持本土 AI 娛樂內容生態',
+                title_en: 'South Korean Government Announces $500 Million Investment to Support Local AI Entertainment Content Ecosystem',
+                content_zh: '韓國文化體育觀光部宣布了一項五年計劃，將投入 5 億美元支持 AI 在 K-Pop、韓劇和網絡漫畫 (Webtoons) 領域的应用。設計劃旨在鞏固韓國在全球文化市場的領導地位，並培育 AI 原生內容的出口。',
+                content_en: 'South Korea\'s Ministry of Culture, Sports and Tourism announced a five-year plan to invest $500 million to support AI applications in K-Pop, Korean dramas, and webtoons. The plan aims to consolidate South Korea\'s leadership position in the global cultural market and cultivate the export of AI-native content.',
+                source: '韓國政府',
+                tags: ['韓國', 'AI娛樂', '內容生態'],
                 is_hkaiiff: false
             },
             {
                 id: 25,
                 category: '產業鏈與未來趨勢',
-                time: '3天前',
-                title_zh: '投資者警告:警惕「AI 娛樂」概念的過度炒作',
-                title_en: 'Investor Warning: Beware of Over-Hyping "AI Entertainment" Concepts',
-                content_zh: '儘管 PwC 和券商報告看好前景，但 AASTOCKS 的評論區和 GDC 的氛圍也提醒投資者，目前「AI 娛樂」賽道存在大量泡沫和過度炒作。許多項目可能無法在 3-5 年內實現盈利。',
-                content_en: 'Despite bullish outlooks from PwC and brokerage reports, AASTOCKS comment sections and GDC atmosphere remind investors that the "AI Entertainment" track currently has significant bubbles and over-hype. Many projects may not achieve profitability within 3-5 years.',
-                source: '綜合分析',
-                tags: ['投資警告', '泡沫風險', '過度炒作', '盈利預期'],
+                time: '4天前',
+                title_zh: 'AI 劇本分析工具「Script Analytica」獲 3000 萬美元融資',
+                title_en: 'AI Script Analysis Tool "Script Analytica" Raises $30 Million Funding',
+                content_zh: '一家專注於 AI 劇本分析的初創公司 Script Analytics 宣布完成融資。其工具聲稱可以通過分析劇本結構、角色弧光、對白密度和情感曲線，來預測劇本的潛在市場表現和觀眾評分，輔助製片公司進行早期決策。',
+                content_en: 'A startup focused on AI script analysis, Script Analytics, announced completion of funding. Its tool claims to predict scripts\' potential market performance and audience ratings by analyzing script structure, character arcs, dialogue density, and emotional curves, assisting production companies in early decision-making.',
+                source: 'Script Analytica',
+                tags: ['劇本分析', 'AI工具', '融資'],
                 is_hkaiiff: false
             },
 
-            // HKAIIFF 生態內容資訊 (5條，修改為模式分析)
+            // AI原生邏輯與技術發展 (26-50)
+            {
+                id: 26,
+                category: 'AI原生邏輯與技術發展',
+                time: '2小時前',
+                title_zh: '迪士尼研究院展示 FANGS 技術：AI 輔助的動畫牙齒生成',
+                title_en: 'Disney Research Showcases FANGS Technology: AI-Assisted Animation Teeth Generation',
+                content_zh: '迪士尼研究院最新論文展示了一種名為 FANGS (Face Animation Neural Gags) 的 AI 技術。該技術可以根據 3D 角色的面部表情，自動生成高保真、符合解剖學的牙齒、牙齦和舌頭動畫，顯著提高了動畫角色的真實感。',
+                content_en: 'Disney Research\'s latest paper showcases an AI technology called FANGS (Face Animation Neural Gags). This technology can automatically generate high-fidelity, anatomically correct teeth, gums, and tongue animations based on 3D characters\' facial expressions, significantly improving the realism of animated characters.',
+                source: '迪士尼研究院',
+                tags: ['迪士尼', 'FANGS', '動畫技術'],
+                is_hkaiiff: false
+            },
+            {
+                id: 27,
+                category: 'AI原生邏輯與技術發展',
+                time: '4小時前',
+                title_zh: 'AI 輔助的「虛擬場景勘探」（Virtual Scouting）正在節省製片成本',
+                title_en: 'AI-Assisted "Virtual Scouting" Saving Production Costs',
+                content_zh: '傳統電影製作需要在全球範圍內勘探實景。而現在，製片團隊正轉向使用 AI 工具（如 Google Earth Studio 結合 AI 生成）來進行「虛擬場景」。AI 可以根據劇本描述（如「黃昏時的荒蕪沙漠」）生成逼真的虛擬場景，供導演在前期預覽和決策。',
+                content_en: 'Traditional film production requires scouting real locations worldwide. Now, production teams are turning to AI tools (such as Google Earth Studio combined with AI generation) for "virtual scouting". AI can generate realistic virtual scenes based on script descriptions (like "desolate desert at dusk") for directors to preview and make decisions during pre-production.',
+                source: '行業應用',
+                tags: ['虛擬場景', '製片成本', 'AI勘探'],
+                is_hkaiiff: false
+            },
+            {
+                id: 28,
+                category: 'AI原生邏輯與技術發展',
+                time: '6小時前',
+                title_zh: '索尼（Sony）發布「AI 鼓手」工具，可實時跟隨真人吉他手即興演奏',
+                title_en: 'Sony Releases "AI Drummer" Tool That Can Improvise in Real-Time Following Live Guitarist',
+                content_zh: '索尼計算機科學實驗室（CSL）展示了一款 AI 鼓點生成工具。該工具能實時收聽真人吉他手或貝斯手的演奏，分析其風格、節奏和弦變化，並即時生成与之匹配的、富有動態變化的鼓點伴奏。',
+                content_en: 'Sony Computer Science Laboratory (CSL) demonstrated an AI drum beat generation tool. The tool can listen in real-time to live guitarists or bassists\' performances, analyze their style, rhythm, and chord changes, and instantly generate matching drum accompaniments with dynamic variations.',
+                source: '索尼',
+                tags: ['索尼', 'AI鼓手', '音樂生成'],
+                is_hkaiiff: false
+            },
+            {
+                id: 29,
+                category: 'AI原生邏輯與技術發展',
+                time: '8小時前',
+                title_zh: '動畫工作室 Laika（《鬼媽媽》）確認在其新片中「謹慎使用」AI 工具',
+                title_en: 'Animation Studio Laika ("Coraline") Confirms "Cautious Use" of AI Tools in New Film',
+                content_zh: '以定格動畫聞名的 Laika 工作室表示，他們在其最新的定格動畫電影中，已開始「謹慎地」使用 AI 工具，主要用於輔助 VFX 清理（如擦除支架）和生成複雜的背景紋理，同時強調所有角色的核心表演仍 100% 由手工製作。',
+                content_en: 'Laika studio, famous for stop-motion animation, stated they have begun "cautiously" using AI tools in their latest stop-motion film, mainly for assisting VFX cleanup (such as erasing supports) and generating complex background textures, while emphasizing that all characters\' core performances remain 100% handmade.',
+                source: 'Laika',
+                tags: ['Laika', '定格動畫', 'AI工具'],
+                is_hkaiiff: false
+            },
+            {
+                id: 30,
+                category: 'AI原生邏輯與技術發展',
+                time: '10小時前',
+                title_zh: '《連線》雜誌（Wired）宣布將明確標註所有 AI 輔助生成的文章和圖像',
+                title_en: 'Wired Magazine Announces Clear Labeling for All AI-Assisted Generated Articles and Images',
+                content_zh: '面對 AI 內容的泛濫，《連線》雜誌宣佈了新的編輯政策。未來，所有在其網站或雜誌上發表的、在創作過程中（包括構思、寫作、編輯或插圖）使用了生成式 AI 的內容，都將被明確標註，以保證編輯透明度。',
+                content_en: 'Facing the proliferation of AI content, Wired Magazine announced new editorial policies. In the future, all content published on its website or magazine that used generative AI in the creation process (including conception, writing, editing, or illustration) will be clearly labeled to ensure editorial transparency.',
+                source: 'Wired',
+                tags: ['Wired', 'AI標註', '編輯政策'],
+                is_hkaiiff: false
+            },
+            {
+                id: 31,
+                category: 'AI原生邏輯與技術發展',
+                time: '12小時前',
+                title_zh: 'EA Sports 確認《Madden NFL》系列將使用 AI 驅動的「動態解說」',
+                title_en: 'EA Sports Confirms Madden NFL Series Will Use AI-Driven "Dynamic Commentary"',
+                content_zh: 'EA Sports 宣布，未來的《Madden NFL》（麥登橄欖球）遊戲將不再使用預錄的解說音頻。取而代之的是，一個經過體育解說員聲音訓練的 AI 模型，將根據球場上的實時賽況，動態生成「永不重複」的解說評論。',
+                content_en: 'EA Sports announced that future Madden NFL games will no longer use pre-recorded commentary audio. Instead, an AI model trained on sports commentators\' voices will dynamically generate "never-repeating" commentary based on real-time game situations on the field.',
+                source: 'EA Sports',
+                tags: ['EA Sports', '動態解說', 'AI語音'],
+                is_hkaiiff: false
+            },
+            {
+                id: 32,
+                category: 'AI原生邏輯與技術發展',
+                time: '14小時前',
+                title_zh: '行業趨勢：AI 正在重塑「電影預告片」的剪輯方式',
+                title_en: 'Industry Trend: AI Reshaping "Movie Trailer" Editing Methods',
+                content_zh: '電影營銷部門正 increasingly 依賴 AI 來製作預告片。AI 工具可以在幾小時內分析一部 2 小時的電影，識別出所有高光時刻（如爆炸、情感強烈的對白），並自動生成數十個不同風格和時長的預告片版本，以供營銷團隊測試。',
+                content_en: 'Film marketing departments are increasingly relying on AI to produce trailers. AI tools can analyze a 2-hour film in hours, identify all highlight moments (such as explosions, emotionally intense dialogues), and automatically generate dozens of trailer versions with different styles and durations for marketing teams to test.',
+                source: '行業趨勢',
+                tags: ['電影預告', 'AI剪輯', '營銷'],
+                is_hkaiiff: false
+            },
+            {
+                id: 33,
+                category: 'AI原生邏輯與技術發展',
+                time: '16小時前',
+                title_zh: 'AI 驅動的「3D 資產生成」工具（如 Luma AI）大幅縮短遊戲開發週期',
+                title_en: 'AI-Driven "3D Asset Generation" Tools (Like Luma AI) Significantly Shorten Game Development Cycles',
+                content_zh: 'Luma AI 等公司推出的「文本/圖像轉 3D」工具正被獨立遊戲開發者廣泛採用。開發者現在可以通過簡單的提示或一張概念圖，在幾分鐘內生成可用的 3D 遊戲資產，極大縮短了以往需要數天建模和紋理繪製的週期。',
+                content_en: '"Text/Image to 3D" tools launched by companies like Luma AI are being widely adopted by independent game developers. Developers can now generate usable 3D game assets in minutes through simple prompts or a concept image, greatly shortening cycles that previously required days of modeling and texture painting.',
+                source: 'Luma AI',
+                tags: ['3D生成', '遊戲資產', 'Luma AI'],
+                is_hkaiiff: false
+            },
+            {
+                id: 34,
+                category: 'AI原生邏輯與技術發展',
+                time: '18小時前',
+                title_zh: '教育認證分析：AlF.Academy 的區塊鏈證書如何提升可信度',
+                title_en: 'Education Certification Analysis: How AlF.Academy\'s Blockchain Certificates Enhance Credibility',
+                content_zh: 'AlF.Academy（香港 AI 電影學院）的認證體系旨在解決傳統證書的信任問題。其「區塊鏈學歷證書」具有不可篡改的特性。更重要的是，證書不僅證明「學過」，還詳細記錄了「技能構成」和「實際項目記錄」，其作品集和貢獻被永久存儲在鏈上，為雇主提供了可驗證的能力證明。',
+                content_en: 'The certification system of AlF.Academy aims to address trust issues with traditional certificates. Its "blockchain academic certificates" have immutable characteristics. More importantly, certificates not only prove "studied" but also detail "skill composition" and "actual project records", with portfolios and contributions permanently stored on-chain, providing employers with verifiable capability proofs.',
+                source: 'HKAIFA 分析',
+                tags: ['區塊鏈證書', '教育認證', 'HKAIFA'],
+                is_hkaiiff: true
+            },
+            {
+                id: 35,
+                category: 'AI原生邏輯與技術發展',
+                time: '20小時前',
+                title_zh: '谷歌 DeepMind 展示「Gemini 1.5 Pro」的長上下文窗口能力',
+                title_en: 'Google DeepMind Showcases "Gemini 1.5 Pro" Long Context Window Capability',
+                content_zh: 'DeepMind 演示了 Gemini 1.5 Pro 模型的驚人能力。該模型擁有 100 萬 Token 的上下文窗口，使其能夠一次性「閱讀」並理解整部 400 頁的劇本，或一部 1 小時的無聲電影，並準確回答關於其中細節的問題。',
+                content_en: 'DeepMind demonstrated the impressive capabilities of the Gemini 1.5 Pro model. With a 1 million token context window, the model can "read" and understand an entire 400-page script or a 1-hour silent film in one go, accurately answering questions about details within them.',
+                source: 'Google DeepMind',
+                tags: ['Gemini', '上下文窗口', 'AI理解'],
+                is_hkaiiff: false
+            },
+            {
+                id: 36,
+                category: 'AI原生邏輯與技術發展',
+                time: '22小時前',
+                title_zh: 'TikTok 測試「AI 虛擬網紅」功能，允許創作者生成 AI 助手',
+                title_en: 'TikTok Tests "AI Virtual Influencer" Feature, Allowing Creators to Generate AI Assistants',
+                content_zh: 'TikTok 正在測試一項新功能，允許受歡迎的創作者創建自己形象和聲音的「AI 虛擬版本」。這個 AI 助手可以代表創作者 24/7 全天候與粉絲互動、直播帶貨，並自動生成新的短視頻內容。',
+                content_en: 'TikTok is testing a new feature that allows popular creators to create "AI virtual versions" of their own image and voice. This AI assistant can represent creators 24/7 to interact with fans, conduct live commerce, and automatically generate new short video content.',
+                source: 'TikTok',
+                tags: ['TikTok', 'AI網紅', '虛擬助手'],
+                is_hkaiiff: false
+            },
+            {
+                id: 37,
+                category: 'AI原生邏輯與技術發展',
+                time: '1天前',
+                title_zh: '好萊塢編劇（WGA）工會成立 AI 專案組，研究 AI 對編劇「創意輔助」的潛力',
+                title_en: 'Hollywood Writers Guild (WGA) Establishes AI Task Force to Study AI\'s "Creative Assistance" Potential for Writers',
+                content_zh: '在去年的罷工限制了 AI 的「寫作」權利後，WGA（美國編劇工會）近日宣布成立一個新的專案組。該小組的任務是研究 AI 作為「輔助工具」的潛力，例如幫助編劇進行劇情構思、資料搜集和角色背景填充，以探索「人機協作」的邊界。',
+                content_en: 'After last year\'s strike limited AI\'s "writing" rights, the Writers Guild of America (WGA) recently announced establishing a new task force. The group\'s mission is to study AI\'s potential as an "assistive tool", such as helping writers with plot conception, data collection, and character background filling, to explore the boundaries of "human-machine collaboration".',
+                source: 'WGA',
+                tags: ['WGA', 'AI輔助', '編劇'],
+                is_hkaiiff: false
+            },
+            {
+                id: 38,
+                category: 'AI原生邏輯與技術發展',
+                time: '1天前',
+                title_zh: 'AI 創業公司 Haiper 獲 1380 萬美元種子輪融資，專注於視頻中的角色一致性',
+                title_en: 'AI Startup Haiper Raises $13.8 Million Seed Round, Focusing on Character Consistency in Videos',
+                content_zh: '由前 DeepMind 和 TikTok 員工創立的 AI 視頻公司 Haiper 宣布獲得種子輪融資。該公司的技術重點是解決 AI 視頻生成中的核心難點之一：保持角色在不同鏡頭和動作中的「一致性」。',
+                content_en: 'AI video company Haiper, founded by former DeepMind and TikTok employees, announced seed round funding. The company\'s technical focus is solving one of the core difficulties in AI video generation: maintaining character "consistency" across different shots and actions.',
+                source: 'Haiper',
+                tags: ['Haiper', '角色一致性', '視頻生成'],
+                is_hkaiiff: false
+            },
+            {
+                id: 39,
+                category: 'AI原生邏輯與技術發展',
+                time: '1天前',
+                title_zh: '微軟宣布 Xbox 遊戲將整合 AI 內容審核系統',
+                title_en: 'Microsoft Announces Xbox Games Will Integrate AI Content Moderation System',
+                content_zh: '為應對遊戲內語音聊天和用戶生成內容 (UGC) 中的不當行為，微軟宣布將在其 Xbox 平台上部署基於 AI 的實時內容審核系統。該系統能實時監測語音和文本，自動過濾和處罰違規內容。',
+                content_en: 'To address inappropriate behavior in in-game voice chat and user-generated content (UGC), Microsoft announced it will deploy an AI-based real-time content moderation system on its Xbox platform. The system can monitor voice and text in real-time, automatically filtering and penalizing违规 content.',
+                source: '微軟',
+                tags: ['Xbox', '內容審核', 'AI安全'],
+                is_hkaiiff: false
+            },
+            {
+                id: 40,
+                category: 'AI原生邏輯與技術發展',
+                time: '1天前',
+                title_zh: '電影《芙莉歐莎》導演喬治·米勒：AI 是「不可避免的工具」',
+                title_en: 'Furiosa Director George Miller: AI is an "Inevitable Tool"',
+                content_zh: '《瘋狂的麥克斯：芙莉歐莎》的導演喬治·米勒在採訪中表示，AI 就像當年電吉他的發明，是一種「不可避免的工具」。他透露，在他的製作流程中，AI 已被用於快速生成「假設性」的視覺概念，但他強調 AI 缺乏「意圖」，最終決策仍需人類。',
+                content_en: 'Mad Max: Furiosa director George Miller stated in an interview that AI, like the invention of the electric guitar back in the day, is an "inevitable tool". He revealed that in his production process, AI has been used to quickly generate "hypothetical" visual concepts, but he emphasized AI lacks "intent", and final decisions still require humans.',
+                source: '喬治·米勒',
+                tags: ['喬治·米勒', 'AI工具', '電影製作'],
+                is_hkaiiff: false
+            },
+            {
+                id: 41,
+                category: 'AI原生邏輯與技術發展',
+                time: '2天前',
+                title_zh: 'AI 法律科技公司「LegalAI」推出 AI 合同審核工具，瞄準娛樂業',
+                title_en: 'AI Legal Tech Company "LegalAI" Launches AI Contract Review Tool Targeting Entertainment Industry',
+                content_zh: '一家新的 AI 法律科技公司正向好萊塢推廣其 AI 合同審核工具。該工具聲稱可以在幾分鐘內分析演員、編劇的複雜合同，自動識別出其中的「陷阱條款」、「權利歸屬」和「AI 相關限制」，以輔助經紀人和律師談判。',
+                content_en: 'A new AI legal tech company is promoting its AI contract review tool to Hollywood. The tool claims to analyze complex contracts for actors and writers within minutes, automatically identifying "trap clauses", "rights attribution", and "AI-related restrictions" to assist agents and lawyers in negotiations.',
+                source: 'LegalAI',
+                tags: ['LegalAI', '合同審核', '娛樂法律'],
+                is_hkaiiff: false
+            },
+            {
+                id: 42,
+                category: 'AI原生邏輯與技術發展',
+                time: '2天前',
+                title_zh: '亞馬遜工作室（Amazon Studios）發布內部 AI 工具，用於「劇本覆蓋率」分析',
+                title_en: 'Amazon Studios Releases Internal AI Tool for "Script Coverage" Analysis',
+                content_zh: '亞馬遜工作室正在使用一種內部開發的 AI 工具來簡化劇本審閱流程。該工具可以閱讀提交的數千份劇本，並自動生成「劇本覆蓋率」報告，總結劇情、人物關係、情感基調，並評估其是否符合亞馬遜的內容策略。',
+                content_en: 'Amazon Studios is using an internally developed AI tool to streamline script review processes. The tool can read thousands of submitted scripts and automatically generate "script coverage" reports, summarizing plots, character relationships, emotional tones, and assessing whether they align with Amazon\'s content strategy.',
+                source: 'Amazon Studios',
+                tags: ['Amazon Studios', '劇本分析', 'AI工具'],
+                is_hkaiiff: false
+            },
+            {
+                id: 43,
+                category: 'AI原生邏輯與技術發展',
+                time: '2天前',
+                title_zh: '「AI 奧林匹克」競賽舉辦，評估 AI 模型的多模態能力',
+                title_en: '"AI Olympics" Competition Held, Evaluating AI Models\' Multimodal Capabilities',
+                content_zh: '首屆「AI 奧林匹克」（AI Olympics）競賽在線舉行。來自全球的 AI 模型（如 GPT-4o, Llama 3）在一系列複雜的多模態任務中進行比拼，包括理解電影片段中的幽默、根據音樂風格生成匹配的視覺藝術，以及玩複雜的視頻遊戲。',
+                content_en: 'The first "AI Olympics" competition was held online. AI models from around the world (such as GPT-4o, Llama 3) competed in a series of complex multimodal tasks, including understanding humor in film clips, generating matching visual art based on music styles, and playing complex video games.',
+                source: 'AI Olympics',
+                tags: ['AI競賽', '多模態', '模型評估'],
+                is_hkaiiff: false
+            },
+            {
+                id: 44,
+                category: 'AI原生邏輯與技術發展',
+                time: '3天前',
+                title_zh: '虛擬引擎開發商 Unity 宣布裁員 25%，轉型專注於 AI 和核心引擎業務',
+                title_en: 'Virtual Engine Developer Unity Announces 25% Layoffs, Shifting Focus to AI and Core Engine Business',
+                content_zh: '遊戲引擎巨頭 Unity 宣布進行大規模戰略重組，將裁員 25%（約 1800 人）。CEO 表示，此次重組是為了剝離非核心業務（如 Meta Digital 的部分工具），將資源集中在核心引擎的開發以及 AI 驅動的創作工具（如 Sentis 和 Muse）上。',
+                content_en: 'Game engine giant Unity announced a large-scale strategic reorganization, laying off 25% of staff (approximately 1,800 people). The CEO stated this reorganization is to divest non-core businesses (such as some Meta Digital tools) and focus resources on core engine development and AI-driven creation tools (like Sentis and Muse).',
+                source: 'Unity',
+                tags: ['Unity', '戰略重組', 'AI工具'],
+                is_hkaiiff: false
+            },
+            {
+                id: 45,
+                category: 'AI原生邏輯與技術發展',
+                time: '3天前',
+                title_zh: 'AI「數字復活」引發倫理爭議：已故演員哈羅德·雷米斯「回歸」《捉鬼敢死隊》',
+                title_en: 'AI "Digital Resurrection" Sparks Ethical Debate: Deceased Actor Harold Ramis "Returns" in Ghostbusters',
+                content_zh: '在最新的《捉鬼敢死隊》電影中，製作團隊利用 AI 和 CGI 技術，「數字復活」了已故演員哈羅德·雷米斯。儘管獲得了家屬的同意，但這一做法仍在影評界和觀眾中引發了關於「表演權利是否應隨死亡而終止」的倫理辯論。',
+                content_en: 'In the latest Ghostbusters film, the production team used AI and CGI technology to "digitally resurrect" deceased actor Harold Ramis. Despite obtaining family consent, this approach has sparked ethical debates in film criticism circles and among audiences about "whether performance rights should terminate with death".',
+                source: '行業動態',
+                tags: ['數字復活', 'AI倫理', '表演權利'],
+                is_hkaiiff: false
+            },
+            {
+                id: 46,
+                category: 'AI原生邏輯與技術發展',
+                time: '3天前',
+                title_zh: '生態閉環：AIF.Market 如何為 AI 創作者提供全生命週期支持',
+                title_en: 'Ecosystem Closed Loop: How AIF.Market Provides Full Lifecycle Support for AI Creators',
+                content_zh: 'AIF.Market（香港 AI 電影市場）的平台架構旨在覆蓋電影的全生命週期。創作者可以先使用「AI 創作中心」孵化創意；接著通過「區塊鏈融資平台」籌集資金；製作完成後，相關數字資產可在「NFT 市場」交易；最終通過「發行與分紅系統」實現全球發行和自動分紅。',
+                content_en: 'The platform architecture of AIF.Market aims to cover the entire lifecycle of films. Creators can first use the "AI Creation Center" to incubate ideas; then raise funds through the "Blockchain Financing Platform"; after production completion, related digital assets can be traded in the "NFT Market"; finally achieving global distribution and automatic dividends through the "Distribution and Dividend System".',
+                source: 'AIF.Market 分析',
+                tags: ['AIF.Market', '生態閉環', '創作者支持'],
+                is_hkaiiff: true
+            },
+            {
+                id: 47,
+                category: 'AI原生邏輯與技術發展',
+                time: '4天前',
+                title_zh: '開源 AI 繪畫工具 Krita 推出新插件，集成 Stable Diffusion 3',
+                title_en: 'Open Source AI Painting Tool Krita Launches New Plugin, Integrating Stable Diffusion 3',
+                content_zh: '免費開源的數字繪畫軟件 Krita 發行了新插件，允許畫師在軟體內直接調用 Stable Diffusion 3 模型。藝術家可以在自己的草圖層上，通過文本提示讓 AI 進行細化、上色或生成多種變體，實現了「人類繪畫」與「AI 生成」的無縫工作流。',
+                content_en: 'Free open-source digital painting software Krita released a new plugin allowing artists to directly call Stable Diffusion 3 models within the software. Artists can use text prompts on their sketch layers to have AI refine, color, or generate multiple variants, achieving a seamless workflow between "human painting" and "AI generation".',
+                source: 'Krita',
+                tags: ['Krita', 'Stable Diffusion', '開源工具'],
+                is_hkaiiff: false
+            },
+            {
+                id: 48,
+                category: 'AI原生邏輯與技術發展',
+                time: '4天前',
+                title_zh: 'AI 驅動的「敘事廣告」興起：廣告內容可根據觀眾數據動態變化',
+                title_en: 'AI-Driven "Narrative Advertising" Rising: Ad Content Can Dynamically Change Based on Audience Data',
+                content_zh: '廣告行業正利用 AI 製作「敘事廣告」。同一支廣告片，AI 可以根據投放平台（如 TikTok vs. YouTube）和觀眾畫像（如年齡、興趣），實時重新剪輯鏡頭順序、替換背景音樂，甚至改變旁白，以最大化廣告的轉化率。',
+                content_en: 'The advertising industry is using AI to produce "narrative advertising". For the same ad, AI can dynamically re-edit shot sequences, replace background music, and even change narration based on placement platform (e.g., TikTok vs. YouTube) and audience profiles (e.g., age, interests) to maximize ad conversion rates.',
+                source: '廣告行業',
+                tags: ['敘事廣告', 'AI營銷', '個性化'],
+                is_hkaiiff: false
+            },
+            {
+                id: 49,
+                category: 'AI原生邏輯與技術發展',
+                time: '4天前',
+                title_zh: '音樂版權公司 BMI 與 AI 公司達成協議，探索 AI 音樂的版稅分配',
+                title_en: 'Music Rights Company BMI Reaches Agreement with AI Company to Explore AI Music Royalty Distribution',
+                content_zh: '音樂版權巨頭 BMI 宣布與一家 AI 音樂生成平台達成合作試點。該試點旨在探索一種新的版稅分配模型：當用戶使用 AI 生成音樂時，如果 AI 模型的風格受到了某位 BMI 簽約藝術家的顯著影響，該藝術家將能從這首 AI 生成的音樂中獲得一定比例的版稅。',
+                content_en: 'Music rights giant BMI announced a pilot cooperation with an AI music generation platform. The pilot aims to explore a new royalty distribution model: when users generate music with AI, if the AI model\'s style is significantly influenced by a BMI-signed artist, that artist will receive a percentage of royalties from this AI-generated music.',
+                source: 'BMI',
+                tags: ['BMI', 'AI音樂', '版稅分配'],
+                is_hkaiiff: false
+            },
+            {
+                id: 50,
+                category: 'AI原生邏輯與技術發展',
+                time: '5天前',
+                title_zh: '夢工廠動畫公司 (DreamWorks) 利用 AI 優化《功夫熊貓 4》的渲染流程',
+                title_en: 'DreamWorks Animation Uses AI to Optimize Kung Fu Panda 4 Rendering Process',
+                content_zh: '夢工廠動畫團隊透露，在《功夫熊貓 4》的製作中，他們使用了一套內部 AI 系統來優化渲染農場的資源分配。AI 可以預測哪些鏡頭的渲染最為複雜和耗時，並動態調度算力，將總渲染時間縮短了近 20%。',
+                content_en: 'DreamWorks animation team revealed that during Kung Fu Panda 4 production, they used an internal AI system to optimize render farm resource allocation. AI can predict which shots are most complex and time-consuming to render, and dynamically schedule computing power, reducing total rendering time by nearly 20%.',
+                source: 'DreamWorks',
+                tags: ['DreamWorks', '渲染優化', 'AI效率'],
+                is_hkaiiff: false
+            },
+
+            // 影視發展趨勢與電影節 (51-75)
+            {
+                id: 51,
+                category: '影視發展趨勢與電影節',
+                time: '2小時前',
+                title_zh: 'AI 驅動的「自動配樂」工具 Amper Music 被 Shutterstock 收購後關停',
+                title_en: 'AI-Driven "Auto Scoring" Tool Amper Music Shut Down After Shutterstock Acquisition',
+                content_zh: '最早的 AI 音樂生成工具之一 Amper Music，在被圖庫巨頭 Shutterstock 收購後，近日宣布將停止獨立服務。業內人士分析，這標誌著 AI 音樂正從「獨立工具」轉向「大型內容平台的集成功能」，成為巨頭生態的一部分。',
+                content_en: 'Amper Music, one of the earliest AI music generation tools, announced it will discontinue independent service after being acquired by stock image giant Shutterstock. Industry analysts suggest this marks AI music\'s transition from "independent tools" to "integrated features of large content platforms", becoming part of giant ecosystems.',
+                source: '行業動態',
+                tags: ['Amper Music', 'AI音樂', '平台整合'],
+                is_hkaiiff: false
+            },
+            {
+                id: 52,
+                category: '影視發展趨勢與電影節',
+                time: '4小時前',
+                title_zh: '研究：AI 生成的電影海報在 A/B 測試中點擊率更高',
+                title_en: 'Research: AI-Generated Movie Posters Have Higher Click-Through Rates in A/B Testing',
+                content_zh: '一家電影營銷數據公司發布報告稱，在對 50 部電影進行的 A/B 測試中，由 AI 生成的、基於數據分析的海報版本，相比人類設計師製作的傳統海報，平均點擊率（CTR）高出 12%。AI 更擅長組合吸引眼球的元素和色彩搭配。',
+                content_en: 'A film marketing data company released a report stating that in A/B testing of 50 films, AI-generated poster versions based on data analysis had an average 12% higher click-through rate (CTR) compared to traditional posters made by human designers. AI is better at combining eye-catching elements and color combinations.',
+                source: '營銷研究',
+                tags: ['AI海報', 'A/B測試', '點擊率'],
+                is_hkaiiff: false
+            },
+            {
+                id: 53,
+                category: '影視發展趨勢與電影節',
+                time: '6小時前',
+                title_zh: 'DeepMind 開發「SAFE」系統：AI 驅動的代碼安全和漏洞檢測',
+                title_en: 'DeepMind Develops "SAFE" System: AI-Driven Code Security and Vulnerability Detection',
+                content_zh: '谷歌 DeepMind 推出「SAFE」（Security Assessment Framework for Environments）系統。這是一個專門用於檢測和修復代碼漏洞的 AI。遊戲和娛樂 APP 開發者可利用該工具，自動掃描其項目代碼，防止潛在的黑客攻擊和數據泄露。',
+                content_en: 'Google DeepMind launched the "SAFE" (Security Assessment Framework for Environments) system. This is an AI specifically designed to detect and fix code vulnerabilities. Game and entertainment app developers can use this tool to automatically scan their project code, preventing potential hacker attacks and data leaks.',
+                source: 'DeepMind',
+                tags: ['SAFE系統', '代碼安全', '漏洞檢測'],
+                is_hkaiiff: false
+            },
+            {
+                id: 54,
+                category: '影視發展趨勢與電影節',
+                time: '8小時前',
+                title_zh: 'AI 對動畫行業的衝擊：法國動畫工會呼籲政府提供補貼',
+                title_en: 'AI Impact on Animation Industry: French Animation Union Calls for Government Subsidies',
+                content_zh: '面對 AI 技術對動畫製作流程的衝擊，法國動畫工會（Syndicat des Professionnels de l\'Animation）向政府發出呼籲，要求為那些承諾「限制使用 AI」並「保障人類藝術家簡化」的動畫工作室提供專項政府補貼。',
+                content_en: 'Facing AI technology\'s impact on animation production processes, the French Animation Union called on the government to provide special subsidies for animation studios that commit to "limiting AI use" and "safeguarding human artist employment".',
+                source: '法國動畫工會',
+                tags: ['動畫工會', 'AI衝擊', '政府補貼'],
+                is_hkaiiff: false
+            },
+            {
+                id: 55,
+                category: '影視發展趨勢與電影節',
+                time: '10小時前',
+                title_zh: '印度寶萊塢（Bollywood）擁抱 AI：用於低成本電影的「數字群演」',
+                title_en: 'Indian Bollywood Embraces AI: "Digital Extras" for Low-Budget Films',
+                content_zh: '在製作成本敏感的印度電影業，AI 生成的「數字群眾演員」正被廣泛應用於大型歌舞和戰爭場面。製片方不再需要雇佣數百名臨時演員，而是通過 AI 在後期合成逼真的動態人群，大幅節省了製作開支。',
+                content_en: 'In cost-sensitive Indian film industry, AI-generated "digital extras" are widely used in large song and dance sequences and war scenes. Production companies no longer need to hire hundreds of temporary actors, but instead use AI to synthesize realistic dynamic crowds in post-production, significantly saving production costs.',
+                source: '寶萊塢',
+                tags: ['寶萊塢', '數字群演', '成本節約'],
+                is_hkaiiff: false
+            },
+            {
+                id: 56,
+                category: '影視發展趨勢與電影節',
+                time: '12小時前',
+                title_zh: 'AI 輔助的「劇本醫生」：AI 工具幫助編劇檢查劇情邏輯漏洞',
+                title_en: 'AI-Assisted "Script Doctor": AI Tools Help Writers Check Plot Logic Holes',
+                content_zh: '新一代的 AI 編劇輔助軟件（如 WriterDuet 的 AI 功能）正扮演「劇本醫生」的角色。編劇可以上傳草稿，AI 會自動檢查劇本中的「情節漏洞」（Plot Holes）、角色動機是否連貫，以及是否存在「Deus ex machina」（機械降神）式的突兀結尾。',
+                content_en: 'New generation AI screenwriting assistant software (like WriterDuet\'s AI features) are playing the role of "script doctors". Writers can upload drafts, and AI will automatically check for "plot holes" in scripts, whether character motivations are consistent, and if there are abrupt "Deus ex machina" endings.',
+                source: '編劇工具',
+                tags: ['劇本醫生', 'AI編劇', '邏輯檢查'],
+                is_hkaiiff: false
+            },
+            {
+                id: 57,
+                category: '影視發展趨勢與電影節',
+                time: '14小時前',
+                title_zh: '行業影響：HKAIIFF「數字生命」類別預示「合成表演」將成新賽道',
+                title_en: 'Industry Impact: HKAIIFF "Digital Life" Category Predicts "Synthetic Performance" Becoming New Track',
+                content_zh: '香港 AI 國際電影節（HKAIIFF）設立的「數字生命與合成表演類」，專注於 AI 驅動的虛擬角色。這預示著未來的電影藝術可能不再局限於人類表演。對「合成表演」的藝術評估——即 AI 行為邏輯的合理性和情感表現力——將成為一個全新的行業賽道。',
+                content_en: 'The "Digital Life and Synthetic Performance" category established by Hong Kong AI International Film Festival focuses on AI-driven virtual characters. This预示着 future film art may no longer be limited to human performances. Artistic evaluation of "synthetic performance"—namely the rationality of AI behavior logic and emotional expressiveness—will become a completely new industry track.',
+                source: 'HKAIIFF 分析',
+                tags: ['HKAIIFF', '數字生命', '合成表演'],
+                is_hkaiiff: true
+            },
+            {
+                id: 58,
+                category: '影視發展趨勢與電影節',
+                time: '16小時前',
+                title_zh: 'AI 公司 Kinetix 獲 1100 萬美元融資，用於「視頻轉 3D 動畫」',
+                title_en: 'AI Company Kinetix Raises $11 Million for "Video to 3D Animation"',
+                content_zh: 'AI 公司 Kinetix 宣布完成 1100 萬美元融資。其技術僅需一段 2D 視頻，就能自動提取人物的 3D 動作數據，並將其應用於 3D 動畫角色。該工具旨在讓沒有動作捕捉設備的用戶，也能為元宇宙和遊戲快速生成 3D 動畫。',
+                content_en: 'AI company Kinetix announced completion of $11 million funding. Its technology only requires a 2D video to automatically extract 3D motion data of characters and apply it to 3D animated characters. The tool aims to enable users without motion capture equipment to quickly generate 3D animations for metaverse and games.',
+                source: 'Kinetix',
+                tags: ['Kinetix', '3D動畫', '動作捕捉'],
+                is_hkaiiff: false
+            },
+            {
+                id: 59,
+                category: '影視發展趨勢與電影節',
+                time: '18小時前',
+                title_zh: '元宇宙平台 Roblox 推出 AI 驅動的實時聊天翻譯功能',
+                title_en: 'Metaverse Platform Roblox Launches AI-Driven Real-Time Chat Translation Feature',
+                content_zh: '為打破全球玩家的語言障礙，Roblox 平台宣布推出 AI 實時聊天翻譯。該功能支持 16 種語言，玩家使用母語輸入，其他玩家將看到實時翻譯後的文本。此舉旨在增強其全球社區的社交互動性。',
+                content_en: 'To break language barriers for global players, Roblox platform announced the launch of AI real-time chat translation. The feature supports 16 languages—players input in their native language, and other players see real-time translated text. This move aims to enhance social interactivity of its global community.',
+                source: 'Roblox',
+                tags: ['Roblox', '聊天翻譯', 'AI社交'],
+                is_hkaiiff: false
+            },
+            {
+                id: 60,
+                category: '影視發展趨勢與電影節',
+                time: '20小時前',
+                title_zh: '研究：AI 在「色彩分級」（Color Grading）領域的应用',
+                title_en: 'Research: AI Applications in "Color Grading" Field',
+                content_zh: '電影後期製作中的色彩分級極為主觀。新研究表明，AI 系統可以學習頂級調色師的作品風格，並將其作為「濾鏡」應用於新影片。AI 還能自動執行「色彩匹配」任務，確保不同攝影機、不同光線下拍攝的鏡頭，色調保持一致。',
+                content_en: 'Color grading in film post-production is highly subjective. New research shows AI systems can learn top colorists\' work styles and apply them as "filters" to new films. AI can also automatically perform "color matching" tasks, ensuring consistent color tones across shots filmed with different cameras under different lighting conditions.',
+                source: '色彩研究',
+                tags: ['色彩分級', 'AI調色', '後期製作'],
+                is_hkaiiff: false
+            },
+            {
+                id: 61,
+                category: '影視發展趨勢與電影節',
+                time: '22小時前',
+                title_zh: '獨立遊戲開發者利用 AI 生成「程序化音樂」，實現無限變體',
+                title_en: 'Independent Game Developers Use AI to Generate "Procedural Music", Achieving Infinite Variations',
+                content_zh: '為解決獨立遊戲音樂預算有限的問題，開發者正轉向使用 AI 程序化音樂生成器。這些工具可以根據遊戲的當前狀態（如「安全」、「緊張」、「勝利」）生成無限時長的背景音樂，且每次播放都有細微變化，避免了音樂的重複感。',
+                content_en: 'To address limited music budgets for independent games, developers are turning to AI procedural music generators. These tools can generate infinite-duration background music based on the game\'s current state (such as "safe", "tense", "victory"), with subtle variations each play, avoiding musical repetition.',
+                source: '遊戲開發',
+                tags: ['程序化音樂', '遊戲音效', 'AI生成'],
+                is_hkaiiff: false
+            },
+            {
+                id: 62,
+                category: '影視發展趨勢與電影節',
+                time: '1天前',
+                title_zh: 'AI 驅動的「市場預測」：AI 分析社交媒體情緒，預測電影首週末票房',
+                title_en: 'AI-Driven "Market Prediction": AI Analyzes Social Media Sentiment to Predict Movie Opening Weekend Box Office',
+                content_zh: '金融和娛樂業的數據分析公司，正在利用 AI 模型大規模抓取和分析社交媒體（如 X、TikTok）上關於電影預告片的「情緒傾向」。通過分析期待度、負面評論和討論熱度，AI 預測電影首週末票房的準確率已超過傳統的問卷調查。',
+                content_en: 'Data analytics companies in finance and entertainment are using AI models to massively scrape and analyze "emotional tendencies" about movie trailers on social media (like X, TikTok). By analyzing anticipation levels, negative comments, and discussion热度, AI\'s accuracy in predicting movie opening weekend box office has surpassed traditional questionnaire surveys.',
+                source: '市場分析',
+                tags: ['市場預測', '社交媒體', '票房預測'],
+                is_hkaiiff: false
+            },
+            {
+                id: 63,
+                category: '影視發展趨勢與電影節',
+                time: '1天前',
+                title_zh: 'AI 遊戲開發公司 Latitude （《AI 地下城》）裁員，轉向 B2B 業務',
+                title_en: 'AI Game Development Company Latitude ("AI Dungeon") Layoffs, Shifting to B2B Business',
+                content_zh: '熱門 AI 敘事遊戲《AI 地下城》（AI Dungeon）的開發商 Latitude 宣布裁員，並將其業務重心從面向消費者的遊戲，轉向為其他遊戲工作室提供 AI 技術的 B2B 服務。這反映了 AI 原生遊戲在尋找可持續商業模式方面遇到的困難。',
+                content_en: 'Popular AI narrative game "AI Dungeon" developer Latitude announced layoffs and shifted its business focus from consumer-facing games to B2B services providing AI technology to other game studios. This reflects difficulties AI-native games face in finding sustainable business models.',
+                source: 'Latitude',
+                tags: ['Latitude', 'B2B轉型', 'AI遊戲'],
+                is_hkaiiff: false
+            },
+            {
+                id: 64,
+                category: '影視發展趨勢與電影節',
+                time: '1天前',
+                title_zh: 'SAG-AFTRA （演員公會）發布 AI 許可平台，管理成員的「數字聲音」',
+                title_en: 'SAG-AFTRA Launches AI Licensing Platform to Manage Members\' "Digital Voices"',
+                content_zh: '美國演員公會 SAG-AFTRA 推出了一個官方許可平台。該平台允許 AI 公司合法地授權使用其成員的數字聲音複製品，同時確保演員對其聲音的使用擁有控制權並獲得公平報酬。',
+                content_en: 'American actors guild SAG-AFTRA launched an official licensing platform. The platform allows AI companies to legally license digital voice replicas of its members, while ensuring actors maintain control over their voice usage and receive fair compensation.',
+                source: 'SAG-AFTRA',
+                tags: ['SAG-AFTRA', 'AI許可', '數字聲音'],
+                is_hkaiiff: false
+            },
+            {
+                id: 65,
+                category: '影視發展趨勢與電影節',
+                time: '2天前',
+                title_zh: '迪士尼研究院展示新 AI 工具，可自動為動畫角色添加「次要運動」',
+                title_en: 'Disney Research Showcases New AI Tool That Automatically Adds "Secondary Motion" to Animated Characters',
+                content_zh: '迪士尼研究院展示了一項新技術，該技術可以為 3D 動畫角色的主要動作（如行走）自動添加逼真的「次要運動」（如衣服的褶皺、頭髮的飄動）。這將大幅減少動畫師手動 K 帳的工作量。',
+                content_en: 'Disney Research showcased a new technology that can automatically add realistic "secondary motion" (such as clothing wrinkles, hair swaying) to 3D animated characters\' primary movements (like walking). This will significantly reduce animators\' manual keyframing workload.',
+                source: '迪士尼研究院',
+                tags: ['迪士尼', '次要運動', '動畫技術'],
+                is_hkaiiff: false
+            },
+            {
+                id: 66,
+                category: '影視發展趨勢與電影節',
+                time: '2天前',
+                title_zh: '歐盟《AI法案》正式生效，對高風險AI系統（包括內容生成）提出嚴格要求',
+                title_en: 'EU AI Act Officially Takes Effect, Imposing Strict Requirements on High-Risk AI Systems (Including Content Generation)',
+                content_zh: '歐盟的《人工智能法案》已正式生效，進入分階段实施期。該法案對用於生成內容的通用AI模型提出了嚴格的透明度要求，包括必須披露訓練數據的版權摘要，並為AI生成的內容打上「深度偽造」標籤。',
+                content_en: 'The EU\'s Artificial Intelligence Act has officially taken effect, entering a phased implementation period. The Act imposes strict transparency requirements on general-purpose AI models used for content generation, including mandatory disclosure of training data copyright summaries and labeling AI-generated content as "deepfakes".',
+                source: '歐盟',
+                tags: ['AI法案', '歐盟監管', '透明度'],
+                is_hkaiiff: false
+            },
+            {
+                id: 67,
+                category: '影視發展趨勢與電影節',
+                time: '2天前',
+                title_zh: '行業影響：HKAIIFF生態系統展現了「教育+交易」的閉環邏輯',
+                title_en: 'Industry Impact: HKAIIFF Ecosystem Demonstrates "Education + Transaction" Closed-Loop Logic',
+                content_zh: 'HKAIIFF生態系統的設計展現了清晰的產業閉環。AlF.Academy（學院）專注於解決人才短缺，作為未來的人才管道；而AlF.Market（市場）則專注於解決融資和版權問題。分析認為，這種「教育先行、市場承接」的雙引擎模式，旨在系統性地解決AI娛樂產業的兩大核心瓶頸。',
+                content_en: 'The design of the HKAIIFF ecosystem demonstrates a clear industrial closed loop. AlF.Academy focuses on solving talent shortages as a future talent pipeline; while AlF.Market focuses on solving financing and copyright issues. Analysis suggests this dual-engine model of "education first, market reception" aims to systematically address two core bottlenecks in the AI entertainment industry.',
+                source: 'HKAIIFF 分析',
+                tags: ['HKAIIFF', '生態系統', '教育+交易'],
+                is_hkaiiff: true
+            },
+            {
+                id: 68,
+                category: '影視發展趨勢與電影節',
+                time: '3天前',
+                title_zh: 'Stability AI發布Stable Audio2.0，可生成長達3分鐘的高質量音頻',
+                title_en: 'Stability AI Releases Stable Audio2.0, Capable of Generating Up to 3 Minutes of High-Quality Audio',
+                content_zh: 'Stability AI推出了其AI音樂和音效生成模型的重大更新Stable Audio2.0。新模型能夠生成長達3分鐘、44.1kHz採樣率的立體聲音頻，並支持「音頻轉音頻」（Audio-to-Audio）功能，允許用戶上傳一段旋律並對其進行風格轉換。',
+                content_en: 'Stability AI launched a major update to its AI music and sound effect generation model, Stable Audio2.0. The new model can generate up to 3 minutes of stereo audio at 44.1kHz sample rate, and supports "audio-to-audio" function, allowing users to upload a melody and perform style conversion on it.',
+                source: 'Stability AI',
+                tags: ['Stable Audio', 'AI音頻', '音樂生成'],
+                is_hkaiiff: false
+            },
+            {
+                id: 69,
+                category: '影視發展趨勢與電影節',
+                time: '3天前',
+                title_zh: '《模擬人生》開發商Maxis正在招聘「AI敘事生成」相關職位',
+                title_en: 'The Sims Developer Maxis Recruiting for "AI Narrative Generation" Related Positions',
+                content_zh: 'EA旗下的Maxis工作室（《模擬人生》開發商）發布的招聘故事顯示，他們正在尋找AI和機器學習工程師，專門從事「生成式敘事系統」的研發。這可能預示著未來的《模擬圖》將擁有由AI動態生成的、永不重複的故事情節。',
+                content_en: 'Recruitment stories released by EA\'s Maxis studio (developer of The Sims) show they are seeking AI and machine learning engineers specifically for "generative narrative systems" R&D. This may indicate future Sims games will feature dynamically generated, never-repeating storylines powered by AI.',
+                source: 'Maxis',
+                tags: ['Maxis', 'AI敘事', '模擬人生'],
+                is_hkaiiff: false
+            },
+            {
+                id: 70,
+                category: '影視發展趨勢與電影節',
+                time: '3天前',
+                title_zh: '模式創新：AlF.Market的「多輪融資模式」為電影投資提供新範式',
+                title_en: 'Model Innovation: AlF.Market\'s "Multi-Round Financing Model" Provides New Paradigm for Film Investment',
+                content_zh: 'AlF.Market平台借鑒了風險投資的成功經驗，為電影項目設計了「多輪融資模式」。項目可以分為種子輪（概念驗證）、A輪（預製作）等階段進行融資。這種模式允許投資者在不同階段進入，並通過「智能合約託管」和里程碑釋放資金來精確控制風險。',
+                content_en: 'The AlF.Market platform draws on successful venture capital experience, designing a "multi-round financing model" for film projects. Projects can raise funds in stages like seed round (concept validation), Series A (pre-production), etc. This model allows investors to enter at different stages and precisely control risks through "smart contract escrow" and milestone-based fund releases.',
+                source: 'AIF.Market 分析',
+                tags: ['多輪融資', '風險控制', 'AIF.Market'],
+                is_hkaiiff: true
+            },
+            {
+                id: 71,
+                category: '影視發展趨勢與電影節',
+                time: '4天前',
+                title_zh: 'AI輔助「遊戲本地化」：AI工具自動翻譯遊戲內數百萬字文本',
+                title_en: 'AI-Assisted "Game Localization": AI Tools Automatically Translate Millions of Words of In-Game Text',
+                content_zh: '大型角色扮演遊戲（RPG）通常包含數百萬字的對話和描述。遊戲發行商正普遍採用AI翻譯工具（如DeepL）來完成本地化初稿，然後再由人工譯者進行潤色。這將遊戲的多語言發布週期從數月縮短到了數週。',
+                content_en: 'Large role-playing games (RPGs) typically contain millions of words of dialogue and descriptions. Game publishers are widely adopting AI translation tools (like DeepL) to complete localization drafts, then having human translators polish them. This shortens multi-language game release cycles from months to weeks.',
+                source: '遊戲本地化',
+                tags: ['遊戲本地化', 'AI翻譯', '多語言'],
+                is_hkaiiff: false
+            },
+            {
+                id: 72,
+                category: '影視發展趨勢與電影節',
+                time: '4天前',
+                title_zh: 'AI公司Midjourney宣布將從圖像擴展到「3D和實時世界模擬」',
+                title_en: 'AI Company Midjourney Announces Expansion from Images to "3D and Real-Time World Simulation"',
+                content_zh: 'AI圖像生成領域的領導者Midjourney的創始人David Holz宣布，公司的長期願景是從2D圖像轉向「3D掃描和實時世界模擬」。這一戰略轉型預示著Midjourney將可能成為未來遊戲引擎和元宇宙內容創建的核心工具。',
+                content_en: 'Midjourney founder David Holz announced the company\'s long-term vision is shifting from 2D images to "3D scanning and real-time world simulation". This strategic transformation预示着 Midjourney may become a core tool for future game engines and metaverse content creation.',
+                source: 'Midjourney',
+                tags: ['Midjourney', '3D模擬', '元宇宙'],
+                is_hkaiiff: false
+            },
+            {
+                id: 73,
+                category: '影視發展趨勢與電影節',
+                time: '4天前',
+                title_zh: '微軟Xbox推出AI輔助功能：為殘障玩家提供「語音命令」',
+                title_en: 'Microsoft Xbox Launches AI-Assisted Features: Providing "Voice Commands" for Players with Disabilities',
+                content_zh: '微軟Xbox平台更新了其輔助功能，集成AI語音識別。玩家現在可以通過語音命令來導航菜單、啟動遊戲、發送消息，甚至在遊戲中映射複雜的按鍵操作。此舉旨在讓身體有障礙的玩家也能無障礙享受遊戲。',
+                content_en: 'Microsoft Xbox platform updated its accessibility features, integrating AI speech recognition. Players can now use voice commands to navigate menus, launch games, send messages, and even map complex button operations in games. This move aims to enable players with physical disabilities to enjoy games无障碍.',
+                source: '微軟Xbox',
+                tags: ['Xbox', 'AI輔助', '無障礙'],
+                is_hkaiiff: false
+            },
+            {
+                id: 74,
+                category: '影視發展趨勢與電影節',
+                time: '5天前',
+                title_zh: 'AI 視頻修復技術：AI 成功將 1896 年的黑白默片高清修復至 4K 彩色',
+                title_en: 'AI Video Restoration Technology: AI Successfully Restores 1896 Black-and-White Silent Film to 4K Color HD',
+                content_zh: '一個 AI 歷史愛好者團隊利用多種 AI 模型（如 DeOldify 和 Real-ESRGAN），成功將 1896 年的 Lumière 兄弟的經典默片《火車進站》修復至 4K、60fps 的彩色版本。AI 不僅提升了分辨率，還智能地填補了丟失的畫面細節。',
+                content_en: 'An AI history enthusiast team used multiple AI models (like DeOldify and Real-ESRGAN) to successfully restore the 1896 Lumière brothers\' classic silent film "The Arrival of a Train" to a 4K, 60fps color version. AI not only improved resolution but also intelligently filled in missing frame details.',
+                source: 'AI修復',
+                tags: ['視頻修復', 'AI歷史', '4K修復'],
+                is_hkaiiff: false
+            },
+            {
+                id: 75,
+                category: '影視發展趨勢與電影節',
+                time: '5天前',
+                title_zh: 'AI 驅動的「虛擬試穿」技術被用於電影戲服設計',
+                title_en: 'AI-Driven "Virtual Try-On" Technology Used in Film Costume Design',
+                content_zh: '電影的戲服設計部門已開始使用 AI 進行「虛擬試穿」。設計師將 2D 的戲服草圖和 3D 的演員模型輸入 AI 系統，AI 可以立即生成該戲服在不同光照和運動狀態下的 3D 效果，極大地加速了設計迭代過程。',
+                content_en: 'Film costume design departments have begun using AI for "virtual try-ons". Designers input 2D costume sketches and 3D actor models into AI systems, and AI can immediately generate 3D effects of the costume under different lighting and motion conditions, greatly accelerating design iteration processes.',
+                source: '戲服設計',
+                tags: ['虛擬試穿', '戲服設計', 'AI時尚'],
+                is_hkaiiff: false
+            },
+
+            // 遊戲發展趨勢 (76-100)
+            {
+                id: 76,
+                category: '遊戲發展趨勢',
+                time: '2小時前',
+                title_zh: 'Synthesis 獲 9000 萬美元 C 輪融資，估值達 10 億美元',
+                title_en: 'Synthesis Raises $90 Million Series C Funding, Valuation Reaches $1 Billion',
+                content_zh: 'AI 視頻頭像（Avatar）生成平台 Synthesis 宣布完成新一輪融資，成為 AI 視頻領域的獨角獸。該平台允許企業用戶僅通過輸入文本，就能生成逼真的 AI 發言人視頻，被廣泛用於企業培訓和市場營銷。',
+                content_en: 'AI video avatar generation platform Synthesis announced completion of new funding round, becoming a unicorn in the AI video field. The platform allows enterprise users to generate realistic AI spokesperson videos simply by inputting text, widely used for corporate training and marketing.',
+                source: 'Synthesis',
+                tags: ['Synthesis', 'AI頭像', '企業視頻'],
+                is_hkaiiff: false
+            },
+            {
+                id: 77,
+                category: '遊戲發展趨勢',
+                time: '4小時前',
+                title_zh: 'AI 助力體育轉播：AI 自動剪輯 NBA 球員個人集錦',
+                title_en: 'AI Assists Sports Broadcasting: AI Automatically Edits NBA Player Personal Highlights',
+                content_zh: 'NBA 正在使用 AI 系統實時分析比賽轉播。該系統能自動識別每個球員的精彩鏡頭（如扣籃、三分球），並在賽后幾分鐘內自動剪輯生成每位球員的個人集錦，分發到社交媒體和 NBA App，極大提升了內容分發效率。',
+                content_en: 'NBA is using AI systems to analyze game broadcasts in real-time. The system can automatically identify each player\'s highlight moments (like dunks, three-pointers) and automatically edit and generate personal highlights for each player within minutes after games, distributing to social media and NBA App, greatly improving content distribution efficiency.',
+                source: 'NBA',
+                tags: ['NBA', 'AI剪輯', '體育轉播'],
+                is_hkaiiff: false
+            },
+            {
+                id: 78,
+                category: '遊戲發展趨勢',
+                time: '6小時前',
+                title_zh: '好萊塢經紀公司 WME (William Morris Endeavor) 成立 AI 部門',
+                title_en: 'Hollywood Agency WME (William Morris Endeavor) Establishes AI Department',
+                content_zh: '繼 CAA 之後，另一家好萊塢頂級經紀公司 WME 也宣布成立 AI 部門。該部門將專注於 AI 技術的投資、為旗下藝人提供 AI 戰略諮詢，並探索利用 AI 為其客戶（導演、演員、編劇）創造新的商業機會。',
+                content_en: 'Following CAA, another top Hollywood agency WME announced establishing an AI department. The department will focus on AI technology investments, providing AI strategic consulting for its artists, and exploring using AI to create new business opportunities for its clients (directors, actors, writers).',
+                source: 'WME',
+                tags: ['WME', 'AI部門', '經紀公司'],
+                is_hkaiiff: false
+            },
+            {
+                id: 79,
+                category: '遊戲發展趨勢',
+                time: '8小時前',
+                title_zh: 'AI 驅動的「UGC 內容審核」幫助 Roblox 每天處理數億資產',
+                title_en: 'AI-Driven "UGC Content Moderation" Helps Roblox Process Hundreds of Millions of Assets Daily',
+                content_zh: '元宇宙平台 Roblox 透露，其平台每天有數億的用戶生成內容（UGC）上傳。為保證社區安全，Roblox 嚴重依賴 AI 審核系統，該系統能實時自動檢測和過濾不當的 3D 模型、圖像和文本，準確率已超過 98%。',
+                content_en: 'Metaverse platform Roblox revealed that hundreds of millions of user-generated content (UGC) assets are uploaded to its platform daily. To ensure community safety, Roblox heavily relies on AI moderation systems that can automatically detect and filter inappropriate 3D models, images, and text in real-time, with accuracy exceeding 98%.',
+                source: 'Roblox',
+                tags: ['Roblox', 'UGC審核', 'AI安全'],
+                is_hkaiiff: false
+            },
+            {
+                id: 80,
+                category: '遊戲發展趨勢',
+                time: '10小時前',
+                title_zh: '谷歌 DeepMind 訓練 AI 玩《FIFA》，戰術水平達全球頂尖',
+                title_en: 'Google DeepMind Trains AI to Play FIFA, Tactical Level Reaches Global Top Tier',
+                content_zh: 'DeepMind 宣布其 AI 系統 TacticAI 通過學習數千場《FIFA》（現《EA Sports FC》）的真實比賽數據，其戰術執行（尤其是角球戰術）水平已達到全球頂尖職業玩家水準。該技術未來可能用於遊戲 AI 的改進或真實足球的戰術分析。',
+                content_en: 'DeepMind announced its AI system TacticAI, by learning from thousands of real FIFA (now EA Sports FC) match data, has reached global top-tier professional player level in tactical execution (especially corner kick tactics). This technology may be used for game AI improvement or real football tactical analysis in the future.',
+                source: 'DeepMind',
+                tags: ['DeepMind', 'FIFA', 'AI戰術'],
+                is_hkaiiff: false
+            },
+            {
+                id: 81,
+                category: '遊戲發展趨勢',
+                time: '12小時前',
+                title_zh: 'AI 助力獨立動畫：AI 工具「EbSynth」將真人視頻轉換為動畫風格',
+                title_en: 'AI Assists Independent Animation: AI Tool "EbSynth" Converts Live-Action Video to Animation Style',
+                content_zh: 'AI 工具 EbSynth 正被獨立動畫師廣泛用於「視頻風格遷移」。創作者只需繪製幾個關鍵幀的風格，AI 就能將該風格自動應用於整個真人拍攝的視頻片段，極大地降低了逐幀繪製動畫的成本和時間。',
+                content_en: 'AI tool EbSynth is widely used by independent animators for "video style transfer". Creators only need to draw styles for a few key frames, and AI can automatically apply that style to entire live-action video clips, greatly reducing the cost and time of frame-by-frame animation drawing.',
+                source: 'EbSynth',
+                tags: ['EbSynth', '動畫風格', '視頻轉換'],
+                is_hkaiiff: false
+            },
+            {
+                id: 82,
+                category: '遊戲發展趨勢',
+                time: '14小時前',
+                title_zh: 'AI 驅動的「自動字幕生成」準確率已超 95%',
+                title_en: 'AI-Driven "Automatic Subtitle Generation" Accuracy Exceeds 95%',
+                content_zh: 'YouTube 和 Netflix 報告稱，其最新的 AI 自動字幕生成系統，對於清晰的英語音頻，準確率已穩定超過 95%。AI 技術不僅提高了字幕的準確性，還能自動識別不同的發言人，極大改善了聽障人士的觀影體驗。',
+                content_en: 'YouTube and Netflix report that their latest AI automatic subtitle generation systems have stabilized at over 95% accuracy for clear English audio. AI technology not only improves subtitle accuracy but also automatically identifies different speakers, greatly enhancing viewing experiences for hearing-impaired audiences.',
+                source: 'YouTube/Netflix',
+                tags: ['自動字幕', 'AI語音', '無障礙'],
+                is_hkaiiff: false
+            },
+            {
+                id: 83,
+                category: '遊戲發展趨勢',
+                time: '16小時前',
+                title_zh: '模式創新：AIF.Market 如何利用區塊鏈重構發行？',
+                title_en: 'Model Innovation: How AIF.Market Uses Blockchain to Reconstruct Distribution?',
+                content_zh: 'AIF.Market 旨在解決全球發行壁壘。平台將對接全球主流線上（流媒體）和線下（影院）發行渠道，利用區塊鏈技術實現各渠道收益數據的實時採集和驗證，並通過智能合約自動分紅，解決了傳統發行中結算週期長和數據不透明的問題。',
+                content_en: 'AIF.Market aims to solve global distribution barriers. The platform will connect with mainstream global online (streaming) and offline (theater) distribution channels, use blockchain technology to achieve real-time collection and verification of revenue data from various channels, and automatically distribute dividends through smart contracts, solving problems of long settlement cycles and opaque data in traditional distribution.',
+                source: 'AIF.Market 分析',
+                tags: ['AIF.Market', '區塊鏈發行', '智能合約'],
+                is_hkaiiff: true
+            },
+            {
+                id: 84,
+                category: '遊戲發展趨勢',
+                time: '18小時前',
+                title_zh: 'AI 創業公司 Runway 推出「Gen-3」，電影製作功能進一步增強',
+                title_en: 'AI Startup Runway Launches "Gen-3", Film Production Functions Further Enhanced',
+                content_zh: 'AI 視頻領域的先行者 Runway 發行了其第三代模型 Gen-3。新模型在生成時長、畫面穩定性和對複雜指令的理解上均有大幅提升，並增強了「運動筆刷」 (Motion Brush) 和「鏡頭控制」 (Camera Control) 等專業電影製作功能。',
+                content_en: 'AI video pioneer Runway released its third-generation model Gen-3. The new model has significant improvements in generation duration, frame stability, and understanding of complex instructions, and enhances professional film production functions like "Motion Brush" and "Camera Control".',
+                source: 'Runway',
+                tags: ['Runway', 'Gen-3', '電影製作'],
+                is_hkaiiff: false
+            },
+            {
+                id: 85,
+                category: '遊戲發展趨勢',
+                time: '20小時前',
+                title_zh: 'Spotify 推出 AI DJ 功能，根據用戶品味生成個性化解說',
+                title_en: 'Spotify Launches AI DJ Feature, Generating Personalized Commentary Based on User Taste',
+                content_zh: 'Spotify 推出了名為「DJ」的 AI 新功能。該 AI 不僅能根據用戶的聽歌歷史推廣歌曲，還能用逼真的 AI 語言，像電台 DJ 一樣，為用戶提供關於歌曲和藝術家的個性化介紹和評論，創造了全新的收聽體驗。',
+                content_en: 'Spotify launched a new AI feature called "DJ". The AI not only recommends songs based on users\' listening history but also uses realistic AI language, like a radio DJ, to provide personalized introductions and comments about songs and artists, creating a completely new listening experience.',
+                source: 'Spotify',
+                tags: ['Spotify', 'AI DJ', '音樂推薦'],
+                is_hkaiiff: false
+            },
+            {
+                id: 86,
+                category: '遊戲發展趨勢',
+                time: '22小時前',
+                title_zh: 'AI 輔助「遊戲測試」：AI Bot 可 24/7 不間斷尋找 Bug',
+                title_en: 'AI-Assisted "Game Testing": AI Bots Can Find Bugs 24/7 Non-Stop',
+                content_zh: '遊戲開發中的 QA（質量保證）測試是一個耗時耗力的環節。現在，大型工作室（如育碧）正部署 AI 測試機器人 (AI Bots)，這些機器人可以 24/7 不間斷地在遊戲世界中遊蕩，執行各種極端操作，以自動發現地圖漏洞 (Glitches) 和崩潰 Bug。',
+                content_en: 'QA testing in game development is a time-consuming and labor-intensive环节. Now, large studios (like Ubisoft) are deploying AI test bots that can wander in game worlds 24/7 non-stop, performing various extreme operations to automatically discover map glitches and crash bugs.',
+                source: '遊戲測試',
+                tags: ['AI測試', '遊戲QA', 'Bug檢測'],
+                is_hkaiiff: false
+            },
+            {
+                id: 87,
+                category: '遊戲發展趨勢',
+                time: '1天前',
+                title_zh: 'AI 驅動的「3D 角色綁定」：AI 自動為 3D 模型生成骨骼',
+                title_en: 'AI-Driven "3D Character Rigging": AI Automatically Generates Skeletons for 3D Models',
+                content_zh: '傳統 3D 動畫中，「綁定」 (Rigging，即為模型添加骨骼和控制器) 是一個高度技術性的工作。Autodesk 等公司正在演示基於 AI 的自動綁定工具，該工具可以分析 3D 網絡（如一隻龍或一個人），並在幾分鐘內自動為其生成符合運動學的骨骼結構。',
+                content_en: 'In traditional 3D animation, "rigging" (adding skeletons and controllers to models) is a highly technical task. Companies like Autodesk are demonstrating AI-based automatic rigging tools that can analyze 3D meshes (like a dragon or a person) and automatically generate kinematically correct skeletal structures for them within minutes.',
+                source: 'Autodesk',
+                tags: ['3D綁定', 'AI動畫', '角色建模'],
+                is_hkaiiff: false
+            },
+            {
+                id: 88,
+                category: '遊戲發展趨勢',
+                time: '1天前',
+                title_zh: 'AI 助力音樂創作：AI 工具 (如 A.V.A.) 可自動分離音軌',
+                title_en: 'AI Assists Music Creation: AI Tools (Like A.V.A.) Can Automatically Separate Audio Tracks',
+                content_zh: 'AI 音頻處理工具 (如 A.V.A.) 正被音樂製作人廣泛使用。這些工具可以將一首完整的、混合在一起的歌曲，智能地分離成獨立的人聲、鼓、貝斯和其他音軌。這使得混音、Remix 和採樣創作變得前所未有的簡單。',
+                content_en: 'AI audio processing tools (like A.V.A.) are widely used by music producers. These tools can intelligently separate a complete, mixed song into independent vocal, drum, bass, and other tracks. This makes mixing, remixing, and sampling creation unprecedentedly simple.',
+                source: '音樂工具',
+                tags: ['AI音頻', '音軌分離', '音樂製作'],
+                is_hkaiiff: false
+            },
+            {
+                id: 89,
+                category: '遊戲發展趨勢',
+                time: '1天前',
+                title_zh: 'Adobe Premiere Pro 測試版集成 Firefly AI，支持「生成式填充」',
+                title_en: 'Adobe Premiere Pro Beta Integrates Firefly AI, Supports "Generative Fill"',
+                content_zh: 'Adobe 宣布在其視頻剪輯軟件 Premiere Pro 的測試版中，集成了 Firefly AI 模型。用戶現在可以直接在時間線上使用「生成式填充」 (Generative Fill) 功能，例如選中畫面中的一個物體並將其無縫擦除，或擴展視頻畫面的邊界。',
+                content_en: 'Adobe announced integration of Firefly AI model into the beta version of its video editing software Premiere Pro. Users can now directly use "Generative Fill" function on the timeline, such as selecting an object in the frame and seamlessly erasing it, or expanding video frame boundaries.',
+                source: 'Adobe',
+                tags: ['Premiere Pro', 'Firefly', '生成式填充'],
+                is_hkaiiff: false
+            },
+            {
+                id: 90,
+                category: '遊戲發展趨勢',
+                time: '1天前',
+                title_zh: 'AI 助力「劇本可視化」：AI 工具將劇本文字轉為分鏡故事板',
+                title_en: 'AI Assists "Script Visualization": AI Tools Convert Script Text into Storyboard Panels',
+                content_zh: 'Wonder Dynamics 等公司推出的 AI 工具，允許導演和編劇上傳劇本，AI 會自動分析場景描述、人物和動作，並在幾分鐘內生成一系列的分鏡故事板 (Storyboard) 甚至動態預覽 (Pre-vis) 鏡頭，極大地加速了電影的前期籌備。',
+                content_en: 'AI tools launched by companies like Wonder Dynamics allow directors and writers to upload scripts, and AI automatically analyzes scene descriptions, characters, and actions, generating a series of storyboard panels and even dynamic pre-vis shots within minutes, greatly accelerating film pre-production preparation.',
+                source: 'Wonder Dynamics',
+                tags: ['劇本可視化', '故事板', '前期製作'],
+                is_hkaiiff: false
+            },
+            {
+                id: 91,
+                category: '遊戲發展趨勢',
+                time: '2天前',
+                title_zh: '市場信心：HKAIIFF 生態系統的香港戰略定位',
+                title_en: 'Market Confidence: HKAIIFF Ecosystem\'s Hong Kong Strategic Positioning',
+                content_zh: 'HKAIIFF 生態系統選址香港，是基於其「全球金融中心」和「東西方文化橋梁」的獨特定位。白皮書分析認為，香港的多元文化環境、國際資本市場、先進數字基礎設施以及鄰近中國內地 AI 研究中心等優勢，為其提供了理想的基礎。',
+                content_en: 'The HKAIIFF ecosystem chose Hong Kong based on its unique positioning as a "global financial center" and "East-West cultural bridge". White paper analysis suggests Hong Kong\'s multicultural environment, international capital markets, advanced digital infrastructure, and proximity to mainland China\'s AI research centers provide ideal foundations.',
+                source: 'HKAIIFF 分析',
+                tags: ['HKAIIFF', '香港定位', '戰略優勢'],
+                is_hkaiiff: true
+            },
+            {
+                id: 92,
+                category: '遊戲發展趨勢',
+                time: '2天前',
+                title_zh: 'AI 提升遊戲可訪問性：AI 實時描述遊戲畫面',
+                title_en: 'AI Enhances Game Accessibility: AI Describes Game Screens in Real-Time',
+                content_zh: '微軟 Xbox 平台正在開發一項新的 AI 輔助功能，旨在服務視障玩家。AI 可以實時分析遊戲畫面，並通過語音向玩家描述當前的場景、菜單選項和畫面中發生的關鍵事件。',
+                content_en: 'Microsoft Xbox platform is developing a new AI-assisted feature aimed at serving visually impaired players. AI can analyze game screens in real-time and describe the current scene, menu options, and key events happening on screen to players through voice.',
+                source: '微軟Xbox',
+                tags: ['遊戲可訪問性', 'AI描述', '視障玩家'],
+                is_hkaiiff: false
+            },
+            {
+                id: 93,
+                category: '遊戲發展趨勢',
+                time: '2天前',
+                title_zh: 'AI 創業公司 Perplexity AI 獲 7360 萬美元 B 輪融資，估值超 5 億',
+                title_en: 'AI Startup Perplexity AI Raises $73.6 Million Series B Funding, Valuation Exceeds $500 Million',
+                content_zh: '被稱為「AI 搜索引擎」的 Perplexity AI 宣布完成 B 輪融資，由英偉達 (NVIDIA) 和亞馬遜創始人貝索斯等參投。該工具以其能提供準確、有來源引用的答案而受到用戶青睞，被視為對傳統搜索引擎的重大挑戰。',
+                content_en: 'AI startup Perplexity AI, known as the "AI search engine", announced completion of Series B funding with participation from NVIDIA and Amazon founder Bezos, among others. The tool is favored by users for providing accurate, source-cited answers and is seen as a major challenge to traditional search engines.',
+                source: 'Perplexity AI',
+                tags: ['Perplexity', 'AI搜索', '融資'],
+                is_hkaiiff: false
+            },
+            {
+                id: 94,
+                category: '遊戲發展趨勢',
+                time: '3天前',
+                title_zh: 'AI 助力電影修復：彼得-傑克遜利用 AI 修復一戰紀錄片《他們已不再老去》',
+                title_en: 'AI Assists Film Restoration: Peter Jackson Uses AI to Restore WWI Documentary "They Shall Not Grow Old"',
+                content_zh: '著名導演彼得-傑克遜（《指環王》）的團隊開創性地使用 AI 技術，修復了一戰時期的黑白模糊錄像。AI 不僅將其高清化、彩色化，還分析了士兵的口型以還原他們的對話。這部名為《他們已不再老去》的紀錄片，展示了 AI 在文化遺產保護上的巨大價值。',
+                content_en: 'Famous director Peter Jackson\'s team pioneered using AI technology to restore blurred black-and-white footage from WWI period. AI not only enhanced it to HD and colorized it but also analyzed soldiers\' lip movements to restore their dialogues. This documentary titled "They Shall Not Grow Old" demonstrates AI\'s tremendous value in cultural heritage preservation.',
+                source: '彼得·傑克遜',
+                tags: ['電影修復', 'AI歷史', '文化遺產'],
+                is_hkaiiff: false
+            },
+            {
+                id: 95,
+                category: '遊戲發展趨勢',
+                time: '3天前',
+                title_zh: 'NVIDIA CEO 黃仁勳：AI 將為遊戲行業帶來「第二次黃金時代」',
+                title_en: 'NVIDIA CEO Jensen Huang: AI Will Bring "Second Golden Age" to Gaming Industry',
+                content_zh: 'NVIDIA CEO 黃仁勳在 GDC 2025 的演講中表示，生成式 AI 將為遊戲行業帶來「第二次黃金時代」。他預測 AI 將降低內容創作的成本，使小型獨立團隊也能創造出 3A 級別的宏大世界，從而極大地釋放行業的創造力。',
+                content_en: 'NVIDIA CEO Jensen Huang stated in his GDC 2025 speech that generative AI will bring a "second golden age" to the gaming industry. He predicts AI will lower content creation costs, enabling small independent teams to create AAA-level grand worlds, thus greatly unleashing industry creativity.',
+                source: 'NVIDIA',
+                tags: ['黃仁勳', 'AI遊戲', '行業預測'],
+                is_hkaiiff: false
+            },
+            {
+                id: 96,
+                category: '遊戲發展趨勢',
+                time: '4天前',
+                title_zh: 'AI 遊戲測試的自動化趨勢與挑戰',
+                title_en: 'Automation Trends and Challenges in AI Game Testing',
+                content_zh: 'AI 技術正在改變遊戲測試的方式，從傳統的手動測試轉向自動化測試。這種轉變不僅提高了測試效率，還能發現更深層次的遊戲問題，但也面臨著測試用例設計和結果解釋的挑戰。',
+                content_en: 'AI technology is changing the way games are tested, shifting from traditional manual testing to automated testing. This transformation not only improves testing efficiency but also discovers deeper game issues, but also faces challenges in test case design and result interpretation.',
+                source: '遊戲測試分析',
+                tags: ['遊戲測試', '自動化', '測試效率'],
+                is_hkaiiff: false
+            },
+            {
+                id: 97,
+                category: '遊戲發展趨勢',
+                time: '4天前',
+                title_zh: 'AI 在遊戲平衡性設計中的應用前景',
+                title_en: 'Application Prospects of AI in Game Balance Design',
+                content_zh: 'AI 技術為遊戲平衡性設計帶來了新的可能性。通過分析大量玩家數據，AI 可以幫助設計師更精確地調整遊戲參數，實現更好的遊戲平衡，提升玩家體驗。',
+                content_en: 'AI technology brings new possibilities to game balance design. By analyzing large amounts of player data, AI can help designers adjust game parameters more precisely, achieve better game balance, and enhance player experience.',
+                source: '遊戲設計分析',
+                tags: ['遊戲平衡', 'AI設計', '玩家體驗'],
+                is_hkaiiff: false
+            },
+            {
+                id: 98,
+                category: '遊戲發展趨勢',
+                time: '5天前',
+                title_zh: 'AI 與區塊鏈融合：探索數字內容的確權與交易新範式',
+                title_en: 'AI and Blockchain Integration: Exploring New Paradigms for Digital Content Rights Confirmation and Trading',
+                content_zh: 'AI 與區塊鏈技術的結合為數字內容產業帶來了新的可能性。通過區塊鏈實現內容確權，結合 AI 進行內容創作，有望構建更加透明、高效的數字內容生態系統。',
+                content_en: 'The combination of AI and blockchain technology brings new possibilities to the digital content industry. Using blockchain for content rights confirmation combined with AI for content creation is expected to build a more transparent and efficient digital content ecosystem.',
+                source: '技術融合分析',
+                tags: ['AI區塊鏈', '數字內容', '確權機制'],
+                is_hkaiiff: false
+            },
+            {
+                id: 99,
+                category: '遊戲發展趨勢',
+                time: '5天前',
+                title_zh: 'AI 內容審核技術面臨的挑戰與機遇',
+                title_en: 'Challenges and Opportunities Facing AI Content Review Technology',
+                content_zh: '隨著 AI 生成內容的爆炸式增長，傳統內容審核方式面臨巨大挑戰。AI 內容審核技術不僅需要識別有害內容，還需要理解上下文語境，這對技術提出了更高要求。',
+                content_en: 'With the explosive growth of AI-generated content, traditional content review methods face enormous challenges. AI content review technology not only needs to identify harmful content but also understand contextual nuances, placing higher demands on the technology.',
+                source: '技術分析',
+                tags: ['內容審核', 'AI技術', '語境理解'],
+                is_hkaiiff: false
+            },
+            {
+                id: 100,
+                category: '遊戲發展趨勢',
+                time: '6天前',
+                title_zh: 'AI 倫理框架建設：確保技術發展與社會價值觀一致',
+                title_en: 'AI Ethics Framework Construction: Ensuring Technology Development Aligns with Social Values',
+                content_zh: '隨著 AI 在娛樂領域的深入應用，建立完善的 AI 倫理框架變得日益重要。這不僅涉及內容審核，還包括數據隱私、算法偏見等多個方面，需要行業自律與監管協同。',
+                content_en: 'With the deepening application of AI in the entertainment field, establishing a comprehensive AI ethics framework is becoming increasingly important. This involves not only content review but also data privacy, algorithmic bias, and other aspects, requiring industry self-discipline and regulatory coordination.',
+                source: '倫理研究',
+                tags: ['AI倫理', '框架建設', '社會價值'],
+                is_hkaiiff: false
+            },
+
+            // 保留原有的HKAIIFF生態內容資訊 (101-105)
             {
                 id: 101,
                 category: '產業鏈與未來趨勢',
@@ -821,981 +1727,92 @@
                 time: '3天前',
                 title_zh: 'HKAIIFF 平台價值分析：構建AI影視全球樞紐',
                 title_en: 'HKAIIFF Platform Value Analysis: Building Global Hub for AI Film',
-                content_zh: 'HKAIIFF 通過整合HKAIFA、HKAIFM和HKAIFC三大平台，形成了從教育、創作到市場的完整生態。這種平台化運營模式不僅降低了AI影視創作門檻，更通過全球資源整合，有望成為AI影視領域的全球樞紐，推動行業標準化和規範化發展。',
-                content_en: 'By integrating three major platforms - HKAIFA, HKAIFM, and HKAIFC - HKAIIFF forms a complete ecosystem from education and creation to market. This platform operation model not only lowers the threshold for AI film creation but also, through global resource integration, is expected to become a global hub in the AI film field, promoting industry standardization and规范化 development.',
-                source: 'HKAIIFF 平台分析',
-                tags: ['HKAIIFF', '平台價值', '全球樞紐', '資源整合'],
+                content_zh: 'HKAIIFF 平台憑藉其先發優勢和完整的生態佈局，有望成為全球AI影視內容的創作、展示和交易樞紐。平台通過降低創作門檻、提供全鏈條服務和建立全球分發網絡，正在重塑AI影視產業的價值分配格局。',
+                content_en: 'With its first-mover advantage and complete ecosystem layout, the HKAIIFF platform is expected to become a global hub for AI film content creation, display, and trading. By lowering creation barriers, providing full-chain services, and establishing global distribution networks, the platform is reshaping the value distribution pattern of the AI film industry.',
+                source: 'HKAIIFF 平台分析報告',
+                tags: ['HKAIIFF', '平台價值', '全球樞紐', '價值分配'],
                 is_hkaiiff: true
-            },
-
-            // AI原生邏輯與技術發展 (約25條)
-            {
-                id: 26,
-                category: 'AI原生邏輯與技術發展',
-                time: '3小時前',
-                title_zh: '學術界證實：Diffusion 模型是高保真 AI 視頻的關鍵',
-                title_en: 'Academia Confirms: Diffusion Models Key to High-Fidelity AI Video',
-                content_zh: '根據 ResearchGate 上發布的一篇論文，Sora 等模型所依賴的 Diffusion 技術，已被證實在生成高解析度圖像和高保真短視頻方面具有變革性作用。這為 AI 影視製作提供了底層技術支持。',
-                content_en: 'According to a paper published on ResearchGate, Diffusion technology relied upon by models like Sora has been proven to have transformative effects in generating high-resolution images and high-fidelity short videos. This provides fundamental technical support for AI film and TV production.',
-                source: 'ResearchGate',
-                tags: ['Diffusion', 'Sora', '視頻生成', '學術研究'],
-                is_hkaiiff: false
-            },
-            {
-                id: 27,
-                category: 'AI原生邏輯與技術發展',
-                time: '5小時前',
-                title_zh: 'AI 原生模型興起，「多模態」成技術競賽新戰場',
-                title_en: 'Rise of AI-Native Models, "Multimodal" Becomes New Battlefield in Technology Race',
-                content_zh: '易觀分析報告稱，以智源 Emu3 為代表的「原生多模態世界模型」正成為研發熱點。這些模型能同時理解和生成圖像、文本、視頻，為未來的融合式娛樂體驗奠定基礎。',
-                content_en: 'Analysys report states that "native multimodal world models" represented by Zhiyuan Emu3 are becoming R&D hotspots. These models can simultaneously understand and generate images, text, and video, laying the foundation for future integrated entertainment experiences.',
-                source: '易觀分析',
-                tags: ['多模態', 'Emu3', '世界模型', '技術趨勢'],
-                is_hkaiiff: false
-            },
-            {
-                id: 28,
-                category: 'AI原生邏輯與技術發展',
-                time: '7小時前',
-                title_zh: '技術前沿：原生多模態模型將統一文本、圖像和視頻生成',
-                title_en: 'Technology Frontier: Native Multimodal Models Will Unify Text, Image, and Video Generation',
-                content_zh: '易觀分析稱，未來的 AI 模型將不再是「文生圖」或「文生視頻」的單一工具，而是能夠理解和生成所有模態的「世界模型」。這將使創作者能用更自然的方式（如口述+草圖）完成複雜作品。',
-                content_en: 'Analysys states that future AI models will no longer be single tools for "text-to-image" or "text-to-video", but "world models" capable of understanding and generating all modalities. This will enable creators to complete complex works in more natural ways (such as dictation + sketches).',
-                source: '易觀分析',
-                tags: ['世界模型', '多模態統一', '創作方式', '技術進化'],
-                is_hkaiiff: false
-            },
-            {
-                id: 29,
-                category: 'AI原生邏輯與技術發展',
-                time: '9小時前',
-                title_zh: 'AI 娛樂的「iPhone 時刻」：等待殺手級應用',
-                title_en: 'AI Entertainment\'s "iPhone Moment": Waiting for Killer Application',
-                content_zh: '易觀分析指出，儘管 AI 技術（如 Sora）層出不窮，但娛樂產業仍處於「前 iPhone 時刻」。市場正在等待一款像《憤怒的小鳥》或 Instagram 那樣的「殺手級應用」，來引爆 AI 原生內容的消費市場。',
-                content_en: 'Analysys points out that despite numerous AI technologies (like Sora), the entertainment industry is still in its "pre-iPhone moment". The market is waiting for a "killer application" like Angry Birds or Instagram to ignite the consumer market for AI-native content.',
-                source: '易觀分析',
-                tags: ['殺手級應用', 'iPhone時刻', '市場爆發', '消費市場'],
-                is_hkaiiff: false
-            },
-            {
-                id: 30,
-                category: 'AI原生邏輯與技術發展',
-                time: '11小時前',
-                title_zh: '學術界關注：AI 生成視頻的「物理一致性」仍是難點',
-                title_en: 'Academia Focus: "Physical Consistency" of AI-Generated Videos Still a Challenge',
-                content_zh: '儘管 Sora 表現驚艷，但 ResearchGate 上的學術討論指出，AI 生成視頻在「物理一致性」（如物體交互、重力表現）和「長時序邏輯」方面仍有缺陷。這是該技術從「短片」走向「長片」必須克服的障礙。',
-                content_en: 'Despite Sora\'s impressive performance, academic discussions on ResearchGate point out that AI-generated videos still have deficiencies in "physical consistency" (such as object interactions, gravity representation) and "long-term temporal logic". This is an obstacle that must be overcome for the technology to move from "short films" to "feature films".',
-                source: 'ResearchGate',
-                tags: ['物理一致性', '技術挑戰', '長片障礙', '學術研究'],
-                is_hkaiiff: false
-            },
-            {
-                id: 31,
-                category: 'AI原生邏輯與技術發展',
-                time: '13小時前',
-                title_zh: 'AI 驅動的「虛擬製片」正在降低科幻和大場面門檻',
-                title_en: 'AI-Driven "Virtual Production" Lowering Barriers for Sci-Fi and Large-Scale Scenes',
-                content_zh: '結合 NVIDIA Omniverse 等平台，AI 正被用於即時生成和渲染虛擬製作 (Virtual Production) 的背景。這使中小型製作公司也能拍攝出以往只有好萊塢大片才能實現的宏大科幻場景。',
-                content_en: 'Combined with platforms like NVIDIA Omniverse, AI is being used to generate and render Virtual Production backgrounds in real-time. This enables small and medium production companies to shoot grand sci-fi scenes that were previously only achievable by Hollywood blockbusters.',
-                source: '行業趨勢 / NVIDIA',
-                tags: ['虛擬製片', 'NVIDIA', '科幻場景', '技術民主化'],
-                is_hkaiiff: false
-            },
-            {
-                id: 32,
-                category: 'AI原生邏輯與技術發展',
-                time: '17小時前',
-                title_zh: 'AI 劇本分析工具興起，用於預測票房和觀眾反饋',
-                title_en: 'Rise of AI Script Analysis Tools for Predicting Box Office and Audience Feedback',
-                content_zh: '基於 JETIR.org 的研究方向，市場上已出現利用 AI 分析劇本結構、角色弧光和對白情感的工具。這些工具聲稱可以預測劇本的潛在市場表現，幫助製片公司在早期決策。',
-                content_en: 'Based on JETIR.org research directions, tools have emerged that use AI to analyze script structure, character arcs, and dialogue emotions. These tools claim to predict scripts\' potential market performance, helping production companies make early decisions.',
-                source: 'JETIR.org / 行業趨勢',
-                tags: ['劇本分析', 'AI預測', '票房預測', '決策工具'],
-                is_hkaiiff: false
-            },
-            {
-                id: 33,
-                category: 'AI原生邏輯與技術發展',
-                time: '19小時前',
-                title_zh: 'Roblox 與 AI：UGC 的未來是「用說的」',
-                title_en: 'Roblox and AI: Future of UGC is "Speaking It"',
-                content_zh: 'Meshy AI 的分析與 Roblox 的官方願景一致。未來，玩家在 Roblox 中創造世界，可能不再需要複雜的建模或編程，只需通過自然語言描述「我想要一座漂浮的城堡」，AI 即可即時生成。',
-                content_en: 'Meshy AI\'s analysis aligns with Roblox\'s official vision. In the future, players creating worlds in Roblox may no longer need complex modeling or programming, simply describing "I want a floating castle" in natural language, and AI will generate it instantly.',
-                source: 'Meshy AI Blog / Roblox',
-                tags: ['Roblox', 'UGC', '自然語言', 'AI生成'],
-                is_hkaiiff: false
-            },
-            {
-                id: 34,
-                category: 'AI原生邏輯與技術發展',
-                time: '21小時前',
-                title_zh: 'PwC 數據解讀：3.5 兆美元營收背後的「個性化」革命',
-                title_en: 'PwC Data Interpretation: "Personalization" Revolution Behind $3.5 Trillion Revenue',
-                content_zh: 'PwC 預測的 3.5 兆美元營收，不僅僅是廣告數量的增加，而是「質」的飛躍。AI 將使廣告內容能根據每個用戶的即時情境（如正在觀看的劇情）動態生成，實現「千人千面」的終極個性化。',
-                content_en: 'PwC\'s predicted $3.5 trillion revenue is not just an increase in ad quantity, but a qualitative leap. AI will enable ad content to be dynamically generated based on each user\'s immediate context (such as the plot being watched), achieving ultimate "personalization for everyone".',
-                source: 'PwC 報告',
-                tags: ['個性化', 'AI廣告', '動態生成', '千人千面'],
-                is_hkaiiff: false
-            },
-            {
-                id: 35,
-                category: 'AI原生邏輯與技術發展',
-                time: '1天前',
-                title_zh: 'AI 在電影宣發的應用：自動剪輯預告片、精準定位受眾',
-                title_en: 'AI in Film Marketing: Automated Trailer Editing, Precise Audience Targeting',
-                content_zh: 'AI 不僅在製作端，也在宣發端發力。AI 工具現在可以分析整部電影，自動剪輯出數百個不同風格的預告片版本，並在社交媒體上精準投放給特定受眾（如「喜歡懸疑」或「喜歡特定演員」的群體）。',
-                content_en: 'AI is making strides not only in production but also in marketing. AI tools can now analyze entire films, automatically edit hundreds of different trailer versions, and precisely deliver them to specific audiences on social media (such as groups who "like suspense" or "like specific actors").',
-                source: '行業趨勢',
-                tags: ['電影宣發', 'AI剪輯', '精準投放', '預告片'],
-                is_hkaiiff: false
-            },
-            {
-                id: 36,
-                category: 'AI原生邏輯與技術發展',
-                time: '1天前',
-                title_zh: '「Sora 級」工具的出現，對動畫產業的衝擊大於真人電影',
-                title_en: '"Sora-Level" Tools Impact Animation Industry More Than Live-Action Films',
-                content_zh: '行業分析普遍認為，Sora 這類文生視頻工具，短期內對「動畫」和「VFX」產業的衝擊，將遠大於「真人實拍電影」。因為 AI 目前更容易生成非真實感的奇幻場景和動畫角色。',
-                content_en: 'Industry analysis generally believes that text-to-video tools like Sora will have a much greater short-term impact on the "animation" and "VFX" industries than "live-action films". This is because AI currently finds it easier to generate non-realistic fantasy scenes and animated characters.',
-                source: '80 Level / Cartoon Brew',
-                tags: ['Sora', '動畫衝擊', 'VFX', '產業影響'],
-                is_hkaiiff: false
-            },
-            {
-                id: 37,
-                category: 'AI原生邏輯與技術發展',
-                time: '1天前',
-                title_zh: 'AI 遊戲的未來：實現「永不重複」的 NPC 對話',
-                title_en: 'Future of AI Games: Achieving "Never-Repeating" NPC Dialogues',
-                content_zh: '目前遊戲 NPC 的對話都是預設的。但在 AI Agent 技術支持下，未來的 NPC 將擁有「記憶」和「個性」。玩家每次與其對話，AI 都會根據先前的交互，生成獨一無二、永不重複的回應。',
-                content_en: 'Current game NPC dialogues are all preset. But with AI Agent technology support, future NPCs will have "memory" and "personality". Each time players converse with them, AI will generate unique, never-repeating responses based on previous interactions.',
-                source: '行業趨勢',
-                tags: ['AI對話', 'NPC', '遊戲創新', 'AI Agent'],
-                is_hkaiiff: false
-            },
-            {
-                id: 38,
-                category: 'AI原生邏輯與技術發展',
-                time: '2天前',
-                title_zh: 'AI 驅動的「動態配樂」：遊戲音樂將千人千面',
-                title_en: 'AI-Driven "Dynamic Soundtracks": Game Music Will Be Personalized for Everyone',
-                content_zh: 'AI 在遊戲中的應用正深入到音樂領域。未來的遊戲配樂可能不再是循環播放的 BGM，而是由 AI 根據玩家的即時情緒（緊張、放鬆）和遊戲場景動態生成、無縫切換的「動態配樂」。',
-                content_en: 'AI applications in games are penetrating the music field. Future game soundtracks may no longer be looping BGM, but "dynamic soundtracks" generated by AI based on players\' real-time emotions (tension, relaxation) and game scenes, with seamless transitions.',
-                source: '行業趨勢',
-                tags: ['動態配樂', 'AI音樂', '遊戲音效', '情緒識別'],
-                is_hkaiiff: false
-            },
-            {
-                id: 39,
-                category: 'AI原生邏輯與技術發展',
-                time: '2天前',
-                title_zh: '中國 AI 娛樂布局：阿里、騰訊的模型已深入文娛場景',
-                title_en: 'China\'s AI Entertainment Layout: Alibaba, Tencent Models Deeply Integrated into Entertainment Scenarios',
-                content_zh: '據易觀分析和 AASTOCKS 的報導，中國的 AI 發展同樣迅速。阿里巴巴（通義）和騰訊（混元）等大模型，已經在遊戲、漫劇、影視後期等文娛場景實現深度應用和佈局。',
-                content_en: 'According to Analysys and AASTOCKS reports, China\'s AI development is equally rapid. Large models like Alibaba (Tongyi) and Tencent (Hunyuan) have achieved deep applications and deployments in entertainment scenarios such as games, comic dramas, and post-production.',
-                source: '易觀分析 / AASTOCKS',
-                tags: ['中國AI', '阿里巴巴', '騰訊', '文娛應用'],
-                is_hkaiiff: false
-            },
-            {
-                id: 40,
-                category: 'AI原生邏輯與技術發展',
-                time: '2天前',
-                title_zh: 'AI 技術的「黑盒」問題，困擾著監管機構',
-                title_en: 'AI Technology\'s "Black Box" Problem Troubles Regulators',
-                content_zh: 'NCC 報告中提到的治理難點之一，是 AI 決策的「黑盒」屬性。AI 為何推薦這部電影？AI 為何判定該內容違規？由於決策過程不透明，使得監管和問責變得極其困難。',
-                content_en: 'One governance difficulty mentioned in the NCC report is the "black box" nature of AI decision-making. Why does AI recommend this film? Why does AI determine this content violates rules? The lack of transparency in decision-making processes makes regulation and accountability extremely difficult.',
-                source: 'NCC 報告',
-                tags: ['黑盒問題', 'AI監管', '透明度', '決策解釋'],
-                is_hkaiiff: false
-            },
-            {
-                id: 41,
-                category: 'AI原生邏輯與技術發展',
-                time: '3天前',
-                title_zh: '獨立電影人的新工作流：AI 用於「視覺預覽」(Pre-vis)',
-                title_en: 'Independent Filmmakers\' New Workflow: AI for "Visual Previsualization" (Pre-vis)',
-                content_zh: '對於預算有限的獨立電影人來說，AI 的殺手級應用之一是「視覺預覽」。他們現在可以用 AI 快速生成分鏡故事版，甚至將劇本直接轉化為動態視頻預覽，極大便利了融資和拍攝溝通。',
-                content_en: 'For budget-limited independent filmmakers, one killer AI application is "visual previsualization". They can now use AI to quickly generate storyboards, or even directly convert scripts into dynamic video previews, greatly facilitating financing and shooting communication.',
-                source: '行業趨勢',
-                tags: ['視覺預覽', 'Pre-vis', '獨立電影', 'AI工作流'],
-                is_hkaiiff: false
-            },
-            {
-                id: 42,
-                category: 'AI原生邏輯與技術發展',
-                time: '3天前',
-                title_zh: 'AI 漫劇的全球化潛力：AI 配音和翻譯打破語言壁壘',
-                title_en: 'Global Potential of AI Comic Dramas: AI Dubbing and Translation Break Language Barriers',
-                content_zh: 'AI 漫劇的潛力不止於製作。AI 驅動的語音合成和即時翻譯技術，可以極低成本將漫劇翻譯成數十種語言，幫助閱文等平台的 IP 快速觸達全球市場。',
-                content_en: 'The potential of AI comic dramas goes beyond production. AI-driven voice synthesis and real-time translation technology can translate comic dramas into dozens of languages at very low cost, helping IPs on platforms like China Literature quickly reach global markets.',
-                source: 'AASTOCKS / 行業趨勢',
-                tags: ['全球化', 'AI配音', '語言翻譯', '市場拓展'],
-                is_hkaiiff: false
-            },
-            {
-                id: 43,
-                category: 'AI原生邏輯與技術發展',
-                time: '3天前',
-                title_zh: '遊戲 AI 的「聖杯」：可信的「程序化內容生成」(PCG)',
-                title_en: 'Game AI\'s "Holy Grail": Credible "Procedural Content Generation" (PCG)',
-                content_zh: '遊戲行業長期追求「程序化內容生成」(PCG)，如《No Man\'s Sky》。但傳統 PCG 內容單調。A16Z 和 Meshy AI 的分析認為，生成式 AI 將是實現 PCG「聖杯」的關鍵，能生成既隨機、又富有邏輯和美感的內容。',
-                content_en: 'The game industry has long pursued "Procedural Content Generation" (PCG), like No Man\'s Sky. But traditional PCG content is monotonous. A16Z and Meshy AI analysis believes generative AI will be key to achieving PCG\'s "holy grail", generating content that is both random and logical/aesthetic.',
-                source: 'Meshy AI / A16Z',
-                tags: ['PCG', '程序化生成', '遊戲AI', '內容創新'],
-                is_hkaiiff: false
-            },
-            {
-                id: 44,
-                category: 'AI原生邏輯與技術發展',
-                time: '3天前',
-                title_zh: 'A16Z 調查的深層解讀：AI 在「3A 遊戲」中仍是輔助',
-                title_en: 'Deep Dive into A16Z Survey: AI Still Auxiliary in "AAA Games"',
-                content_zh: 'A16Z 調查顯示 60% 的工作室已使用 AI，但 Meshy AI 的分析指出，在 3A 遊戲的核心開發中，AI 仍是輔助。因為 3A 遊戲需要高度定製化和獨創性的資產，目前的 AI 尚難滿足其質量和一致性要求。',
-                content_en: 'A16Z survey shows 60% of studios use AI, but Meshy AI analysis points out that in AAA game core development, AI remains auxiliary. This is because AAA games require highly customized and original assets, and current AI struggles to meet their quality and consistency requirements.',
-                source: 'Meshy AI / A16Z',
-                tags: ['3A遊戲', 'AI輔助', '質量要求', '定製化'],
-                is_hkaiiff: false
-            },
-            {
-                id: 45,
-                category: 'AI原生邏輯與技術發展',
-                time: '3天前',
-                title_zh: 'AI 時代的新工種：「AI 創意總監」與「提示工程師」',
-                title_en: 'New Professions in AI Era: "AI Creative Director" and "Prompt Engineer"',
-                content_zh: 'AI 正在催生新工種。未來的娛樂工作室，核心職位可能不再是傳統的美術或攝影，而是「AI 創意總監」（負責定義風格和審核產出）和「提示工程師」（負責將創意轉化為精確的 AI 指令）。',
-                content_en: 'AI is spawning new professions. Future entertainment studios\' core positions may no longer be traditional art or cinematography, but "AI Creative Director" (responsible for defining style and reviewing output) and "Prompt Engineer" (responsible for converting creativity into precise AI instructions).',
-                source: '行業趨勢',
-                tags: ['新工種', 'AI創意總監', '提示工程師', '職業轉型'],
-                is_hkaiiff: false
-            },
-            {
-                id: 46,
-                category: 'AI原生邏輯與技術發展',
-                time: '4天前',
-                title_zh: 'AI 驅動的「虛擬人」產業鏈正在形成',
-                title_en: 'AI-Driven "Virtual Human" Industry Chain Forming',
-                content_zh: '從 AI Film Awards 的「最佳 Avatar」獎，到廣告、直播中的應用，一個圍繞「AI 虛擬人」的完整產業鏈（包括建模、驅動、運營、中之人）正在快速形成，成為 AI 娛樂中最快變現的賽道之一。',
-                content_en: 'From AI Film Awards\' "Best Avatar" award to applications in advertising and live streaming, a complete industry chain around "AI virtual humans" (including modeling, driving, operations, voice actors) is rapidly forming, becoming one of the fastest monetizing tracks in AI entertainment.',
-                source: '行業觀察',
-                tags: ['虛擬人', '產業鏈', 'Avatar', '變現賽道'],
-                is_hkaiiff: false
-            },
-            {
-                id: 47,
-                category: 'AI原生邏輯與技術發展',
-                time: '4天前',
-                title_zh: 'AI 生成內容的版權歸屬問題引發法律爭議',
-                title_en: 'Copyright Ownership Issues of AI-Generated Content Spark Legal Controversy',
-                content_zh: '隨著 AI 生成內容的普及，版權歸屬問題日益凸顯。目前法律界對於 AI 生成內容是否享有版權保護尚無定論，這對 AI 娛樂產業的商業模式構成了潛在威脅。',
-                content_en: 'With the proliferation of AI-generated content, copyright ownership issues are becoming increasingly prominent. The legal community currently has no consensus on whether AI-generated content enjoys copyright protection, posing potential threats to the business models of the AI entertainment industry.',
-                source: '法律分析',
-                tags: ['版權歸屬', 'AI生成內容', '法律爭議', '商業模式'],
-                is_hkaiiff: false
-            },
-            {
-                id: 48,
-                category: 'AI原生邏輯與技術發展',
-                time: '4天前',
-                title_zh: 'AI 倫理框架建設：確保技術發展與社會價值觀一致',
-                title_en: 'AI Ethics Framework Construction: Ensuring Technology Development Aligns with Social Values',
-                content_zh: '隨著 AI 在娛樂領域的深入應用，建立完善的 AI 倫理框架變得日益重要。這不僅涉及內容審核，還包括數據隱私、算法偏見等多個方面，需要行業自律與監管協同。',
-                content_en: 'With the deepening application of AI in the entertainment field, establishing a comprehensive AI ethics framework is becoming increasingly important. This involves not only content review but also data privacy, algorithmic bias, and other aspects, requiring industry self-discipline and regulatory coordination.',
-                source: '倫理研究',
-                tags: ['AI倫理', '框架建設', '社會價值', '行業自律'],
-                is_hkaiiff: false
-            },
-            {
-                id: 49,
-                category: 'AI原生邏輯與技術發展',
-                time: '5天前',
-                title_zh: 'AI 與區塊鏈融合：探索數字內容的確權與交易新範式',
-                title_en: 'AI and Blockchain Integration: Exploring New Paradigms for Digital Content Rights Confirmation and Trading',
-                content_zh: 'AI 與區塊鏈技術的結合為數字內容產業帶來了新的可能性。通過區塊鏈實現內容確權，結合 AI 進行內容創作，有望構建更加透明、高效的數字內容生態系統。',
-                content_en: 'The combination of AI and blockchain technology brings new possibilities to the digital content industry. Using blockchain for content rights confirmation combined with AI for content creation is expected to build a more transparent and efficient digital content ecosystem.',
-                source: '技術融合分析',
-                tags: ['AI區塊鏈', '數字內容', '確權機制', '生態系統'],
-                is_hkaiiff: false
-            },
-            {
-                id: 50,
-                category: 'AI原生邏輯與技術發展',
-                time: '5天前',
-                title_zh: 'AI 內容審核技術面臨的挑戰與機遇',
-                title_en: 'Challenges and Opportunities Facing AI Content Review Technology',
-                content_zh: '隨著 AI 生成內容的爆炸式增長，傳統內容審核方式面臨巨大挑戰。AI 內容審核技術不僅需要識別有害內容，還需要理解上下文語境，這對技術提出了更高要求。',
-                content_en: 'With the explosive growth of AI-generated content, traditional content review methods face enormous challenges. AI content review technology not only needs to identify harmful content but also understand contextual nuances, placing higher demands on the technology.',
-                source: '技術分析',
-                tags: ['內容審核', 'AI技術', '語境理解', '挑戰機遇'],
-                is_hkaiiff: false
-            },
-
-            // 影視發展趨勢與電影節 (約25條)
-            {
-                id: 51,
-                category: '影視發展趨勢與電影節',
-                time: '2小時前',
-                title_zh: '西班牙全 AI 電影《大重置》亮相，無真人演員或實體場景',
-                title_en: 'Spain\'s Full-AI Film "The Great Reset" Debuts, No Real Actors or Physical Sets',
-                content_zh: '據新華網報導，西班牙電影《大重置》(The Great Reset) 完全依賴 AI 進行製作，展示了 AI 在「微預算、高概念」內容創作上的巨大潛力。此片已在柏林電影節等市場展出，引發獨立製片界高度關注。',
-                content_en: 'According to Xinhua News, the Spanish film "The Great Reset" was produced entirely using AI, demonstrating AI\'s enormous potential in "micro-budget, high-concept" content creation. The film has been exhibited at markets like the Berlin Film Festival, attracting significant attention from the independent film community.',
-                source: '新華網',
-                tags: ['全AI電影', '大重置', '西班牙', '柏林電影節'],
-                is_hkaiiff: false
-            },
-            {
-                id: 52,
-                category: '影視發展趨勢與電影節',
-                time: '6小時前',
-                title_zh: 'AI 電影獎項成新趨勢，Cannes AI 電影獎設立「最佳 AI 敘事」',
-                title_en: 'AI Film Awards Become New Trend, Cannes AI Film Awards Establish "Best AI Narrative"',
-                content_zh: '全球範圍內湧現出多個 AI 專門電影節。據 FilmFreeway 資料，AI Film Awards Cannes 等活動已設立「最佳 AI 生成」、「最佳 AI 角色」等新獎項，標誌著一套全新的「AI 電影美學」正在形成。',
-                content_en: 'Multiple AI-specific film festivals have emerged globally. According to FilmFreeway data, events like AI Film Awards Cannes have established new awards such as "Best AI Generation" and "Best AI Character", marking the formation of a new "AI film aesthetics".',
-                source: 'FilmFreeway',
-                tags: ['AI電影獎', 'Cannes', '新獎項', '電影美學'],
-                is_hkaiiff: false
-            },
-            {
-                id: 53,
-                category: '影視發展趨勢與電影節',
-                time: '10小時前',
-                title_zh: 'AI 倫理成電影新題材！《Humans in the Loop》登陸 Netflix',
-                title_en: 'AI Ethics Becomes New Film Theme! "Humans in the Loop" Lands on Netflix',
-                content_zh: '據 Variety 報導，一部探討 AI 數據標註工人困境的電影《Humans in the Loop》已在 Netflix 上映。這標誌著 AI 倫理不僅是行業內部的爭議，也正成為面向大眾的新興內容題材。',
-                content_en: 'According to Variety, a film exploring the plight of AI data annotation workers, "Humans in the Loop", has premiered on Netflix. This marks that AI ethics is not only an industry controversy but is becoming an emerging content theme for the general public.',
-                source: 'Variety',
-                tags: ['AI倫理', 'Netflix', '數據標註', '新題材'],
-                is_hkaiiff: false
-            },
-            {
-                id: 54,
-                category: '影視發展趨勢與電影節',
-                time: '14小時前',
-                title_zh: 'AI 電影教育起步，RIT 學院因「融合科技藝術」獲表彰',
-                title_en: 'AI Film Education Begins, RIT College Recognized for "Integrating Technology and Art"',
-                content_zh: '頂級電影學院正被迫轉型。據 RIT News 報導，羅徹斯特理工學院 (RIT) 因其「融合科技、藝術與設計」的前瞻性課程，被《TheWrap》評為頂級電影學院之一。未來的電影教育將必須包含 AI 工具鏈。',
-                content_en: 'Top film schools are being forced to transform. According to RIT News, Rochester Institute of Technology (RIT) was named one of the top film schools by TheWrap for its forward-looking curriculum "integrating technology, art, and design". Future film education must include AI tool chains.',
-                source: 'RIT News / TheWrap',
-                tags: ['電影教育', 'RIT', '科技融合', '課程轉型'],
-                is_hkaiiff: false
-            },
-            {
-                id: 55,
-                category: '影視發展趨勢與電影節',
-                time: '16小時前',
-                title_zh: '主流電影節接納 AI，Tribeca 設立「AI 短片」專門單元',
-                title_en: 'Mainstream Film Festivals Embrace AI, Tribeca Establishes "AI Short Film" Dedicated Section',
-                content_zh: 'AI 電影正從地下走向主流。紐約 Tribeca 電影節已正式設立名為「Human Powered: AI Shorts Program」的單元，展映利用 AI 輔助製作的短片。這標誌著 AI 作為一種創作工具，正獲得藝術界的認可。',
-                content_en: 'AI films are moving from underground to mainstream. New York\'s Tribeca Film Festival has officially established a section called "Human Powered: AI Shorts Program" to screen short films made with AI assistance. This marks AI as a creative tool gaining recognition from the art world.',
-                source: 'Tribeca Festival',
-                tags: ['Tribeca', 'AI短片', '主流認可', '電影節'],
-                is_hkaiiff: false
-            },
-            {
-                id: 56,
-                category: '影視發展趨勢與電影節',
-                time: '18小時前',
-                title_zh: '釜山 AI 電影節開幕，推動亞洲 AI 電影製作',
-                title_en: 'Busan AI Film Festival Opens, Promoting Asian AI Film Production',
-                content_zh: '亞洲在 AI 電影領域正迎頭趕上。釜山國際 AI 電影節 (Busan International AI Film Festival) 已開始運營，旨在挖掘和支持使用 AI 技術進行創作的亞洲電影人。',
-                content_en: 'Asia is catching up in the AI film field. Busan International AI Film Festival has begun operations, aiming to discover and support Asian filmmakers creating with AI technology.',
-                source: 'AI Film Festivals',
-                tags: ['釜山', 'AI電影節', '亞洲市場', '電影人支持'],
-                is_hkaiiff: false
-            },
-            {
-                id: 57,
-                category: '影視發展趨勢與電影節',
-                time: '22小時前',
-                title_zh: '奧斯汀 AI 電影節 (Austin AI Film Festival) 關注獨立精神',
-                title_en: 'Austin AI Film Festival Focuses on Independent Spirit',
-                content_zh: '在眾多 AI 電影節中，奧斯汀 AI 電影節以其「保持獨立電影精神」而獨樹一幟。該電影節強調 AI 應作為輔助工具，而不是取代人類的創造力，代表了行業內的另一種聲音。',
-                content_en: 'Among many AI film festivals, Austin AI Film Festival stands out for "maintaining independent film spirit". The festival emphasizes AI should be an assistive tool, not replacing human creativity, representing another voice within the industry.',
-                source: 'AI Film Festivals',
-                tags: ['Austin', 'AI電影節', '獨立精神', '人類創造力'],
-                is_hkaiiff: false
-            },
-            {
-                id: 58,
-                category: '影視發展趨勢與電影節',
-                time: '1天前',
-                title_zh: 'AI 電影美學：新獎項「最佳 AI 角色」關注數字人表現力',
-                title_en: 'AI Film Aesthetics: New Award "Best AI Character" Focuses on Digital Human Performance',
-                content_zh: 'AI Film Awards 等電影節設立的「最佳 AI 角色」獎項，正推動行業思考新的問題：一個完全由 AI 生成的虛擬角色，其「表演」的藝術價值應如何評估？',
-                content_en: 'Awards like "Best AI Character" established by film festivals like AI Film Awards are pushing the industry to think about new questions: How should the artistic value of a "performance" by a completely AI-generated virtual character be evaluated?',
-                source: 'FilmFreeway',
-                tags: ['AI角色', '數字人', '表演藝術', '評估標準'],
-                is_hkaiiff: false
-            },
-            {
-                id: 59,
-                category: '影視發展趨勢與電影節',
-                time: '1天前',
-                title_zh: 'AI 倫理電影《Humans in the Loop》引發「數據勞工」討論',
-                title_en: 'AI Ethics Film "Humans in the Loop" Sparks "Data Labor" Discussion',
-                content_zh: '據 Variety 報導，《Humans in the Loop》的上映（Netflix）將 AI 幕後的「數據標註工人」群體帶入公眾視野。電影探討了 AI 光鮮外表下，對全球底層勞工的依賴和潛在剝削。',
-                content_en: 'According to Variety, the release of "Humans in the Loop" on Netflix brings the "data annotation workers" behind AI into public view. The film explores AI\'s reliance on and potential exploitation of global bottom-tier workers beneath its glamorous surface.',
-                source: 'Variety',
-                tags: ['數據勞工', 'AI倫理', 'Netflix', '社會議題'],
-                is_hkaiiff: false
-            },
-            {
-                id: 60,
-                category: '影視發展趨勢與電影節',
-                time: '2天前',
-                title_zh: 'AI 時代的電影學院：RIT 學生已開始使用行業標準 AI 工具',
-                title_en: 'Film Schools in AI Era: RIT Students Already Using Industry-Standard AI Tools',
-                content_zh: '據 RIT News 報導，像 RIT 這樣的頂級電影學院，已將 AI 工具（如 MAGIC Spell Studios）納入課程，確保學生在畢業時就能掌握行業標準的 AI 輔助製作流程。',
-                content_en: 'According to RIT News, top film schools like RIT have incorporated AI tools (such as MAGIC Spell Studios) into curricula, ensuring students master industry-standard AI-assisted production workflows upon graduation.',
-                source: 'RIT News',
-                tags: ['RIT', 'AI工具', '電影教育', '行業標準'],
-                is_hkaiiff: false
-            },
-            {
-                id: 61,
-                category: '影視發展趨勢與電影節',
-                time: '2天前',
-                title_zh: '新華網：AI 降低電影門檻，但「情感內核」仍是關鍵',
-                title_en: 'Xinhua News: AI Lowers Film Barriers, But "Emotional Core" Still Key',
-                content_zh: '新華網在報導《大重置》等 AI 電影時評論稱，柏林電影節藝術總監 Tricia Tuttle 強調，AI 只是輔助工具。對於電影節和策展人來說，技術如何服務於「情感表達與美學內涵」才是評選的最終標準。',
-                content_en: 'Xinhua News commented in its coverage of AI films like "The Great Reset" that Berlin Film Festival Artistic Director Tricia Tuttle emphasized AI is just an assistive tool. For film festivals and curators, how technology serves "emotional expression and aesthetic connotation" is the ultimate standard for selection.',
-                source: '新華網',
-                tags: ['情感內核', '電影評選', '藝術價值', '柏林電影節'],
-                is_hkaiiff: false
-            },
-            {
-                id: 62,
-                category: '影視發展趨勢與電影節',
-                time: '2天前',
-                title_zh: '《Humans in the Loop》的啟示：AI 敘事需關注「人」',
-                title_en: '"Humans in the Loop" Insight: AI Narratives Need to Focus on "People"',
-                content_zh: 'Variety 對電影《Humans in the Loop》的評論稱，這部電影的成功之處在於，它沒有聚焦於 AI 技術本身，而是講述了技術背後「人」的故事。這為其他 AI 題材的創作者提供了範本。',
-                content_en: 'Variety\'s review of "Humans in the Loop" states the film\'s success lies in not focusing on AI technology itself, but telling the story of "people" behind the technology. This provides a template for other creators of AI-themed content.',
-                source: 'Variety',
-                tags: ['人性關懷', 'AI敘事', '創作範本', '電影主題'],
-                is_hkaiiff: false
-            },
-            {
-                id: 63,
-                category: '影視發展趨勢與電影節',
-                time: '3天前',
-                title_zh: 'AI 時代的電影教育：從「技術操作」轉向「創意決策」',
-                title_en: 'Film Education in AI Era: From "Technical Operations" to "Creative Decision-Making"',
-                content_zh: 'RIT 等電影學院的課程改革表明，未來的電影教育將減少對「軟體按鈕」的教學，轉而增加對「創意決策」的培養。學生需要學會的不是如何操作 AI，而是如何向 AI 提問，以及如何評估 AI 的產出。',
-                content_en: 'Curriculum reforms at film schools like RIT show that future film education will reduce teaching about "software buttons" and increase focus on cultivating "creative decision-making". Students need to learn not how to operate AI, but how to ask AI questions and evaluate AI output.',
-                source: 'RIT News',
-                tags: ['教育改革', '創意決策', '電影教育', 'AI素養'],
-                is_hkaiiff: false
-            },
-            {
-                id: 64,
-                category: '影視發展趨勢與電影節',
-                time: '3天前',
-                title_zh: 'AI 電影節的挑戰：如何界定「AI 使用率」？',
-                title_en: 'AI Film Festival Challenge: How to Define "AI Usage Rate"?',
-                content_zh: 'FilmFreeway 上的 AI 電影節章程顯示，行業正努力界定「什麼是 AI 電影」。有的要求 100% AI 生成，有的只要求 AI 輔助。如何劃定「AI 使用率」並進行評審，是新興電影節面臨的核心難題。',
-                content_en: 'AI film festival charters on FilmFreeway show the industry is struggling to define "what is an AI film". Some require 100% AI generation, others only require AI assistance. How to delineate "AI usage rate" and conduct reviews is a core challenge facing emerging film festivals.',
-                source: 'FilmFreeway',
-                tags: ['AI使用率', '評審標準', '定義挑戰', '電影節規則'],
-                is_hkaiiff: false
-            },
-            {
-                id: 65,
-                category: '影視發展趨勢與電影節',
-                time: '3天前',
-                title_zh: 'AI 時代，電影節的「策展」價值凸顯',
-                title_en: 'In AI Era, Film Festivals\' "Curation" Value Becomes Prominent',
-                content_zh: '在 AI 每天都能生成海量視頻的未來，像 Tribeca、釜山這樣的電影節，「策展」的價值變得空前重要。策展人將扮演「過濾器」和「品味定義者」的角色，幫助觀眾從 AI 的噪音中發現真正的佳作。',
-                content_en: 'In a future where AI can generate massive amounts of video daily, the "curation" value of film festivals like Tribeca and Busan becomes unprecedentedly important. Curators will play the role of "filters" and "taste definers", helping audiences discover true masterpieces from AI noise.',
-                source: '行業分析',
-                tags: ['策展價值', '電影節角色', '內容篩選', '品味定義'],
-                is_hkaiiff: false
-            },
-            {
-                id: 66,
-                category: '影視發展趨勢與電影節',
-                time: '3天前',
-                title_zh: 'AI 電影節的「泡沫」：是藝術創新還是技術獵奇？',
-                title_en: 'AI Film Festival "Bubble": Artistic Innovation or Technical Curiosity?',
-                content_zh: '隨著全球湧現數十個 AI 電影節，業內也出現了質疑的聲音。部分評論認為，許多 AI 電影目前僅停留在「技術獵奇」和「視覺奇觀」，缺乏成熟的敘事和情感深度，可能存在「泡沫化」風險。',
-                content_en: 'As dozens of AI film festivals emerge globally, doubts are also arising within the industry. Some commentators believe many AI films currently remain at "technical curiosity" and "visual spectacle", lacking mature narratives and emotional depth, with potential "bubble" risks.',
-                source: '行業觀察 / 評論',
-                tags: ['泡沫風險', '藝術價值', '技術獵奇', '行業質疑'],
-                is_hkaiiff: false
-            },
-            {
-                id: 67,
-                category: '影視發展趨勢與電影節',
-                time: '4天前',
-                title_zh: 'AI 電影節的「金獎」作品，能進入主流院線嗎？',
-                title_en: 'Can AI Film Festival "Gold Award" Works Enter Mainstream Theaters?',
-                content_zh: '目前，AI 電影節的獲獎作品（如 Austin、Busan）大多仍是實驗性短片。行業正在觀察，這些作品是否具有足夠的商業和藝術價值，能夠從「小圈子」走向「主流院線」，接受大眾市場的考驗。',
-                content_en: 'Currently, award-winning works from AI film festivals (like Austin, Busan) are mostly experimental short films. The industry is observing whether these works have sufficient commercial and artistic value to move from "niche circles" to "mainstream theaters" and face mass market tests.',
-                source: '行業觀察',
-                tags: ['院線發行', '商業價值', '主流市場', '實驗電影'],
-                is_hkaiiff: false
-            },
-            {
-                id: 68,
-                category: '影視發展趨勢與電影節',
-                time: '4天前',
-                title_zh: 'RIT 電影學院的啟示：AI 時代，「團隊協作」能力更重要',
-                title_en: 'RIT Film School Insight: In AI Era, "Team Collaboration" Ability More Important',
-                content_zh: 'RIT 的課程改革顯示，當 AI 可以完成大量基礎工作時，「團隊協作」和「跨學科溝通」（如藝術家向程序員描述需求）的能力變得比以往任何時候都重要。',
-                content_en: 'RIT\'s curriculum reform shows that when AI can complete large amounts of basic work, "team collaboration" and "interdisciplinary communication" abilities (such as artists describing needs to programmers) become more important than ever before.',
-                source: 'RIT News',
-                tags: ['團隊協作', '跨學科', '溝通能力', '教育改革'],
-                is_hkaiiff: false
-            },
-            {
-                id: 69,
-                category: '影視發展趨勢與電影節',
-                time: '4天前',
-                title_zh: '「反 AI」電影節出現？好萊塢或將分裂為兩大陣營',
-                title_en: '"Anti-AI" Film Festivals Emerging? Hollywood May Split into Two Major Camps',
-                content_zh: '《南佛羅里達論壇報》預測，隨著 AI 電影節的興起，未來也將出現「反 AI」的電影節（如 Justine Bateman 倡導的）。好萊塢和獨立電影界，可能分裂為「擁抱 AI」和「堅持純人類創作」兩大陣營。',
-                content_en: 'The South Florida Tribune predicts that with the rise of AI film festivals, "anti-AI" film festivals (such as those advocated by Justine Bateman) will also emerge. Hollywood and the independent film community may split into two major camps: "embrace AI" and "insist on pure human creation".',
-                source: 'South Florida Tribune',
-                tags: ['反AI運動', '陣營分裂', '人類創作', '好萊塢'],
-                is_hkaiiff: false
-            },
-            {
-                id: 70,
-                category: '影視發展趨勢與電影節',
-                time: '4天前',
-                title_zh: 'AI 電影《大重置》的啟示：AI 降低了「科幻片」的資金門檻',
-                title_en: 'AI Film "The Great Reset" Insight: AI Lowers Financial Barriers for "Sci-Fi Films"',
-                content_zh: '西班牙電影《大重置》作為一部科幻片，其重要意義在於展示了 AI 可以低成本生成複雜的未來場景和特效。這使得以往最「燒錢」的科幻類型，未來可能成為獨立電影人的新寵。',
-                content_en: 'The Spanish film "The Great Reset", as a sci-fi film, has significant meaning in demonstrating that AI can generate complex future scenes and effects at low cost. This makes the previously most "money-burning" sci-fi genre potentially a new favorite for independent filmmakers in the future.',
-                source: '新華網',
-                tags: ['科幻片', '成本降低', '獨立製片', 'AI特效'],
-                is_hkaiiff: false
-            },
-            {
-                id: 71,
-                category: '影視發展趨勢與電影節',
-                time: '5天前',
-                title_zh: '「AI 生成」的法律地位：美國版權局拒絕為 AI 圖像提供版權',
-                title_en: '"AI-Generated" Legal Status: US Copyright Office Refuses Copyright for AI Images',
-                content_zh: 'AI 娛樂產業面臨的重大法律障礙是：美國版權局 (USCO) 已多次裁定，完全由 AI 生成的圖像（如《Zarya of the Dawn》）不受版權保護。這意味著公司投入巨資開發的 AI 內容，可能無法建立法律護城河。',
-                content_en: 'A major legal obstacle facing the AI entertainment industry is: the US Copyright Office (USCO) has repeatedly ruled that images completely generated by AI (like "Zarya of the Dawn") are not protected by copyright. This means AI content developed with huge investments may not establish legal moats.',
-                source: '法律新聞',
-                tags: ['版權問題', '法律地位', 'AI內容', '美國版權局'],
-                is_hkaiiff: false
-            },
-            {
-                id: 72,
-                category: '影視發展趨勢與電影節',
-                time: '5天前',
-                title_zh: '《大重置》的象徵意義：電影製作的「民主化」',
-                title_en: '"The Great Reset" Symbolic Meaning: "Democratization" of Film Production',
-                content_zh: '新華網的報導稱，《大重置》這類全 AI 電影的象徵意義，大於其目前的藝術成就。它標誌著電影製作工具的又一次「民主化」——如同當年數位攝影機取代膠片一樣。',
-                content_en: 'Xinhua News reports that the symbolic meaning of full-AI films like "The Great Reset" is greater than their current artistic achievements. It marks another "democratization" of filmmaking tools - just as digital cameras replaced film back then.',
-                source: '新華網',
-                tags: ['民主化', '工具革命', '電影製作', '歷史意義'],
-                is_hkaiiff: false
-            },
-            {
-                id: 73,
-                category: '影視發展趨勢與電影節',
-                time: '5天前',
-                title_zh: 'AI 電影節評審標準的演變：從技術創新到藝術表達',
-                title_en: 'Evolution of AI Film Festival Review Standards: From Technical Innovation to Artistic Expression',
-                content_zh: '隨著 AI 電影的發展，電影節的評審標準也在不斷演變。從最初關注技術創新，逐漸轉向對藝術表達和情感傳遞的評價，這反映了 AI 電影從技術實驗向成熟藝術形式的轉變。',
-                content_en: 'With the development of AI films, film festival review standards are constantly evolving. From initially focusing on technological innovation to gradually shifting towards evaluating artistic expression and emotional transmission, this reflects the transformation of AI films from technical experiments to mature art forms.',
-                source: '電影節分析',
-                tags: ['評審標準', '藝術表達', '技術創新', '電影節演變'],
-                is_hkaiiff: false
-            },
-            {
-                id: 74,
-                category: '影視發展趨勢與電影節',
-                time: '6天前',
-                title_zh: 'AI 電影的國際合作新模式：跨地域協同創作',
-                title_en: 'New Model of International Cooperation for AI Films: Cross-Regional Collaborative Creation',
-                content_zh: 'AI 技術打破了地理限制，促進了國際電影合作的新模式。不同國家的創作者可以通過 AI 工具實現無縫協同工作，這為電影產業的全球化發展帶來了新的機遇。',
-                content_en: 'AI technology breaks geographical restrictions and promotes new models of international film cooperation. Creators from different countries can achieve seamless collaborative work through AI tools, bringing new opportunities for the globalization of the film industry.',
-                source: '國際合作分析',
-                tags: ['國際合作', '跨地域協同', '全球化', '創作模式'],
-                is_hkaiiff: false
-            },
-            {
-                id: 75,
-                category: '影視發展趨勢與電影節',
-                time: '6天前',
-                title_zh: 'AI 電影節對獨立電影人的扶持機制分析',
-                title_en: 'Analysis of Support Mechanisms for Independent Filmmakers at AI Film Festivals',
-                content_zh: 'AI 電影節通過獎金、資源對接和展示平台等多種方式扶持獨立電影人。這種扶持機制不僅促進了 AI 電影的發展，也為獨立電影人提供了新的發展機會。',
-                content_en: 'AI film festivals support independent filmmakers through various means such as prizes, resource matching, and展示 platforms. This support mechanism not only promotes the development of AI films but also provides new development opportunities for independent filmmakers.',
-                source: '電影節機制分析',
-                tags: ['獨立電影人', '扶持機制', '資源對接', '發展機會'],
-                is_hkaiiff: false
-            },
-
-            // 遊戲發展趨勢 (約25條)
-            {
-                id: 76,
-                category: '遊戲發展趨勢',
-                time: '1小時前',
-                title_zh: 'GDC 調查揭示開發者焦慮：84% 擔心 AI 倫理問題',
-                title_en: 'GDC Survey Reveals Developer Anxiety: 84% Worried About AI Ethics Issues',
-                content_zh: '根據 The Guardian 對遊戲開發者大會 (GDC) 的報導，儘管 AI 工具湧現，但開發者群體普遍感到不安。高達 84% 的受訪者對 AI 的倫理、版權及工作替代問題表示擔憂，現場氛圍被形容為「腐敗」。',
-                content_en: 'According to The Guardian\'s coverage of Game Developers Conference (GDC), despite the emergence of AI tools, the developer community generally feels uneasy. Up to 84% of respondents expressed concerns about AI ethics, copyright, and job replacement issues, with the atmosphere described as "toxic".',
-                source: 'GDC / The Guardian',
-                tags: ['GDC', 'AI倫理', '開發者焦慮', '版權問題'],
-                is_hkaiiff: false
-            },
-            {
-                id: 77,
-                category: '遊戲發展趨勢',
-                time: '3小時前',
-                title_zh: 'Unity 調查顯示樂觀情緒：79% 開發者擁抱 AI',
-                title_en: 'Unity Survey Shows Optimism: 79% of Developers Embrace AI',
-                content_zh: '與 GDC 的悲觀情緒形成對比，Unity 發布的年度遊戲報告（由 ETtoday Game 報導）顯示，高達 79% 的受訪開發者對 AI 持「正面」態度，認為 AI 是簡化工作流程、提升效率的利器。',
-                content_en: 'Contrasting with GDC\'s pessimism, Unity\'s annual game report (reported by ETtoday Game) shows that up to 79% of surveyed developers have "positive" attitudes toward AI, believing AI is a tool to simplify workflows and improve efficiency.',
-                source: 'Unity 報告 / ETtoday Game',
-                tags: ['Unity', 'AI樂觀', '開發者態度', '效率提升'],
-                is_hkaiiff: false
-            },
-            {
-                id: 78,
-                category: '遊戲發展趨勢',
-                time: '5小時前',
-                title_zh: '開發者擔憂 AI 導致「遊戲品質下降」，內容恐更趨同質化',
-                title_en: 'Developers Worry AI Will Lead to "Game Quality Decline", Content May Become More Homogenized',
-                content_zh: '80 Level 的一份調查報告顯示，47% 的遊戲開發者比去年「更擔心」AI 會拉低遊戲品質。他們擔憂工作室會為了節省成本而接受「足夠好」的 AI 產出，導致遊戲內容缺乏靈魂和創意。',
-                content_en: '80 Level survey report shows 47% of game developers are "more worried" than last year that AI will lower game quality. They fear studios will accept "good enough" AI output to save costs, resulting in game content lacking soul and creativity.',
-                source: '80 Level',
-                tags: ['品質擔憂', '同質化', 'AI風險', '開發者態度'],
-                is_hkaiiff: false
-            },
-            {
-                id: 79,
-                category: '遊戲發展趨勢',
-                time: '7小時前',
-                title_zh: 'AI 驅動的 UGC 將是 Roblox 和 Fortnite 的下一個增長點',
-                title_en: 'AI-Driven UGC Will Be Next Growth Point for Roblox and Fortnite',
-                content_zh: 'Meshy AI 博客分析指出，AI 工具將極大降低玩家自創內容 (UGC) 的門檻。在 Roblox 和 Fortnite Creative 這樣的平台上，玩家將能用自然語言生成 3D 模型和場景，進一步釋放平台生態的創造力。',
-                content_en: 'Meshy AI blog analysis points out that AI tools will greatly lower the barrier for user-generated content (UGC). On platforms like Roblox and Fortnite Creative, players will be able to generate 3D models and scenes using natural language, further unleashing the creative power of platform ecosystems.',
-                source: 'Meshy AI Blog',
-                tags: ['UGC', 'Roblox', 'Fortnite', 'AI生成'],
-                is_hkaiiff: false
-            },
-            {
-                id: 80,
-                category: '遊戲發展趨勢',
-                time: '9小時前',
-                title_zh: 'AI 遊戲資產的「所有權」問題浮現',
-                title_en: '"Ownership" Issue of AI Game Assets Emerges',
-                content_zh: '當《使命召喚》的玩家購買一個由 AI 生成的道具時，他們購買的究竟是什麼？DataAgent 的報告引發了新的法律問題：玩家是否擁有該資產？如果 AI 生成了兩個相似的道具，是否存在侵權？',
-                content_en: 'When Call of Duty players purchase an AI-generated item, what exactly are they buying? DataAgent\'s report raises new legal questions: Do players own the asset? If AI generates two similar items, is there infringement?',
-                source: 'DataAgent / 法律分析',
-                tags: ['資產所有權', '法律問題', 'AI道具', '版權爭議'],
-                is_hkaiiff: false
-            },
-            {
-                id: 81,
-                category: '遊戲發展趨勢',
-                time: '11小時前',
-                title_zh: '80 Level 調查：47% 開發者認為 AI 正讓遊戲變得「更平庸」',
-                title_en: '80 Level Survey: 47% of Developers Think AI Making Games "More Mediocre"',
-                content_zh: '遊戲開發者的擔憂正與日俱增。80 Level 的最新調查顯示，近半數開發者認為，管理層出於降本壓力而濫用 AI，正導致遊戲設計趨同，失去創意火花，最終產出「更平庸」的作品。',
-                content_en: 'Game developers\' concerns are growing daily. 80 Level\'s latest survey shows nearly half of developers believe management\'s misuse of AI due to cost-cutting pressure is causing game design homogenization, losing creative spark, ultimately producing "more mediocre" works.',
-                source: '80 Level',
-                tags: ['平庸化', '創意缺失', 'AI濫用', '管理壓力'],
-                is_hkaiiff: false
-            },
-            {
-                id: 82,
-                category: '遊戲發展趨勢',
-                time: '15小時前',
-                title_zh: 'Unity 報告樂觀解讀：AI 將開發者從「繁瑣勞動」中解放',
-                title_en: 'Unity Report Optimistic Reading: AI Liberates Developers from "Tedious Labor"',
-                content_zh: 'ETtoday Game 對 Unity 報告的解讀稱，79% 開發者支持 AI 的原因在於，AI 有望接管遊戲開發中繁瑣的、重複性的勞動（如資產擺放、Bug 測試），使開發者能專注於核心創意。',
-                content_en: 'ETtoday Game\'s interpretation of Unity report states that 79% of developers support AI because AI promises to take over tedious, repetitive labor in game development (such as asset placement, bug testing), enabling developers to focus on core creativity.',
-                source: 'ETtoday Game / Unity 報告',
-                tags: ['Unity解讀', 'AI解放', '創意專注', '勞動優化'],
-                is_hkaiiff: false
-            },
-            {
-                id: 83,
-                category: '遊戲發展趨勢',
-                time: '17小時前',
-                title_zh: 'GDC 現場：開發者對 AI 的不滿與「工會化」趨勢相關聯',
-                title_en: 'GDC On-Site: Developer Dissatisfaction with AI Related to "Unionization" Trend',
-                content_zh: 'The Guardian 報導指出，在 GDC 上對 AI 的強烈不滿，與遊戲行業日益增長的「工會化」呼聲相吻合。開發者希望通過組織工會，來爭取在 AI 應用上的話語權，保護自身權益。',
-                content_en: 'The Guardian reports that strong dissatisfaction with AI at GDC aligns with the growing "unionization" calls in the game industry. Developers hope to gain voice in AI applications and protect their rights through organizing unions.',
-                source: 'GDC / The Guardian',
-                tags: ['工會化', '權益保護', '開發者運動', 'AI話語權'],
-                is_hkaiiff: false
-            },
-            {
-                id: 84,
-                category: '遊戲發展趨勢',
-                time: '19小時前',
-                title_zh: '《使命召喚》的 AI 應用被指「缺乏創意」',
-                title_en: 'Call of Duty\'s AI Application Criticized as "Lacking Creativity"',
-                content_zh: '儘管 DataAgent 分析了《COD》的 AI 商業模式，但在玩家社區中，不少人批評這些 AI 生成的呼叫卡「千篇一律」、「缺乏創意」，並擔憂這只是大型工作室利用 AI「偷工減料」的開始。',
-                content_en: 'Despite DataAgent analyzing COD\'s AI business model, many in the player community criticize these AI-generated calling cards as "cookie-cutter" and "lacking creativity", worrying this is just the beginning of major studios "cutting corners" with AI.',
-                source: '玩家社區 / 評論',
-                tags: ['使命召喚', '創意批評', '玩家反饋', 'AI爭議'],
-                is_hkaiiff: false
-            },
-            {
-                id: 85,
-                category: '遊戲發展趨勢',
-                time: '21小時前',
-                title_zh: '遊戲開發者尋求「人機協作」：AI 應是「副駕駛」而非「駕駛員」',
-                title_en: 'Game Developers Seek "Human-AI Collaboration": AI Should Be "Co-Pilot" Not "Driver"',
-                content_zh: '在 80 Level 和 GDC 的討論中，一個共識正在形成：開發者並不完全抵制 AI，但他們希望 AI 扮演「Copilot」（副駕駛）的角色，提供建議、優化代碼、處理雜務，而「創意方向盤」必須掌握在人類手中。',
-                content_en: 'In discussions at 80 Level and GDC, a consensus is forming: developers don\'t completely resist AI, but they want AI to play a "Copilot" role, providing suggestions, optimizing code, handling chores, while the "creative steering wheel" must remain in human hands.',
-                source: '80 Level / GDC',
-                tags: ['人機協作', 'Copilot角色', '創意主導', '開發者共識'],
-                is_hkaiiff: false
-            },
-            {
-                id: 86,
-                category: '遊戲發展趨勢',
-                time: '1天前',
-                title_zh: '80 Level：開發者呼籲建立 AI「白名單」，明確工具使用範圍',
-                title_en: '80 Level: Developers Call for AI "Whitelist", Clarifying Tool Usage Scope',
-                content_zh: '面對 AI 引發的混亂，GDC 和 80 Level 上的許多開發者呼籲，工作室應制定清晰的 AI 工具「白名單」。明確哪些工具可用於輔助工作（如代碼優化），哪些工具（如 AI 概念設計）因版權問題應被禁止。',
-                content_en: 'Facing chaos caused by AI, many developers at GDC and 80 Level call for studios to establish clear AI tool "whitelists". Clarifying which tools can be used for auxiliary work (like code optimization) and which tools (like AI concept design) should be prohibited due to copyright issues.',
-                source: '80 Level / GDC',
-                tags: ['AI白名單', '工具規範', '版權合規', '使用準則'],
-                is_hkaiiff: false
-            },
-            {
-                id: 87,
-                category: '遊戲發展趨勢',
-                time: '1天前',
-                title_zh: 'GDC 上的恐慌：AI 威脅的首先是「中級」開發者',
-                title_en: 'Panic at GDC: AI Threatens "Mid-Level" Developers First',
-                content_zh: 'The Guardian 的報導分析稱，GDC 上的恐慌情緒主要集中在「中級」開發者（如概念美術、關卡設計）。AI 目前最容易取代的，正是這些需要大量「迭代」但尚未達到「頂尖創意」的工作。',
-                content_en: 'The Guardian\'s report analysis states that panic at GDC mainly concentrates on "mid-level" developers (like concept art, level design). What AI can most easily replace are these jobs requiring massive "iteration" but not yet reaching "top-tier creativity".',
-                source: 'The Guardian',
-                tags: ['中級開發者', 'AI威脅', '職位風險', '替代性'],
-                is_hkaiiff: false
-            },
-            {
-                id: 88,
-                category: '遊戲發展趨勢',
-                time: '1天前',
-                title_zh: 'Unity vs GDC：開發者對 AI 的態度取決於「職位」？',
-                title_en: 'Unity vs GDC: Developer Attitudes Toward AI Depend on "Position"?',
-                content_zh: '行業分析試圖調和 Unity 的樂觀（79%）與 GDC 的悲觀（84%）。一種可能是：程序員和技術崗位（使用 AI 優化代碼）更為樂觀，而藝術家和設計師崗位（面臨直接替代威脅）則更為悲觀。',
-                content_en: 'Industry analysis attempts to reconcile Unity\'s optimism (79%) with GDC\'s pessimism (84%). One possibility: programmers and technical positions (using AI to optimize code) are more optimistic, while artists and designers (facing direct replacement threats) are more pessimistic.',
-                source: '行業分析',
-                tags: ['職位差異', '態度分化', '技術vs藝術', '行業觀察'],
-                is_hkaiiff: false
-            },
-            {
-                id: 89,
-                category: '遊戲發展趨勢',
-                time: '2天前',
-                title_zh: '遊戲開發者情緒分裂：79% 樂觀 vs 84% 擔憂',
-                title_en: 'Game Developer Sentiment Split: 79% Optimistic vs 84% Concerned',
-                content_zh: 'AI 在遊戲業引發了嚴重的情緒分裂。一方面，Unity 報告稱 79% 的開發者持正面態度；另一方面，GDC 調查顯示 84% 的開發者對倫理問題感到擔憂。這場爭論正主導著遊戲行業的未來。',
-                content_en: 'AI has caused severe emotional division in the game industry. On one hand, Unity reports 79% of developers have positive attitudes; on the other, GDC surveys show 84% of developers worry about ethical issues. This debate is dominating the game industry\'s future.',
-                source: 'Unity / GDC',
-                tags: ['情緒分裂', '態度對立', '行業爭論', '未來方向'],
-                is_hkaiiff: false
-            },
-            {
-                id: 90,
-                category: '遊戲發展趨勢',
-                time: '2天前',
-                title_zh: '遊戲開發者的新焦慮：AI 生成的「垃圾資產」正在淹沒商店',
-                title_en: 'New Anxiety for Game Developers: AI-Generated "Garbage Assets" Flooding Stores',
-                content_zh: 'Unity 和 Unreal 的資產商店正麵臨新的問題。部分開發者（引述自 80 Level）抱怨，大量低質量的、由 AI 生成的「垃圾資產」正在湧入商店，增加了開發者尋找高質量資源的難度。',
-                content_en: 'Unity and Unreal asset stores are facing new problems. Some developers (quoted from 80 Level) complain that massive amounts of low-quality "garbage assets" generated by AI are flooding stores, increasing developers\' difficulty in finding high-quality resources.',
-                source: '80 Level',
-                tags: ['垃圾資產', '商店泛濫', '質量問題', '資源篩選'],
-                is_hkaiiff: false
-            },
-            {
-                id: 91,
-                category: '遊戲發展趨勢',
-                time: '2天前',
-                title_zh: 'GDC 上的工會呼聲：要求 AI 收益「公平分配」',
-                title_en: 'Union Voices at GDC: Demand "Fair Distribution" of AI Benefits',
-                content_zh: '遊戲開發者和配音演員（如 SAG-AFTRA）在 GDC 等場合呼籲，如果工作室使用 AI 提高了效率、增加了利潤，那麼節省下來的成本和新增的收益，應與被 AI 影響的創意人員「公平分配」。',
-                content_en: 'Game developers and voice actors (like SAG-AFTRA) at GDC and other venues call for "fair distribution" of cost savings and new profits with creative personnel affected by AI, if studios use AI to improve efficiency and increase profits.',
-                source: 'GDC / SAG-AFTRA',
-                tags: ['工會訴求', '利益分配', '公平權益', '收益共享'],
-                is_hkaiiff: false
-            },
-            {
-                id: 92,
-                category: '遊戲發展趨勢',
-                time: '3天前',
-                title_zh: 'AI 漫劇的隱憂：風格同質化與「流水線」作業',
-                title_en: 'AI Comic Drama Concerns: Style Homogenization and "Assembly Line" Operations',
-                content_zh: '儘管 AI 漫劇提效降本，但業內人士（引述自 AASTOCKS 評論）也擔憂，過度依賴 AI 可能導致漫劇風格同質化。如果所有作品都使用相似的 AI 模型渲染，可能會失去原作漫畫的獨特畫風。',
-                content_en: 'Despite AI comic dramas\' efficiency and cost reduction, industry insiders (quoted from AASTOCKS comments) also worry that over-reliance on AI may lead to style homogenization. If all works use similar AI model rendering, they may lose the unique art style of original comics.',
-                source: 'AASTOCKS',
-                tags: ['風格同質化', '漫劇風險', 'AI依賴', '獨特性喪失'],
-                is_hkaiiff: false
-            },
-            {
-                id: 93,
-                category: '遊戲發展趨勢',
-                time: '3天前',
-                title_zh: '「AI 數據標註」行業的悖論：AI 越智能，越需要人工',
-                title_en: '"AI Data Annotation" Industry Paradox: The Smarter AI Gets, The More Manual Labor Needed',
-                content_zh: '《Humans in the Loop》揭示了一個悖論：為了訓練出更智能、錯誤更少的 AI，就需要更多、更精細的人工數據標註。這意味著 AI 產業的發展，在短期內反而加劇了對全球數據勞工的依賴。',
-                content_en: '"Humans in the Loop" reveals a paradox: to train smarter, less error-prone AI requires more and more refined manual data annotation. This means AI industry development actually intensifies dependence on global data laborers in the short term.',
-                source: 'Variety',
-                tags: ['數據標註', '產業悖論', '勞工依賴', 'AI訓練'],
-                is_hkaiiff: false
-            },
-            {
-                id: 94,
-                category: '遊戲發展趨勢',
-                time: '4天前',
-                title_zh: '券商看好「AI+IP」模式，但前提是 IP 方對 AI 有控制力',
-                title_en: 'Brokerages Bullish on "AI+IP" Model, But Prerequisite is IP Holders Have Control Over AI',
-                content_zh: 'AASTOCKS 引述的券商報告雖然看好閱文等 IP 方，但一個隱含的前提是：IP 方必須對 AI 的使用有強大的控制力，以防止 AI 生成的內容（如漫劇）偏離原作精神或產生法律糾紛。',
-                content_en: 'Brokerage reports cited by AASTOCKS are bullish on IP holders like China Literature, but an implicit prerequisite is: IP holders must have strong control over AI usage to prevent AI-generated content (like comic dramas) from deviating from original spirit or causing legal disputes.',
-                source: 'AASTOCKS',
-                tags: ['AI+IP', '控制力', 'IP保護', '商業模式'],
-                is_hkaiiff: false
-            },
-            {
-                id: 95,
-                category: '遊戲發展趨勢',
-                time: '4天前',
-                title_zh: '世界經濟論壇 (WEF) 報告：AI 在媒體業的應用需警惕「偏見放大」',
-                title_en: 'WEF Report: AI Applications in Media Need to Beware of "Bias Amplification"',
-                content_zh: '世界經濟論壇的報告警告，如果 AI 模型的訓練數據本身帶有性別、種族或文化偏見，那麼 AI 生成的內容和推薦算法，將會大規模地「放大」這些偏見。',
-                content_en: 'WEF report warns that if AI model training data itself contains gender, racial, or cultural biases, then AI-generated content and recommendation algorithms will "amplify" these biases at scale.',
-                source: 'World Economic Forum',
-                tags: ['WEF', '偏見放大', 'AI倫理', '算法公平'],
-                is_hkaiiff: false
-            },
-            {
-                id: 96,
-                category: '遊戲發展趨勢',
-                time: '4天前',
-                title_zh: '世界經濟論壇 (WEF) 預警：AI 可能加劇「信息繭房」',
-                title_en: 'WEF Warning: AI May Exacerbate "Information Echo Chambers"',
-                content_zh: 'WEF 報告在分析「AI 驅動推薦」時發出警告，雖然個性化推薦提升了用戶體驗，但也可能極大加劇「信息繭房」和「算法偏見」問題，對社會輿論和文化多樣性構成威脅。',
-                content_en: 'WEF report warns when analyzing "AI-driven recommendations" that while personalized recommendations improve user experience, they may also greatly exacerbate "echo chamber" and "algorithmic bias" issues, threatening social discourse and cultural diversity.',
-                source: 'World Economic Forum',
-                tags: ['信息繭房', 'WEF預警', '算法偏見', '文化多樣性'],
-                is_hkaiiff: false
-            },
-            {
-                id: 97,
-                category: '遊戲發展趨勢',
-                time: '5天前',
-                title_zh: 'AI 版權戰：藝術家起訴 AI 公司或將定義行業未來',
-                title_en: 'AI Copyright Battle: Artists Suing AI Companies May Define Industry Future',
-                content_zh: '目前全球多起藝術家和版權方（如 Getty Images）起訴 AI 公司（如 Stability AI）的案件，其判決結果將對整個 AI 娛樂產業產生決定性影響。如果法院判決 AI 訓練構成侵權，將極大提高 AI 內容的合規成本。',
-                content_en: 'Multiple current global cases of artists and copyright holders (like Getty Images) suing AI companies (like Stability AI) will have decisive impacts on the entire AI entertainment industry. If courts rule AI training constitutes infringement, it will greatly increase AI content compliance costs.',
-                source: '行業新聞',
-                tags: ['版權訴訟', 'AI侵權', '法律案件', '行業影響'],
-                is_hkaiiff: false
-            },
-            {
-                id: 98,
-                category: '遊戲發展趨勢',
-                time: '5天前',
-                title_zh: 'AI 治理的全球難題：IP 版權的「避風港」在哪裡？',
-                title_en: 'Global Challenge of AI Governance: Where is the "Safe Harbor" for IP Copyright?',
-                content_zh: 'NCC 報告中提到的 IP 保護問題是全球性的。目前，AI 模型的訓練數據是否構成「合理使用」在全球範圍內沒有統一定論，這使得 AI 內容公司面臨巨大的法律訴訟風險。',
-                content_en: 'IP protection issues mentioned in NCC report are global. Currently, whether AI model training data constitutes "fair use" has no unified conclusion globally, making AI content companies face enormous legal litigation risks.',
-                source: 'NCC 報告 / 行業分析',
-                tags: ['IP保護', '合理使用', '全球治理', '訴訟風險'],
-                is_hkaiiff: false
-            },
-            {
-                id: 99,
-                category: '遊戲發展趨勢',
-                time: '6天前',
-                title_zh: 'AI 遊戲測試的自動化趨勢與挑戰',
-                title_en: 'Automation Trends and Challenges in AI Game Testing',
-                content_zh: 'AI 技術正在改變遊戲測試的方式，從傳統的手動測試轉向自動化測試。這種轉變不僅提高了測試效率，還能發現更深層次的遊戲問題，但也面臨著測試用例設計和結果解釋的挑戰。',
-                content_en: 'AI technology is changing the way games are tested, shifting from traditional manual testing to automated testing. This transformation not only improves testing efficiency but also discovers deeper game issues, but also faces challenges in test case design and result interpretation.',
-                source: '遊戲測試分析',
-                tags: ['遊戲測試', '自動化', '測試效率', 'AI應用'],
-                is_hkaiiff: false
-            },
-            {
-                id: 100,
-                category: '遊戲發展趨勢',
-                time: '6天前',
-                title_zh: 'AI 在遊戲平衡性設計中的應用前景',
-                title_en: 'Application Prospects of AI in Game Balance Design',
-                content_zh: 'AI 技術為遊戲平衡性設計帶來了新的可能性。通過分析大量玩家數據，AI 可以幫助設計師更精確地調整遊戲參數，實現更好的遊戲平衡，提升玩家體驗。',
-                content_en: 'AI technology brings new possibilities to game balance design. By analyzing large amounts of player data, AI can help designers adjust game parameters more precisely, achieve better game balance, and enhance player experience.',
-                source: '遊戲設計分析',
-                tags: ['遊戲平衡', 'AI設計', '玩家體驗', '數據分析'],
-                is_hkaiiff: false
             }
         ];
 
+        // 初始化頁面
+        function initPage() {
+            renderNewsCards();
+            setupEventListeners();
+        }
+
         // 渲染新聞卡片
-        function renderNews(category = '全部') {
+        function renderNewsCards() {
             const container = document.getElementById('newsContainer');
             container.innerHTML = '';
-
-            const filteredNews = category === '全部' ? newsData : newsData.filter(news => news.category === category);
-
-            filteredNews.forEach(news => {
-                const card = document.createElement('div');
-                card.className = `news-card ${news.is_hkaiiff ? 'hkaiiff' : ''}`;
-
-                const title = currentLang === 'zh' ? news.title_zh : news.title_en;
-                const content = currentLang === 'zh' ? news.content_zh : news.content_en;
-
-                card.innerHTML = `
-                    <div class="card-category">${news.category}</div>
-                    <h3 class="card-title">${title}</h3>
-                    <p class="card-content">${content}</p>
-                    <div class="card-meta">
-                        <span>${news.time}</span>
-                        <span>${news.source}</span>
-                    </div>
-                    <div class="card-tags">
-                        ${news.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                    </div>
-                `;
-
+            
+            const filteredData = currentCategory === '全部' 
+                ? newsData 
+                : newsData.filter(item => item.category === currentCategory);
+            
+            filteredData.forEach(item => {
+                const card = createNewsCard(item);
                 container.appendChild(card);
             });
         }
 
-        // 篩選類別
-        function filterCategory(category) {
-            currentCategory = category;
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            renderNews(category);
+        // 創建新聞卡片
+        function createNewsCard(item) {
+            const card = document.createElement('div');
+            card.className = `news-card ${item.is_hkaiiff ? 'hkaiiff' : ''}`;
+            
+            const title = currentLang === 'zh' ? item.title_zh : item.title_en;
+            const content = currentLang === 'zh' ? item.content_zh : item.content_en;
+            
+            card.innerHTML = `
+                <div class="card-category">${item.category}</div>
+                <h3 class="card-title">${title}</h3>
+                <p class="card-content">${content}</p>
+                <div class="card-tags">
+                    ${item.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                </div>
+                <div class="card-meta">
+                    <span>${item.time}</span>
+                    <span>來源: ${item.source}</span>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // 設置事件監聽器
+        function setupEventListeners() {
+            // 漢堡菜單切換
+            const navToggle = document.getElementById('navToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (navToggle && mobileMenu) {
+                navToggle.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('active');
+                });
+            }
+            
+            // 點擊其他地方關閉移動菜單
+            document.addEventListener('click', (e) => {
+                if (mobileMenu && mobileMenu.classList.contains('active') && 
+                    !navToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
         }
 
         // 切換語言
         function toggleLanguage() {
             currentLang = currentLang === 'zh' ? 'en' : 'zh';
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => {
-                if (btn.textContent === 'English' || btn.textContent === '繁體中文') {
-                    btn.textContent = currentLang === 'zh' ? 'English' : '繁體中文';
-                }
-            });
-            renderNews(currentCategory);
+            const toggleBtn = document.querySelector('.filter-btn');
+            if (toggleBtn) {
+                toggleBtn.textContent = currentLang === 'zh' ? 'English' : '中文';
+            }
+            renderNewsCards();
         }
 
-        // 移動端菜單切換
-        document.getElementById('navToggle').addEventListener('click', function() {
-            document.getElementById('mobileMenu').classList.toggle('active');
-        });
-
-        // 初始化
-        document.addEventListener('DOMContentLoaded', function() {
-            renderNews();
-        });
+        // 頁面加載完成後初始化
+        document.addEventListener('DOMContentLoaded', initPage);
     </script>
 </body>
 </html>
